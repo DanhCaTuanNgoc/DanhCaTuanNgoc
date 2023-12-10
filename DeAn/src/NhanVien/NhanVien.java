@@ -76,6 +76,6 @@ public class NhanVien {
 	}
 	
 	public void xuat() {
-		System.out.print(maNhanVien + "\t\t" + ho + "\t" + ten + "\t" + sdt);
+		System.out.printf("%-15s %-7s %-15s %-10s",maNhanVien, ho, ten, sdt);
 	}
 }
