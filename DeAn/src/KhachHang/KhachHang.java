@@ -85,7 +85,7 @@ public class KhachHang {
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhap ma khach hang: ");
+		System.out.print(" - Nhap ma khach hang: ");
 		this.maKhachHang = sc.nextLine();
 		System.out.print(" - Nhap ho: ");
 		this.ho = sc.nextLine();
