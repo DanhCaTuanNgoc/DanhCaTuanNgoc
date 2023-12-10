@@ -217,7 +217,7 @@ final class DanhSachNhanVien {
 						System.out.println(" -------- Hoan tat thao tac --------");
 						break;
 					case 2: 
-						for(int j=i;j<this.tongNV;j++) {
+						for(int j=i;j<this.tongNV - 1;j++) {
 							dsNhanVien[j] = dsNhanVien[j+1]; 
 						}
 						this.tongNV --; this.soNVHH --;
