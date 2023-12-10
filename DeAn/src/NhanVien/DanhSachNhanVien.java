@@ -64,7 +64,7 @@ final class DanhSachNhanVien {
 		dsNhanVien[this.tongNV - 1].nhap(); 
 		System.out.println("");
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
-		String n = sc.nextLine();
+		String n = sc.next();
 		System.out.println("");
 		if(n.equals("1")) { them(); } 
 		else { 
@@ -92,7 +92,6 @@ final class DanhSachNhanVien {
 		} catch(IOException ioe) {
 			System.out.println("File Error!");
 		}
-		
 	}
 	public void ghifile() {
 		try {
@@ -129,7 +128,7 @@ final class DanhSachNhanVien {
         }
         if(checkList == -1) {
             System.out.println("");
-        	System.out.println("		........Danh sach trong........");
+        	System.out.println("	........Danh sach trong........");
         }
 	}
 	public void xemdsXoa() {
@@ -198,7 +197,7 @@ final class DanhSachNhanVien {
 	        		break;
 	        }
 		} else {
-			System.out.println("		........Danh sach trong........");
+			System.out.println("	........Danh sach trong........");
 		}
         
 	}
@@ -253,6 +252,9 @@ final class DanhSachNhanVien {
 		String tk3= sc.nextLine();
 		System.out.print(" + Ten ( x de bo qa): ");
 		String tk4= sc.nextLine(); int m = 0;
+		System.out.println();
+		System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
+		System.out.println();
 		for(int i=0;i<this.tongNV;i++) {
 			if((dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
@@ -262,8 +264,9 @@ final class DanhSachNhanVien {
 				System.out.println("");
 			}
 		}
+		System.out.println("");
 		if(m != 0) {
-			System.out.println(" -------- Hoan tat thao ta --------");
+			System.out.println(" -------- Hoan tat thao tac --------");
 		} else {
 			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
 		}
