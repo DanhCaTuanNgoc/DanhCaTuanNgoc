@@ -217,17 +217,13 @@ final class DanhSachNhanVien {
 						System.out.println(" -------- Hoan tat thao tac --------");
 						break;
 					case 2: 
-						int delete_point = -1;
-						delete_point = i;
-						if(delete_point != -1) {
-							for(int j=delete_point;i<this.tongNV - 1;i++) {
-								dsNhanVien[j] = dsNhanVien[j+1]; 
-							}
-							this.tongNV --; this.soNVHH --;
-							dsNhanVien = Arrays.copyOf(dsNhanVien, this.tongNV);
-							System.out.println("");
-		        			System.out.println(" -------- Hoan tat thao tac --------");
+						for(int j=i;j<this.tongNV;j++) {
+							dsNhanVien[j] = dsNhanVien[j+1]; 
 						}
+						this.tongNV --; this.soNVHH --;
+						dsNhanVien = Arrays.copyOf(dsNhanVien, this.tongNV);
+						System.out.println("");
+						System.out.println(" -------- Hoan tat thao tac --------");
 						break;
 					default :
 						System.out.println(" Lua chon khong hop le, xin thu lai!!!");
