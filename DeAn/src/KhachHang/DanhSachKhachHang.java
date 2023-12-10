@@ -231,16 +231,18 @@ final class DanhSachKhachHang {
 	public void timkiem(){
 		System.out.println(" ------------ Tim kiem ------------");
 		System.out.print(" + Ma khach hang ( x de bo qua): ");
-		String tk1= sc.next(); sc.nextLine();
+		String tk1= sc.next(); 
 		System.out.print(" + So dien thoai ( x de bo qua): ");
-		String tk2= sc.nextLine();
+		String tk2= sc.next();
 		System.out.print(" + Ho ( x de bo qua): ");
-		String tk3= sc.nextLine();
+		String tk3= sc.next();
 		System.out.print(" + Ten ( x de bo qua): ");
+		sc.nextLine();
 		String tk4= sc.nextLine(); int m = 0;
 		System.out.print(" + CCCD (x de bo qua): ");
-		String tk5 = sc.nextLine();
+		String tk5 = sc.next();
 		System.out.print(" + Dia chi (x de bo qua): ");
+		sc.nextLine();
 		String tk6 = sc.nextLine();
  		System.out.println();
 		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
