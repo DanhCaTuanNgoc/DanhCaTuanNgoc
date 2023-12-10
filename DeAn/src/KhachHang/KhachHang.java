@@ -78,7 +78,7 @@ public class KhachHang {
 	public int getDeleted() {
 		return deleted;
 	}
-	public void setDeleleted(int deleted) {
+	public void setDeleted(int deleted) {
 		this.deleted = deleted;
 	}
 	// methods
@@ -87,20 +87,20 @@ public class KhachHang {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("Nhap ma khach hang: ");
 		this.maKhachHang = sc.nextLine();
-		System.out.print("Nhap ho: ");
+		System.out.print(" - Nhap ho: ");
 		this.ho = sc.nextLine();
-		System.out.print("Nhap ten: ");
+		System.out.print(" - Nhap ten: ");
 		this.ten = sc.nextLine();
-		System.out.print("Nhap can cuoc cong dan: ");
+		System.out.print(" - Nhap can cuoc cong dan: ");
 		this.cccd = sc.nextLine();	
-		System.out.print("Nhap dia chi: ");
+		System.out.print(" - Nhap dia chi: ");
 		this.diaChi = sc.nextLine();
-		System.out.print("Nhap sdt: ");
+		System.out.print(" - Nhap sdt: ");
 		this.sdt = sc.nextLine();
 	}
 	
 	public void xuat() {
-		System.out.print(maKhachHang + "\t" + ho + "\t" + ten + "\t" + ho + "\t" + diaChi + "\t" + sdt);
+		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s", maKhachHang, ho, ten, cccd , diaChi, sdt);
 	}
 }
 	
