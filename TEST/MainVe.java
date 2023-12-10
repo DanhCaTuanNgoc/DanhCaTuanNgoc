@@ -1,0 +1,19 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package TEST;
+
+/**
+ *
+ * @author Luong Thanh Tuan
+ */
+public class MainVe {
+    public static void main(String [] args) {
+        DanhSachVe dsVe = new DanhSachVe();
+        dsVe.nhapDanhSach();
+        dsVe.DocFileJava("C:\\Users\\Admin\\Documents\\NetBeansProjects\\HelloAll\\src\\ve.txt");
+	dsVe.xuatDanhSach();
+        dsVe.ThaoTac();
+    }
+}
