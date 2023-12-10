@@ -36,17 +36,17 @@ public class QuanLyDSNV {
 		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
-			System.out.println("   =========================================");
-			System.out.println("   !           ----- Nhan Vien -----       !");
-			System.out.println("   !        1. Them nhan vien.             !");
-			System.out.println("   !        2. Danh sach nhan vien.        !");
-			System.out.println("   !        3. Danh sach nhan vien da xoa. !");
-			System.out.println("   !        4. Tim kiem nhan vien.         !");
-			System.out.println("   !        5. Sua nhan vien.              !");
-			System.out.println("   !        6. Xoa nhan vien.              !");
-			System.out.println("   !        7. Thong ke.                   !");
-			System.out.println("   !        0. Thoat.                      !");
-			System.out.println("   =========================================");
+			System.out.println("   ==========================================");
+			System.out.println("   !           ----- Nhan Vien -----        !");
+			System.out.println("   !        1. Them nhan vien.              !");
+			System.out.println("   !        2. Danh sach nhan vien.         !");
+			System.out.println("   !        3. Danh sach nhan vien da xoa.  !");
+			System.out.println("   !        4. Tim kiem nhan vien.          !");
+			System.out.println("   !        5. Sua nhan vien.               !");
+			System.out.println("   !        6. Xoa nhan vien.               !");
+			System.out.println("   !        7. Thong ke.                    !");
+			System.out.println("   !        0. Thoat.                       !");
+			System.out.println("   ==========================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
