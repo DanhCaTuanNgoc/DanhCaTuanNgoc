@@ -129,7 +129,7 @@ final class DanhSachNhanVien {
         }
         if(checkList == -1) {
             System.out.println("");
-        	System.out.println(" -------- Danh sach trong --------");
+        	System.out.println("		........Danh sach trong........");
         }
 	}
 	public void xemdsXoa() {
@@ -186,7 +186,7 @@ final class DanhSachNhanVien {
 	        				break;
 	        			}
 	        		}
-	        		if(m != 1) {
+	        		if(m == 0) {
 	        			System.out.println("");
 	        			System.out.println(" -------- Khong tim thay ma nhan vien --------");
 	        		}
@@ -198,7 +198,7 @@ final class DanhSachNhanVien {
 	        		break;
 	        }
 		} else {
-			System.out.println(" -------- Danh sach trong --------");
+			System.out.println("		........Danh sach trong........");
 		}
         
 	}
@@ -208,96 +208,64 @@ final class DanhSachNhanVien {
 		String x = sc.next(); int m = 0;
 		for(int i=0;i<this.tongNV;i++) {
 			if(dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(x) && dsNhanVien[i].getDeleted() != 1) {
-				dsNhanVien[i].setDeleted(1); m++; this.soNVHH--;
-				System.out.println("");
-				System.out.println(" -------- Hoan tat thao tac --------");
-			}
+				m++;
+				System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
+				int n = sc.nextInt();
+				switch(n) {
+					case 1:
+						dsNhanVien[i].setDeleted(1); this.soNVHH--;
+						System.out.println("");
+						System.out.println(" -------- Hoan tat thao tac --------");
+						break;
+					case 2: 
+						int delete_point = -1;
+						delete_point = i;
+						if(delete_point != -1) {
+							for(int j=delete_point;i<this.tongNV - 1;i++) {
+								dsNhanVien[j] = dsNhanVien[j+1]; 
+							}
+							this.tongNV --; this.soNVHH --;
+							dsNhanVien = Arrays.copyOf(dsNhanVien, this.tongNV);
+							System.out.println("");
+		        			System.out.println(" -------- Hoan tat thao tac --------");
+						}
+						break;
+					default :
+						System.out.println(" Lua chon khong hop le, xin thu lai!!!");
+						xoa();
+						break;
+				}
+				break;
+			} 
 		}
 		if(m == 0) {
 			System.out.println("");
 			System.out.println(" -------- Khong tim thay ma nhan vien --------");
 		}
 	}
-	// public void timkiem() {
-	// 	System.out.println(" ------------ Tim kiem nhan vien ------------");
-	// 	System.out.print(" Ma nhan vien(1) | Ho ten(2) | So dien thoai(3) | Thoat(0): ");
-	// 	int n = sc.nextInt(); int m = 1;
-	// 	switch (n) {
-	// 		case 1: 
-	// 			System.out.print(" - Hay nhap ma nhan vien can tim kiem: ");
-	// 			String x = sc.next(); 
-	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
-	// 			System.out.println("");
-	// 			for(int i=0;i<this.tongNV;i++) {
-	// 				if(dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(x) && dsNhanVien[i].getDeleted() != 1) {
-	// 					dsNhanVien[i].xuat(); m++;
-	// 					break;
-	// 				}
-	// 			}
-	// 			break;
-	// 		case 2:
-	// 			System.out.print(" - Hay nhap ho nhan vien can tim kiem: ");
-	// 			String ho = sc.next();
-	// 			sc.nextLine();
-	// 			System.out.print(" - Hay nhap ten nhan vien can tim kiem: ");
-	// 			String ten = sc.nextLine();
-	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
-	// 			System.out.println("");
-	// 			for(int i=0;i<this.tongNV;i++) {
-	// 				if(dsNhanVien[i].getHo().equalsIgnoreCase(ho) && dsNhanVien[i].getTen().equalsIgnoreCase(ten) && dsNhanVien[i].getDeleted() != 1) {
-	// 					dsNhanVien[i].xuat(); m++;
-	// 					System.out.println("");
-	// 				}
-	// 			}
-	// 			break;
-	// 		case 3:
-	// 			System.out.print(" - Hay nhap sdt nhan vien can tim kiem: ");
-	// 			String sdt = sc.next();
-	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
-	// 			System.out.println("");
-	// 			for(int i=0;i<this.tongNV;i++) {
-	// 				if(dsNhanVien[i].getSdt().equalsIgnoreCase(sdt) && dsNhanVien[i].getDeleted() != 1) {
-	// 					dsNhanVien[i].xuat(); m++;
-	// 					break;
-	// 				}
-	// 			}
-	// 			break;
-	// 		case 0: 
-	// 			m = -1;
-	// 			break;
-	// 		default:
-	// 			System.out.println(" Lua chon kh hop le, vui long nhap lai !!!");
-	// 			timkiem();
-	// 			break;
-	// 	}
-	// 	if (m == 1) {
-	// 		System.out.println("");
-	// 		System.out.println(" ----- Khong tim thay nhan vien ------");
-	// 	} else if(m == -1) {
-	// 		;
-	// 	} else {
-	// 		System.out.println("");
-	// 		System.out.println(" ----- Hoan tat thao tac tim kiem -----");
-	// 	}
-	// }
 	public void timkiem(){
-		System.out.println("Nhap thong tin can tim (an X de bo qua):");
-		System.out.println("Ma nhan vien: ");
+		System.out.println(" ------------ Tim kiem ------------");
+		System.out.print(" + Ma nhan vien ( x de bo qa): ");
 		String tk1= sc.nextLine();
-		System.out.println("So dien thoi: ");
+		System.out.print(" + So dien thoi ( x de bo qa): ");
 		String tk2= sc.nextLine();
-		System.out.println("Ho: ");
+		System.out.print(" + Ho ( x de bo qa): ");
 		String tk3= sc.nextLine();
-		System.out.println("Ten: ");
-		String tk4= sc.nextLine();
+		System.out.print(" + Ten ( x de bo qa): ");
+		String tk4= sc.nextLine(); int m = 0;
 		for(int i=0;i<this.tongNV;i++) {
 			if((dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))){
-				dsNhanVien[i].xuat();
+				dsNhanVien[i].xuat(); m++;
 				System.out.println("");
 			}
+		}
+		if(m != 0) {
+			System.out.println(" -------- Hoan tat thao ta --------");
+		} else {
+			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
 		}
 	}
 	public void sua() {
