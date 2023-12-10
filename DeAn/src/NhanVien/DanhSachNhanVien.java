@@ -7,7 +7,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.LineNumberReader;
 import java.util.Scanner;
 
 final class DanhSachNhanVien {
@@ -65,9 +64,9 @@ final class DanhSachNhanVien {
 		dsNhanVien[this.tongNV - 1].nhap(); 
 		System.out.println("");
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
-		int n = sc.nextInt();
+		String n = sc.nextLine();
 		System.out.println("");
-		if(n == 1) { them(); } 
+		if(n.equals("1")) { them(); } 
 		else { 
 			System.out.println(" -------- Hoan tat thao tac --------");
 		}
@@ -214,71 +213,91 @@ final class DanhSachNhanVien {
 				System.out.println(" -------- Hoan tat thao tac --------");
 			}
 		}
-		if(m != 1) {
+		if(m == 0) {
 			System.out.println("");
 			System.out.println(" -------- Khong tim thay ma nhan vien --------");
 		}
 	}
-	public void timkiem() {
-		System.out.println(" ------------ Tim kiem nhan vien ------------");
-		System.out.print(" Ma nhan vien(1) | Ho ten(2) | So dien thoai(3) | Thoat(0): ");
-		int n = sc.nextInt(); int m = 1;
-		switch (n) {
-			case 1: 
-				System.out.print(" - Hay nhap ma nhan vien can tim kiem: ");
-				String x = sc.next(); 
-				System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
+	// public void timkiem() {
+	// 	System.out.println(" ------------ Tim kiem nhan vien ------------");
+	// 	System.out.print(" Ma nhan vien(1) | Ho ten(2) | So dien thoai(3) | Thoat(0): ");
+	// 	int n = sc.nextInt(); int m = 1;
+	// 	switch (n) {
+	// 		case 1: 
+	// 			System.out.print(" - Hay nhap ma nhan vien can tim kiem: ");
+	// 			String x = sc.next(); 
+	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
+	// 			System.out.println("");
+	// 			for(int i=0;i<this.tongNV;i++) {
+	// 				if(dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(x) && dsNhanVien[i].getDeleted() != 1) {
+	// 					dsNhanVien[i].xuat(); m++;
+	// 					break;
+	// 				}
+	// 			}
+	// 			break;
+	// 		case 2:
+	// 			System.out.print(" - Hay nhap ho nhan vien can tim kiem: ");
+	// 			String ho = sc.next();
+	// 			sc.nextLine();
+	// 			System.out.print(" - Hay nhap ten nhan vien can tim kiem: ");
+	// 			String ten = sc.nextLine();
+	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
+	// 			System.out.println("");
+	// 			for(int i=0;i<this.tongNV;i++) {
+	// 				if(dsNhanVien[i].getHo().equalsIgnoreCase(ho) && dsNhanVien[i].getTen().equalsIgnoreCase(ten) && dsNhanVien[i].getDeleted() != 1) {
+	// 					dsNhanVien[i].xuat(); m++;
+	// 					System.out.println("");
+	// 				}
+	// 			}
+	// 			break;
+	// 		case 3:
+	// 			System.out.print(" - Hay nhap sdt nhan vien can tim kiem: ");
+	// 			String sdt = sc.next();
+	// 			System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
+	// 			System.out.println("");
+	// 			for(int i=0;i<this.tongNV;i++) {
+	// 				if(dsNhanVien[i].getSdt().equalsIgnoreCase(sdt) && dsNhanVien[i].getDeleted() != 1) {
+	// 					dsNhanVien[i].xuat(); m++;
+	// 					break;
+	// 				}
+	// 			}
+	// 			break;
+	// 		case 0: 
+	// 			m = -1;
+	// 			break;
+	// 		default:
+	// 			System.out.println(" Lua chon kh hop le, vui long nhap lai !!!");
+	// 			timkiem();
+	// 			break;
+	// 	}
+	// 	if (m == 1) {
+	// 		System.out.println("");
+	// 		System.out.println(" ----- Khong tim thay nhan vien ------");
+	// 	} else if(m == -1) {
+	// 		;
+	// 	} else {
+	// 		System.out.println("");
+	// 		System.out.println(" ----- Hoan tat thao tac tim kiem -----");
+	// 	}
+	// }
+	public void timkiem(){
+		System.out.println("Nhap thong tin can tim (an X de bo qua):");
+		System.out.println("Ma nhan vien: ");
+		String tk1= sc.nextLine();
+		System.out.println("So dien thoi: ");
+		String tk2= sc.nextLine();
+		System.out.println("Ho: ");
+		String tk3= sc.nextLine();
+		System.out.println("Ten: ");
+		String tk4= sc.nextLine();
+		for(int i=0;i<this.tongNV;i++) {
+			if((dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
+			&&(dsNhanVien[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
+			&&(dsNhanVien[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
+			&&(dsNhanVien[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))){
+				dsNhanVien[i].xuat();
 				System.out.println("");
-				for(int i=0;i<this.tongNV;i++) {
-					if(dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(x) && dsNhanVien[i].getDeleted() != 1) {
-						dsNhanVien[i].xuat(); m++;
-						break;
-					}
-				}
-				break;
-			case 2:
-				System.out.print(" - Hay nhap ho nhan vien can tim kiem: ");
-				String ho = sc.next();
-				sc.nextLine();
-				System.out.print(" - Hay nhap ten nhan vien can tim kiem: ");
-				String ten = sc.nextLine();
-				System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
-				System.out.println("");
-				for(int i=0;i<this.tongNV;i++) {
-					if(dsNhanVien[i].getHo().equalsIgnoreCase(ho) && dsNhanVien[i].getTen().equalsIgnoreCase(ten) && dsNhanVien[i].getDeleted() != 1) {
-						dsNhanVien[i].xuat(); m++;
-						System.out.println("");
-					}
-				}
-				break;
-			case 3:
-				System.out.print(" - Hay nhap sdt nhan vien can tim kiem: ");
-				String sdt = sc.next();
-				System.out.printf("%-15s %-7s %-15s %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
-				System.out.println("");
-				for(int i=0;i<this.tongNV;i++) {
-					if(dsNhanVien[i].getSdt().equalsIgnoreCase(sdt) && dsNhanVien[i].getDeleted() != 1) {
-						dsNhanVien[i].xuat(); m++;
-						break;
-					}
-				}
-				break;
-			case 0: 
-				m = -1;
-				break;
-			default:
-				System.out.println(" Lua chon kh hop le, vui long nhap lai !!!");
-				timkiem();
-				break;
-		}
-		if (m == 1) {
-			System.out.println("");
-			System.out.println(" ----- Khong tim thay nhan vien ------");
-		} else if(m == -1) {
-			;
-		} else {
-			System.out.println("");
-			System.out.println(" ----- Hoan tat thao tac tim kiem -----");
+			}
 		}
 	}
 	public void sua() {
