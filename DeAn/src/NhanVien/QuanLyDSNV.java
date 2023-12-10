@@ -95,13 +95,13 @@ public class QuanLyDSNV {
 					break;
 				case 0:
 					System.out.println("Hen gap lai !!!");
-					ds.ghifile();
 					return;
 				default: 
 					System.out.println(" Lua chon kh hop le. Hay thu lai!!!");
-					menu();
-	                break;
+	                		break;
 			}
+			
+			ds.ghifile();
 		}
 	}
 }
