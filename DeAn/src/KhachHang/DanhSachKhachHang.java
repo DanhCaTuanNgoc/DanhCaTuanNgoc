@@ -39,17 +39,10 @@ final class DanhSachKhachHang {
 	// methods 
 	public void them() {
 		System.out.println("----- Them khach hang -----");
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Ban muon them bao nhieu khach hang: ");
-		int n = sc.nextInt();
-		for(int i=0;i<n;i++) {
-			KhachHang KhachHang = null;
-			KhachHang = new KhachHang();
-			dsKhachHang[this.tongKhachHang] = KhachHang;
-			KhachHang.nhap();  
-			this.tongKhachHang++;
-		}
-		System.out.println("");
+		KhachHang KhachHang = null;
+		KhachHang = new KhachHang();
+		dsKhachHang[this.tongKhachHang] = KhachHang;
+		KhachHang.nhap();  
 	}
 	public void xemds() {
 		System.out.println("----- Danh sach khach hang -----");

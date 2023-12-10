@@ -9,6 +9,7 @@ public class KhachHang {
 	private String cccd;
 	private String diaChi;
     private String sdt;
+    private int deleted = 0;
 	// constructor
 	public KhachHang() {
 		maKhachHang = "";
@@ -17,22 +18,24 @@ public class KhachHang {
 		cccd = "";
 		diaChi = "";
         sdt = "";
+        deleted = 0;
 	}
-	public KhachHang(String makhachhang, String ho, String ten, String cccd, String diachi, String sdt) {
-		makhachhang = this.maKhachHang;
-		ho = this.ho;
-		ten = this.ten;
-		cccd = this.cccd;
-		diachi = this.diaChi;
-        sdt = this.sdt;
+	public KhachHang(String makhachhang, String ho, String ten, String cccd, String diachi, String sdt, int deleted) {
+		this.maKhachHang = makhachhang;
+		this.ho = ho;
+		this.ten = ten;
+		this.cccd = cccd;
+		this.diaChi = diachi;
+        this.sdt = sdt;
+        this.deleted = deleted;
 	}
 	public KhachHang(KhachHang a) {
-		a.maKhachHang = this.maKhachHang;
-		a.ho = this.ho;
-		a.ten = this.ten;
-		a.cccd = this.cccd;
-		a.diaChi = this.diaChi;
-		a.sdt = this.sdt;
+		this.maKhachHang = a.maKhachHang;
+		this.ho = a.ho;
+		this.ten = a.ten;
+		this.diaChi = a.diaChi;
+		this.sdt = a.sdt;
+		this.deleted = a.deleted;
 	}
 	
 	//get/set
@@ -72,7 +75,12 @@ public class KhachHang {
 	public void setSdt(String sdt) {
 		this.sdt = sdt;
 	}
-	
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleleted(int deleted) {
+		this.deleted = deleted;
+	}
 	// methods
 	
 	public void nhap() {
