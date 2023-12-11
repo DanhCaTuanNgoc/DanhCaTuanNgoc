@@ -183,37 +183,41 @@ final class DanhSachKhachHang {
 	}
 	public void xoa() {
 		System.out.println(" ------------ Xoa khach hang ------------");
-		System.out.print(" - Hay nhap ma khach hang can xoa: ");
+		System.out.print(" - Hay nhap ma khach hang can xoa | Thoat (0): ");
 		String x = sc.next(); int m = 0; int delete_point = -1;
-		for(int i=0;i<this.tongKhachHang;i++) {
-			if(dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(x) && dsKhachHang[i].getDeleted() != 1) {
-				m++; delete_point = i;
-				System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
-				int n = sc.nextInt();
-				switch(n) {
-					case 1:
-						dsKhachHang[i].setDeleted(1);
-						System.out.println("\n -------- Hoan tat thao tac --------");
-						break;
-					case 2: 
-						if(delete_point != -1) {
-							for(int j=delete_point;j<this.tongKhachHang - 1;j++) {
-								dsKhachHang[j] = dsKhachHang[j+1]; 
-							}
-							this.tongKhachHang --;
+		if(x.equalsIgnoreCase("0")) {
+			;
+		} else {
+			for(int i=0;i<this.tongKhachHang;i++) {
+				if(dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(x) && dsKhachHang[i].getDeleted() != 1) {
+					m++; delete_point = i;
+					System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
+					int n = sc.nextInt();
+					switch(n) {
+						case 1:
+							dsKhachHang[i].setDeleted(1);
 							System.out.println("\n -------- Hoan tat thao tac --------");
-						}
-						break;
-					default :
-						System.out.println(" Lua chon khong hop le, xin thu lai!!!");
-						xoa();
-						break;
-				}
-				break;
-			} 
-		}
-		if(m == 0) {
-			System.out.println("\n -------- Khong tim thay ma khach hang --------");
+							break;
+						case 2: 
+							if(delete_point != -1) {
+								for(int j=delete_point;j<this.tongKhachHang - 1;j++) {
+									dsKhachHang[j] = dsKhachHang[j+1]; 
+								}
+								this.tongKhachHang --;
+								System.out.println("\n -------- Hoan tat thao tac --------");
+							}
+							break;
+						default :
+							System.out.println(" Lua chon khong hop le, xin thu lai!!!");
+							xoa();
+							break;
+					}
+					break;
+				} 
+			}
+			if(m == 0) {
+				System.out.println("\n -------- Khong tim thay ma khach hang --------");
+			}
 		}
 	}
 	public void timkiem(){
