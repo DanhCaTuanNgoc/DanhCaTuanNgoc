@@ -54,10 +54,9 @@ final class DanhSachKhachHang {
 		System.out.println("");
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
-		System.out.println("");
 		if(n.equals("1")) { them(); } 
 		else { 
-			System.out.println(" -------- Hoan tat thao tac --------");
+			System.out.println("\n -------- Hoan tat thao tac --------");
 		}
 	}	
 	public void docfile() {
@@ -113,8 +112,7 @@ final class DanhSachKhachHang {
 			}
 		}
 		if(checkList == -1) {
-			System.out.println("");
-			System.out.println("			........Danh sach trong........");
+			System.out.println("\n			........Danh sach trong........");
 		}
 	}
 	public void xemdsXoa() {
@@ -151,11 +149,9 @@ final class DanhSachKhachHang {
 						}
 						this.tongKhachHang--;
 						dsKhachHang = Arrays.copyOf(dsKhachHang, this.tongKhachHang);
-						System.out.println("");
-						System.out.println(" -------- Hoan tat thao tac --------");
+						System.out.println("/n -------- Hoan tat thao tac --------");
 					} else { 
-						System.out.println("");
-						System.out.println(" -------- Khong tim thay ma khach hang --------");
+						System.out.println("/n -------- Khong tim thay ma khach hang --------");
 					} 
 					break;
 				case 2:
@@ -166,14 +162,12 @@ final class DanhSachKhachHang {
 					for(KhachHang nv : dsKhachHang) {
 						if(nv != null && nv.getDeleted() == 1 && nv.getMaKhachHang().equalsIgnoreCase(maKP)) {
 							nv.setDeleted(0); m++; ;
-							System.out.println("");
-							System.out.println(" -------- Hoan tat thao tac --------");
+							System.out.println("\n -------- Hoan tat thao tac --------");
 							break;
 						}
 					}
 					if(m == 0) {
-						System.out.println("");
-						System.out.println(" -------- Khong tim thay ma khach hang --------");
+						System.out.println("\n -------- Khong tim thay ma khach hang --------");
 					}
 				case 0:
 					break;
@@ -199,8 +193,7 @@ final class DanhSachKhachHang {
 				switch(n) {
 					case 1:
 						dsKhachHang[i].setDeleted(1);
-						System.out.println("");
-						System.out.println(" -------- Hoan tat thao tac --------");
+						System.out.println("\n -------- Hoan tat thao tac --------");
 						break;
 					case 2: 
 						if(delete_point != -1) {
@@ -208,8 +201,7 @@ final class DanhSachKhachHang {
 								dsKhachHang[j] = dsKhachHang[j+1]; 
 							}
 							this.tongKhachHang --;
-							System.out.println("");
-							System.out.println(" -------- Hoan tat thao tac --------");
+							System.out.println("\n -------- Hoan tat thao tac --------");
 						}
 						break;
 					default :
@@ -221,8 +213,7 @@ final class DanhSachKhachHang {
 			} 
 		}
 		if(m == 0) {
-			System.out.println("");
-			System.out.println(" -------- Khong tim thay ma khach hang --------");
+			System.out.println("\n -------- Khong tim thay ma khach hang --------");
 		}
 	}
 	public void timkiem(){
@@ -325,13 +316,11 @@ final class DanhSachKhachHang {
 			}
 		}
 		if (m == 1) {
-			System.out.println("");
-			System.out.println(" ------ Khong tim thay khach hang ------");
+			System.out.println("\n ------ Khong tim thay khach hang ------");
 		} else if(m == -1) {
 			;
 		} else {
-			System.out.println("");
-			System.out.println(" ----- Hoan tat thao tac -----");
+			System.out.println("\n ----- Hoan tat thao tac -----");
 		}
 	}
 	public void thongke() {
