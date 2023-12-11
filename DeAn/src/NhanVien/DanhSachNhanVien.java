@@ -81,7 +81,7 @@ final class DanhSachNhanVien {
 			String lines = br.readLine();
 			while(lines != null) {
 				String []line = lines.split("/");
-				dsNhanVien[tongNV] = new NhanVien(line[0], line[1], line[2], line[3], Integer.parseInt(line[4]));
+				dsNhanVien[tongNV] = new NhanVien(line[0], line[1], line[3], line[2], Integer.parseInt(line[4]));
 				if(line[4].equalsIgnoreCase("0")) {
 					this.soNVHH++;
 				}
