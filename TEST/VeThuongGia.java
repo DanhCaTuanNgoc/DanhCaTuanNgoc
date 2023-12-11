@@ -47,7 +47,7 @@ public class VeThuongGia extends Ve {
     @Override
     public void nhap() {
         do {
-            System.out.println("Ma Ve (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
+            System.out.println(" Ma Ve (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
             System.out.println(" - Nhap Ma Ve: ");
             maVe = sc.nextLine();
             if(maVe.length() < 3 || maVe.length() > 5) {
@@ -60,7 +60,7 @@ public class VeThuongGia extends Ve {
         gia = sc.nextFloat();
         sc.nextLine();
         do {
-            System.out.println("Ma Phong Cho (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
+            System.out.println(" Ma Phong Cho (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
             System.out.println(" - Nhap Ma Phong Cho: ");
             maPhongCho = sc.nextLine();
             if(maPhongCho.length() < 3 || maPhongCho.length() > 5) {
