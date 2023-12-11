@@ -71,9 +71,6 @@ final class DanhSachKhachHang {
 			while(lines != null) {
 				String []line = lines.split("/");
 				dsKhachHang[tongKhachHang] = new KhachHang(line[0], line[1], line[2], line[3], line[4], line[5], Integer.parseInt(line[6]));
-				if(line[4].equalsIgnoreCase("0")) {
-					;
-				}
 				tongKhachHang++;
 				lines = br.readLine();
 			}
@@ -95,7 +92,7 @@ final class DanhSachKhachHang {
 			BufferedWriter br = new BufferedWriter(fr);
 			for(KhachHang nv : dsKhachHang) {
 				if(nv != null) {
-					br.write(nv.getMaKhachHang() + "/" + nv.getHo() + "/" + nv.getTen() + "/" + nv.getSdt() + "/" + nv.getDeleted() + "\n");
+					br.write(nv.getMaKhachHang() + "/" + nv.getHo() + "/" + nv.getTen() + "/" + nv.getCccd() + "/" + nv.getDiaChi() + "/" + nv.getSdt() + "/" + nv.getDeleted() + "\n");
 				} else {
 					break;
 				}
@@ -231,7 +228,7 @@ final class DanhSachKhachHang {
 	public void timkiem(){
 		System.out.println(" ------------ Tim kiem ------------");
 		System.out.print(" + Ma khach hang ( x de bo qua): ");
-		String tk1= sc.next(); 
+		String tk1= sc.next();
 		System.out.print(" + So dien thoai ( x de bo qua): ");
 		String tk2= sc.next();
 		System.out.print(" + Ho ( x de bo qua): ");
@@ -259,7 +256,7 @@ final class DanhSachKhachHang {
 			}
 		}
 		System.out.println("");
-		if(m != 0) {
+		if(m != 0) { 
 			System.out.println(" -------- Hoan tat thao tac --------");
 		} else {
 			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
@@ -273,7 +270,14 @@ final class DanhSachKhachHang {
 		// Nhap ma khach hang sau do tuy chon cach sua.
 		for (int i=0;i<this.tongKhachHang;i++) {
 			if(dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(x) && dsKhachHang[i].getDeleted() != 1) {
-				System.out.print(" Ma khach hang(1) | Ho ten(2) | So dien thoai(3) | Tat ca(4) | Thoat(0): ");
+				System.out.println(" (1) Ma khach hang.");
+				System.out.println(" (2) Ho ten.");
+				System.out.println(" (3) So dien thoai.");
+				System.out.println(" (4) CCCD.");
+				System.out.println(" (5) Dia chi.");
+				System.out.println(" (6) Tat ca.");
+				System.out.println(" (0) Thoat.");
+				System.out.print(" - Hay chon gia tri muon sua: ");
 				int n = sc.nextInt(); m++;
 				switch (n) {
 					case 1:
@@ -295,7 +299,18 @@ final class DanhSachKhachHang {
 						String sdt = sc.next();
 						dsKhachHang[i].setSdt(sdt);
 						break;
-					case 4: 
+					case 4:
+						System.out.println(" - Sua CCCD khach hang: ");
+						String cccd = sc.next();
+						dsKhachHang[i].setCccd(cccd);
+						break;
+					case 5:
+						System.out.println(" - Sua dia chi khach hang: ");
+						sc.nextLine();
+						String dc = sc.nextLine();
+						dsKhachHang[i].setDiaChi(dc);
+						break;
+					case 6: 
 						dsKhachHang[i].nhap();
 						break;
 					case 0:
