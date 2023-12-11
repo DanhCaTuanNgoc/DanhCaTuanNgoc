@@ -70,10 +70,6 @@ public class QuanLyDSKH {
 				case 3:
 					clearScreen(5);
 					ds.xemdsXoa();
-					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
-					sc.nextLine();
-					System.out.print(" Thoat (phim bat ky): ");
-					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 4:
