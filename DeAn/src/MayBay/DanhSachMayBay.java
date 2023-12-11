@@ -227,20 +227,19 @@ final class DanhSachMayBay {
 	public void timkiem(){
 		System.out.println(" ------------ Tim kiem ------------");
 		System.out.print(" + Ma may bay ( x de bo qa): ");
-		String tk1= sc.next();
+		String tk1= sc.nextLine();
 		System.out.print(" + Ten may bay ( x de bo qa): ");
-		sc.nextLine();
 		String tk2= sc.nextLine(); 
-		System.out.println(" + So ghe (x de bo qua): ");
-		sc.nextLine();
-		String tk3 = sc.nextLine(); int m = 0;
+		System.out.print(" + So ghe (x de bo qua): ");
+		String tk3=sc.nextLine();
+		 int m = 0;
 		System.out.println();
 		System.out.printf("%-15s %-15s %-10s","Ma may bay","Ten may bay","So ghe");
 		System.out.println();
 		for(int i=0;i<this.tongMayBay;i++) {
 			if((dsMayBay[i].getMaMayBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsMayBay[i].getTenMayBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
-			&&(dsMayBay[i].getSoGhe() == tk3 || tk3 ! =0)
+			&&(String.valueOf(dsMayBay[i]).equals(tk3) || tk3.equalsIgnoreCase("x"))
 			&& dsMayBay[i].getDeleted() != 1){
 				dsMayBay[i].xuat(); m++;
 				System.out.println("");
