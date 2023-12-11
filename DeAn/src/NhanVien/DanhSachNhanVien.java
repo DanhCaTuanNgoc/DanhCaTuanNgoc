@@ -127,8 +127,7 @@ final class DanhSachNhanVien {
         	}
         }
         if(checkList == -1) {
-            System.out.println("");
-        	System.out.println("	........Danh sach trong........");
+        	System.out.println("\n	........Danh sach trong........");
         }
 	}
 	public void xemdsXoa() {
@@ -165,11 +164,9 @@ final class DanhSachNhanVien {
 	        			}
 	        			this.tongNV--;
 	        			dsNhanVien = Arrays.copyOf(dsNhanVien, this.tongNV);
-	        			System.out.println("");
-	        			System.out.println(" -------- Hoan tat thao tac --------");
+	        			System.out.println("\n -------- Hoan tat thao tac --------");
 	        		} else { 
-	        			System.out.println("");
-	        			System.out.println(" -------- Khong tim thay ma nhan vien --------");
+	        			System.out.println("\n -------- Khong tim thay ma nhan vien --------");
 	        		} 
 	        		break;
 	        	case 2:
@@ -180,14 +177,12 @@ final class DanhSachNhanVien {
 	        		for(NhanVien nv : dsNhanVien) {
 	        			if(nv != null && nv.getDeleted() == 1 && nv.getMaNhanVien().equalsIgnoreCase(maKP)) {
 	        				nv.setDeleted(0); m++; this.soNVHH++;
-	        				System.out.println("");
-	        				System.out.println(" -------- Hoan tat thao tac --------");
+	        				System.out.println("\n -------- Hoan tat thao tac --------");
 	        				break;
 	        			}
 	        		}
 	        		if(m == 0) {
-	        			System.out.println("");
-	        			System.out.println(" -------- Khong tim thay ma nhan vien --------");
+	        			System.out.println("\n -------- Khong tim thay ma nhan vien --------");
 	        		}
 	        	case 0:
 	        		break;
@@ -223,8 +218,7 @@ final class DanhSachNhanVien {
 							}
 							this.tongNV --; this.soNVHH --;
 							dsNhanVien = Arrays.copyOf(dsNhanVien, this.tongNV);
-							System.out.println("");
-		        			System.out.println(" -------- Hoan tat thao tac --------");
+		        			System.out.println("\n -------- Hoan tat thao tac --------");
 						}
 						break;
 					default :
@@ -236,8 +230,7 @@ final class DanhSachNhanVien {
 			} 
 		}
 		if(m == 0) {
-			System.out.println("");
-			System.out.println(" -------- Khong tim thay ma nhan vien --------");
+			System.out.println("\n -------- Khong tim thay ma nhan vien --------");
 		}
 	}
 	public void timkiem(){
@@ -314,13 +307,11 @@ final class DanhSachNhanVien {
 			}
 		}
 		if (m == 1) {
-			System.out.println("");
-			System.out.println(" ------ Khong tim thay nhan vien ------");
+			System.out.println("\n ------ Khong tim thay nhan vien ------");
 		} else if(m == -1) {
 			;
 		} else {
-			System.out.println("");
-			System.out.println(" ----- Hoan tat thao tac -----");
+			System.out.println("\n ----- Hoan tat thao tac -----");
 		}
 	}
 	public void thongke() {
