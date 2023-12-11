@@ -1,5 +1,6 @@
 package MayBay;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MayBay {
@@ -59,8 +60,14 @@ public class MayBay {
 		this.maMayBay = sc.nextLine();
 		System.out.print(" - Nhap ten may bay: ");
 		this.tenMayBay = sc.nextLine();
-		System.out.print(" - Nhap so ghe: ");
-		this.soGhe = sc.nextInt();	
+		while(true){
+			try{
+				System.out.print(" - Nhap so ghe: ");
+				
+				this.soGhe = sc.nextInt();
+			if(this.soGhe!=0){return;}
+		}catch(InputMismatchException in){System.out.println("Nhap sai! Vui long nhap so!");sc.nextLine();}
+		}
 	}
 	
 	public void xuat() {
