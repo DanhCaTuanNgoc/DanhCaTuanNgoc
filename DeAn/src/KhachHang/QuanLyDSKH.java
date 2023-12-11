@@ -32,8 +32,6 @@ public class QuanLyDSKH {
 	}
 	public void menu() {
 		ds.docfile();
-		//8. Xem ds da xoa => Xoa ; Khoi phuc
-		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
 			System.out.println("   =============================================");
@@ -94,13 +92,13 @@ public class QuanLyDSKH {
 					break;
 				case 0:
 					System.out.println("Hen gap lai !!!");
-					ds.ghifile();
 					return;
 				default: 
 					System.out.println(" Lua chon kh hop le. Hay thu lai!!!");
 					menu();
 	                break;
 			}
+			ds.ghifile();
 		}
 	}
 }
