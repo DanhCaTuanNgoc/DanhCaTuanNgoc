@@ -6,21 +6,25 @@ public class MayBay {
 	private String maMayBay;
 	private String tenMayBay;
 	private int soGhe;
+	private int deleted = 0;
 	// constructor
 	public MayBay() {
 		maMayBay = "";
 		tenMayBay = "";
 		soGhe = 0;
+		deleted = 0;
 	}
-	public MayBay(String mamaybay,String tenmaybay,int soghe) {
-		mamaybay = this.maMayBay;
-		tenmaybay = this.tenMayBay;
-		soghe = this.soGhe;
+	public MayBay(String mamaybay,String tenmaybay,int soghe, int deleted) {
+		this.maMayBay = mamaybay;
+		this.tenMayBay = tenmaybay;
+		this.soGhe = soghe;
+		this.deleted = deleted;
 	}
 	public MayBay(MayBay a) {
-		a.maMayBay = this.maMayBay;
-		a.tenMayBay = this.tenMayBay;
-		a.soGhe = this.soGhe;
+		this.maMayBay = a.maMayBay;
+		this.tenMayBay = a.tenMayBay;
+		this.soGhe = a.soGhe;
+		this.deleted = a.deleted;
     }
 	// get/set
 	public String getMaMayBay() {
@@ -41,20 +45,25 @@ public class MayBay {
 	public void setSoGhe(int soGhe) {
 		this.soGhe = soGhe;
 	}
-	
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleted (int deleted) {
+		this.deleted = deleted;
+	}
 	// methods
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhap ma may bay: ");
+		System.out.print(" - Nhap ma may bay: ");
 		this.maMayBay = sc.nextLine();
-		System.out.print("Nhap ten may bay: ");
+		System.out.print(" - Nhap ten may bay: ");
 		this.tenMayBay = sc.nextLine();
-		System.out.print("Nhap so ghe: ");
+		System.out.print(" - Nhap so ghe: ");
 		this.soGhe = sc.nextInt();	
 	}
 	
 	public void xuat() {
-		System.out.print(maMayBay + "\t" + tenMayBay + "\t" + soGhe);
+		System.out.printf("%-15s %-15s %-10s",maMayBay, tenMayBay, soGhe);
 	}
 }
