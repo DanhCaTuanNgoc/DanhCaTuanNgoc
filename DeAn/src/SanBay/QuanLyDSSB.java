@@ -59,8 +59,8 @@ public class QuanLyDSSB {
 				case 2:
 					clearScreen(5);
 					ds.xemds();
-					System.out.println("");
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
@@ -74,8 +74,8 @@ public class QuanLyDSSB {
 				case 4: 
 					clearScreen(5);
 					ds.timkiem();
-					System.out.println("");
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
@@ -94,8 +94,8 @@ public class QuanLyDSSB {
 				case 7:
 					clearScreen(5);
 					ds.thongke();
-					System.out.println("");
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();

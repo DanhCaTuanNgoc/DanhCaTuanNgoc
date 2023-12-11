@@ -240,15 +240,13 @@ final class DanhSachSanBay {
 			if((dsSanBay[i].getMaSanBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsSanBay[i].getTenSanBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(dsSanBay[i].getDiaChiSanBay().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
-			){
+			&& dsSanBay[i].getDeleted() != 1){
 				dsSanBay[i].xuat(); m++;
 				System.out.println("");
 			}
 		}
-		if(m != 0) {
-			System.out.println(" -------- Hoan tat thao tac --------");
-		} else {
-			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
+		if(m == 0) {
+			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
 		}
 	}
 	public void sua() {
