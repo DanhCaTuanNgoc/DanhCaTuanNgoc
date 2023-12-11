@@ -255,15 +255,14 @@ final class DanhSachNhanVien {
 			if((dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
-			&&(dsNhanVien[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))){
+			&&(dsNhanVien[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&& dsNhanVien[i].getDeleted() != 1){
 				dsNhanVien[i].xuat(); m++;
 				System.out.println("");
 			}
 		}
-		if(m != 0) {
-			System.out.println(" -------- Hoan tat thao tac --------");
-		} else {
-			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
+		if(m == 0) {
+			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
 		}
 	}
 	public void sua() {
