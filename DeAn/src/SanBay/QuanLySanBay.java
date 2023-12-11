@@ -2,7 +2,7 @@ package SanBay;
 
 public class QuanLySanBay {
 	public static void main(String[]agrs) {
-		QuanLyDSMB ql = new QuanLyDSMB();
+		QuanLyDSSB ql = new QuanLyDSSB();
 		ql.menu();
 	}
 }

@@ -57,15 +57,15 @@ public class SanBay {
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhap ma san bay: ");
+		System.out.print(" - Nhap ma san bay: ");
 		this.maSanBay = sc.nextLine();
-		System.out.print("Nhap ten san bay: ");
+		System.out.print(" - Nhap ten san bay: ");
 		this.tenSanBay = sc.nextLine();
-		System.out.print("Nhap dia chi san bay: ");
+		System.out.print(" - Nhap dia chi san bay: ");
 		this.diaChiSanBay = sc.nextLine();	
 	}
 	
 	public void xuat() {
-		System.out.print(maSanBay + "\t" + tenSanBay + "\t" + diaChiSanBay);
+		System.out.printf("%-15s %-15s %-15s", maSanBay, tenSanBay, diaChiSanBay);
 	}
 }
