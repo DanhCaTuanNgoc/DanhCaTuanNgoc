@@ -245,7 +245,8 @@ final class DanhSachKhachHang {
 			&&(dsKhachHang[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
 			&&(dsKhachHang[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
 			&&(dsKhachHang[i].getCccd().equalsIgnoreCase(tk5)||tk5.equalsIgnoreCase("x"))
-			&&(dsKhachHang[i].getDiaChi().equalsIgnoreCase(tk6)||tk6.equalsIgnoreCase("x"))){
+			&&(dsKhachHang[i].getDiaChi().equalsIgnoreCase(tk6)||tk6.equalsIgnoreCase("x"))
+			&& dsKhachHang[i].getDeleted() != 1){
 				dsKhachHang[i].xuat(); m++;
 				System.out.println("");
 			}

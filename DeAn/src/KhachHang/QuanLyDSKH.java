@@ -58,8 +58,8 @@ public class QuanLyDSKH {
 				case 2:
 					clearScreen(5);
 					ds.xemds();
-					System.out.println("");
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
@@ -74,6 +74,7 @@ public class QuanLyDSKH {
 					clearScreen(5);
 					ds.timkiem();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
@@ -93,6 +94,7 @@ public class QuanLyDSKH {
 					clearScreen(5);
 					ds.thongke();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
