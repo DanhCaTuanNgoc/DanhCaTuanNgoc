@@ -32,6 +32,8 @@ public class QuanLyDSKH {
 	}
 	public void menu() {
 		ds.docfile();
+		//8. Xem ds da xoa => Xoa ; Khoi phuc
+		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
 			System.out.println("   =============================================");
@@ -62,17 +64,25 @@ public class QuanLyDSKH {
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
-					String checkOut = sc.nextLine();
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 3:
 					clearScreen(5);
 					ds.xemdsXoa();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 4:
 					clearScreen(5);
 					ds.timkiem();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 5:
@@ -88,6 +98,10 @@ public class QuanLyDSKH {
 				case 7:
 					clearScreen(5);
 					ds.thongke();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 0:
