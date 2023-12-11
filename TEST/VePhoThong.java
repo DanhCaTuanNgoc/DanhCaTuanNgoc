@@ -36,7 +36,7 @@ public class VePhoThong extends Ve {
     @Override
     public void nhap() {
         do {
-            System.out.println(" - Ma Ve (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu): ");
+            System.out.println(" Ma Ve (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
             System.out.println(" - Nhap Ma Ve: ");
             maVe = sc.nextLine();
             if(maVe.length() < 3 || maVe.length() > 5) {
@@ -49,9 +49,9 @@ public class VePhoThong extends Ve {
         gia = sc.nextFloat();
         sc.nextLine();
         do {
-            System.out.println("Hang Ve Co 2 Loai: ");
-            System.out.println("1.Neu La Hang Ve Tieu Chuan Thi Nhap(a|A): ");
-            System.out.println("2.Neu La Hang Ve Pho Thong Tiet Kiem Thi Nhap(b|B): ");
+            System.out.println(" Hang Ve Co 2 Loai: ");
+            System.out.println(" 1.Neu La Hang Ve Tieu Chuan Thi Nhap(a|A)");
+            System.out.println(" 2.Neu La Hang Ve Pho Thong Tiet Kiem Thi Nhap(b|B)");
             System.out.println(" - Loai Hang Ve: ");
             hangVe = sc.nextLine();
             if((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe))) {
