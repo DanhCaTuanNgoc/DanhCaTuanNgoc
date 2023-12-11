@@ -36,17 +36,17 @@ public class QuanLyDSNV {
 		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
-			System.out.println("   ==========================================");
-			System.out.println("   !           ----- Nhan Vien -----        !");
-			System.out.println("   !        1. Them nhan vien.              !");
-			System.out.println("   !        2. Danh sach nhan vien.         !");
-			System.out.println("   !        3. Danh sach nhan vien da xoa.  !");
-			System.out.println("   !        4. Tim kiem nhan vien.          !");
-			System.out.println("   !        5. Sua nhan vien.               !");
-			System.out.println("   !        6. Xoa nhan vien.               !");
-			System.out.println("   !        7. Thong ke.                    !");
-			System.out.println("   !        0. Thoat.                       !");
-			System.out.println("   ==========================================");
+			System.out.println("   =========================================");
+			System.out.println("   !           ----- Nhan Vien -----       !");
+			System.out.println("   !        1. Them nhan vien.             !");
+			System.out.println("   !        2. Danh sach nhan vien.        !");
+			System.out.println("   !        3. Danh sach nhan vien da xoa. !");
+			System.out.println("   !        4. Tim kiem nhan vien.         !");
+			System.out.println("   !        5. Sua nhan vien.              !");
+			System.out.println("   !        6. Xoa nhan vien.              !");
+			System.out.println("   !        7. Thong ke.                   !");
+			System.out.println("   !        0. Thoat.                      !");
+			System.out.println("   =========================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -65,7 +65,7 @@ public class QuanLyDSNV {
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
-					String checkOut = sc.nextLine();
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 3:
@@ -76,6 +76,10 @@ public class QuanLyDSNV {
 				case 4: // Vinh lam tim kiem
 					clearScreen(5);
 					ds.timkiem();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 5:
@@ -91,6 +95,10 @@ public class QuanLyDSNV {
 				case 7:
 					clearScreen(5);
 					ds.thongke();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 0:
@@ -98,9 +106,8 @@ public class QuanLyDSNV {
 					return;
 				default: 
 					System.out.println(" Lua chon kh hop le. Hay thu lai!!!");
-	                		break;
+	                break;
 			}
-			
 			ds.ghifile();
 		}
 	}
