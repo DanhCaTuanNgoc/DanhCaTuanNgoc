@@ -252,7 +252,7 @@ final class DanhSachKhachHang {
 			}
 		}
 		if(m == 0) {
-			System.out.println("\n 	.....Khong tim thay ket qaua tim kiem.....");
+			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
 		}
 	}
 	public void sua() {
