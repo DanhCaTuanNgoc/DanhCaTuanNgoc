@@ -32,8 +32,6 @@ public class QuanLyDSKH {
 	}
 	public void menu() {
 		ds.docfile();
-		//8. Xem ds da xoa => Xoa ; Khoi phuc
-		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
 			System.out.println("   =============================================");
