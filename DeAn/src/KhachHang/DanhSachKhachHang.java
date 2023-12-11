@@ -251,11 +251,8 @@ final class DanhSachKhachHang {
 				System.out.println("");
 			}
 		}
-		System.out.println("");
-		if(m != 0) { 
-			System.out.println(" -------- Hoan tat thao tac --------");
-		} else {
-			System.out.println(" -------- Khong tim thay ket qua tim kiem --------");
+		if(m == 0) {
+			System.out.println("\n 	.....Khong tim thay ket qaua tim kiem.....");
 		}
 	}
 	public void sua() {
