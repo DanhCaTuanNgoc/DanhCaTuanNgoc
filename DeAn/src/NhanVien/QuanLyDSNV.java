@@ -32,8 +32,6 @@ public class QuanLyDSNV {
 	}
 	public void menu() {
 		ds.docfile();
-		//8. Xem ds da xoa => Xoa ; Khoi phuc
-		//5. Xoa => Xoa ; Xoa vinh vien
 		while(true) {
 			System.out.println("");
 			System.out.println("   =========================================");
@@ -73,7 +71,7 @@ public class QuanLyDSNV {
 					ds.xemdsXoa();
 					clearScreen(5);
 					break;
-				case 4: // Vinh lam tim kiem
+				case 4: 
 					clearScreen(5);
 					ds.timkiem();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
