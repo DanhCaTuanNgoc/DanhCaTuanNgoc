@@ -12,20 +12,24 @@ import java.util.Scanner;
 final class DanhSachSanBay {
 	private SanBay dsSanBay[];
 	private int tongSan; 
+	private int soSBHH; // số sân bay hiện hữu.
 	File d = new File("src/InputOutput/DanhSachSanBay.txt");
 	
 	//constructor
 	public DanhSachSanBay(int n) {
 		dsSanBay = new SanBay[n];
 		this.tongSan=0;
+		this.soSBHH = 0;
 	}
-	public DanhSachSanBay(SanBay dsSanBay[], int tongSan, int soNVHH) {
+	public DanhSachSanBay(SanBay dsSanBay[], int tongSan, int soSBHH) {
 		this.dsSanBay = dsSanBay;
 		this.tongSan = tongSan;
+		this.soSBHH = soSBHH;
 	}
 	public DanhSachSanBay(DanhSachSanBay a) {
 		this.dsSanBay = a.dsSanBay;
 		this.tongSan = a.tongSan;
+		this.soSBHH = a.soSBHH;
 	}
 	
 	// get/set
@@ -41,12 +45,17 @@ final class DanhSachSanBay {
 	public void settongSan(int tongSan) {
 		this.tongSan = tongSan;
 	}
-	
+	public void setSoSBHH(int s) {
+		this.soSBHH = s;
+	}
+	public int getSoSBHH () {
+		return soSBHH;
+	}
 	// methods 
 	Scanner sc = new Scanner(System.in);
 	public void them() {
 		System.out.println(" ------------ Them san bay ------------");
-		this.tongSan++; 
+		this.tongSan++; this.soSBHH++;
 		System.out.println(" 	$ Nhap thong tin san bay $ ");
 		dsSanBay = Arrays.copyOf(dsSanBay, this.tongSan);
 		dsSanBay[this.tongSan - 1] = new SanBay();
@@ -71,6 +80,9 @@ final class DanhSachSanBay {
 			while(lines != null) {
 				String []line = lines.split("/");
 				dsSanBay[tongSan] = new SanBay(line[0], line[1], line[2], Integer.parseInt(line[3]));
+				if(line[3].equalsIgnoreCase("0")) {
+					this.soSBHH++;
+				}
 				tongSan++;
 				lines = br.readLine();
 			}
@@ -148,7 +160,7 @@ final class DanhSachSanBay {
 	        			for(int i=delete_point;i<this.tongSan - 1;i++) {
 	        				dsSanBay[i] = dsSanBay[i+1];
 	        			}
-	        			this.tongSan--;
+	        			this.tongSan--; this.soSBHH--;
 	        			dsSanBay = Arrays.copyOf(dsSanBay, this.tongSan);
 	        			System.out.println("\n -------- Hoan tat thao tac --------");
 	        		} else { 
@@ -162,7 +174,7 @@ final class DanhSachSanBay {
 	        		String maKP = sc.nextLine(); int m = 0;
 	        		for(SanBay nv : dsSanBay) {
 	        			if(nv != null && nv.getDeleted() == 1 && nv.getMaSanBay().equalsIgnoreCase(maKP)) {
-	        				nv.setDeleted(0); m++;
+	        				nv.setDeleted(0); m++; this.soSBHH++;
 	        				System.out.println("\n -------- Hoan tat thao tac --------");
 	        				break;
 	        			}
@@ -196,7 +208,7 @@ final class DanhSachSanBay {
 					int n = sc.nextInt();
 					switch(n) {
 						case 1:
-							dsSanBay[i].setDeleted(1); 
+							dsSanBay[i].setDeleted(1); this.soSBHH--;
 							System.out.println("");
 							System.out.println(" -------- Hoan tat thao tac --------");
 							break;
@@ -205,7 +217,7 @@ final class DanhSachSanBay {
 								for(int j=delete_point;j < this.tongSan - 1;j++) {
 									dsSanBay[j] = dsSanBay[j+1]; 
 								}
-								this.tongSan --;
+								this.tongSan --; this.soSBHH--;
 								dsSanBay = Arrays.copyOf(dsSanBay, this.tongSan);
 			        			System.out.println("\n -------- Hoan tat thao tac --------");
 							}
@@ -231,7 +243,6 @@ final class DanhSachSanBay {
 		sc.nextLine();
 		String tk2= sc.nextLine();
 		System.out.print(" + Dia chi san bay ( x de bo qa): ");
-		sc.nextLine();
 		String tk3= sc.nextLine(); int m = 0;
 		System.out.println();
 		System.out.printf("%-15s %-15s %-15s","Ma san bay","Ten san bay","Dia chi san bay");
@@ -301,6 +312,6 @@ final class DanhSachSanBay {
 	}
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
-		System.out.println(" - Tong so san bay: " + this.tongSan);
+		System.out.println(" - Tong so san bay: " + this.soSBHH);
 	}
 }
