@@ -12,19 +12,23 @@ import java.util.Scanner;
 final class DanhSachKhachHang {
 	private KhachHang dsKhachHang[];
 	private int tongKhachHang;
+	private int soKHHH; // số khách hàng hiện hữu, tức kh bị xóa mềm.
 	File d = new File("src/InputOutput/DanhSachKhachHang.txt");
 	//constructor
 	public DanhSachKhachHang(int n) {
 		dsKhachHang = new KhachHang[n];
 		tongKhachHang = 0;
+		soKHHH = 0;
 	}
-	public DanhSachKhachHang(KhachHang dsKhachHang[], int tongKhachHang) {
+	public DanhSachKhachHang(KhachHang dsKhachHang[], int tongKhachHang, int sokhhh) {
 		this.dsKhachHang = dsKhachHang;
 		this.tongKhachHang = tongKhachHang;
+		this.soKHHH = sokhhh;
 	}
 	public DanhSachKhachHang(DanhSachKhachHang a) {
 		this.dsKhachHang = a.dsKhachHang;
 		this.tongKhachHang = a.tongKhachHang;
+		this.soKHHH = a.soKHHH;
 	}
 	
 	
@@ -41,12 +45,17 @@ final class DanhSachKhachHang {
 	public void settongKhachHang(int tongKhachHang) {
 		this.tongKhachHang = tongKhachHang;
 	}
-	
+	public void setSoKHHH(int s) {
+		this.soKHHH = s;
+	}
+	public int getSoKHHH() {
+		return soKHHH;
+	}
 	// methods 
 	Scanner sc = new Scanner(System.in);
 	public void them() {
 		System.out.println(" ------------ Them khach hang ------------");
-		this.tongKhachHang++; 
+		this.tongKhachHang++; this.soKHHH++;
 		System.out.println(" 	$ Nhap thong tin khach hang $ ");
 		dsKhachHang = Arrays.copyOf(dsKhachHang, this.tongKhachHang);
 		dsKhachHang[this.tongKhachHang - 1] = new KhachHang();
@@ -70,6 +79,9 @@ final class DanhSachKhachHang {
 			while(lines != null) {
 				String []line = lines.split("/");
 				dsKhachHang[tongKhachHang] = new KhachHang(line[0], line[1], line[2], line[3], line[4], line[5], Integer.parseInt(line[6]));
+				if(line[6].equalsIgnoreCase("0")) {
+					this.soKHHH++;
+				}
 				tongKhachHang++;
 				lines = br.readLine();
 			}
@@ -147,7 +159,7 @@ final class DanhSachKhachHang {
 						for(int i=delete_point;i<this.tongKhachHang - 1;i++) {
 							dsKhachHang[i] = dsKhachHang[i+1];
 						}
-						this.tongKhachHang--;
+						this.tongKhachHang--; this.soKHHH--;
 						dsKhachHang = Arrays.copyOf(dsKhachHang, this.tongKhachHang);
 						System.out.println("/n -------- Hoan tat thao tac --------");
 					} else { 
@@ -161,7 +173,7 @@ final class DanhSachKhachHang {
 					String maKP = sc.nextLine(); int m = 0;
 					for(KhachHang nv : dsKhachHang) {
 						if(nv != null && nv.getDeleted() == 1 && nv.getMaKhachHang().equalsIgnoreCase(maKP)) {
-							nv.setDeleted(0); m++; ;
+							nv.setDeleted(0); m++; this.soKHHH++;
 							System.out.println("\n -------- Hoan tat thao tac --------");
 							break;
 						}
@@ -195,15 +207,14 @@ final class DanhSachKhachHang {
 					int n = sc.nextInt();
 					switch(n) {
 						case 1:
-							dsKhachHang[i].setDeleted(1);
-							System.out.println("\n -------- Hoan tat thao tac --------");
+							dsKhachHang[i].setDeleted(1); this.soKHHH--;							System.out.println("\n -------- Hoan tat thao tac --------");
 							break;
 						case 2: 
 							if(delete_point != -1) {
 								for(int j=delete_point;j<this.tongKhachHang - 1;j++) {
 									dsKhachHang[j] = dsKhachHang[j+1]; 
 								}
-								this.tongKhachHang --;
+								this.tongKhachHang --; this.soKHHH--;
 								System.out.println("\n -------- Hoan tat thao tac --------");
 							}
 							break;
@@ -327,6 +338,6 @@ final class DanhSachKhachHang {
 	}
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
-		System.out.println(" - Tong so khach hang: " + this.tongKhachHang);
+		System.out.println(" - Tong so khach hang hien co: " + this.soKHHH);
 	}
 }
