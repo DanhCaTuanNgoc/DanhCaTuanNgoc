@@ -319,6 +319,6 @@ final class DanhSachNhanVien {
 	}
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
-		System.out.println(" - Tong so nhan vien: " + this.soNVHH);
+		System.out.println(" - Tong so nhan vien hien co: " + this.soNVHH);
 	}
 }
