@@ -387,8 +387,7 @@ public class DanhSachVe {
 		int luaChon = 0;
 		loop:
 			while(true) {
-				System.out.pritnln("")
-				System.out.println("\t========================================")
+				System.out.println("\t========================================");
 				System.out.println("\t!		  ---- THAO TAC ----         !");
 				System.out.println("\t!		1.Them ve.                   !");
 				System.out.println("\t!		2.Xoa ve.                    !");
@@ -396,7 +395,7 @@ public class DanhSachVe {
 				System.out.println("\t! 	4.Tim kiem ve.               !");
 				System.out.println("\t! 	5.Xuat danh sach.            !");
 				System.out.println("\t! 	6.Thoat.		     !");
-				System.out.println("\t========================================")
+				System.out.println("\t========================================");
 				System.out.print("Lua chon: ");
 				luaChon = sc.nextInt();
 				sc.nextLine();

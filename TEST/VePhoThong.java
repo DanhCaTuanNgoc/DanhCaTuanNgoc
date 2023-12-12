@@ -38,7 +38,7 @@ public class VePhoThong extends Ve {
     public void nhap() {
         do {
             System.out.println("Ma Ve, Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu: ");
-            System.out.println("Nhap Ma Ve: ");
+            System.out.print("Nhap Ma Ve: ");
             maVe = sc.nextLine();
             if(maVe.length() < 3 || maVe.length() > 5) {
                 System.err.println("Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!!");
@@ -47,8 +47,8 @@ public class VePhoThong extends Ve {
         
         do {
           //  dsCB.DocFileJava("KhachHang.txt");// FILE
-            dsCB.xemds();
-            System.out.println("Nhap ma chuyen bay: ");
+            dsCB.hienThi();
+            System.out.print("Nhap ma chuyen bay: ");
             maChuyenBay = sc.nextLine();
             if(dsCB.truyenDuLieu_CB(maChuyenBay) == null)
                 System.out.println("Ma chuyen bay vua nhap khong co trong danh sach");
@@ -61,7 +61,7 @@ public class VePhoThong extends Ve {
             System.out.println("Hang Ve Co 2 Loai: ");
             System.out.println("1.Neu La Hang Ve Tieu Chuan Thi Nhap(a|A): ");
             System.out.println("2.Neu La Hang Ve Pho Thong Tiet Kiem Thi Nhap(b|B): ");
-            System.out.println("Loai Hang Ve: ");
+            System.out.print("Loai Hang Ve: ");
             hangVe = sc.nextLine();
             if((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe))) {
                 System.err.println("Nhap Sai Ki Tu!!!");
