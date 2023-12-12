@@ -57,7 +57,7 @@ public class VeThuongGia extends Ve {
         }while(maVe.length() < 3 || maVe.length() > 5);
         do {
           //  dsCB.DocFileJava("KhachHang.txt");// FILE
-            dsCB.xemds();
+            dsCB.hienThi();
             System.out.println("Nhap ma chuyen bay: ");
             maChuyenBay = sc.nextLine();
             if(dsCB.truyenDuLieu_CB(maChuyenBay) == null)
