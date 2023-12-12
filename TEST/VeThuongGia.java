@@ -11,6 +11,7 @@ package TEST;
 import java.io.*;
 public class VeThuongGia extends Ve {
     DanhSachVe dsv = new DanhSachVe();
+    DanhSachChuyenBay dsCB = new DanhSachChuyenBay();
     private String maPhongCho, dichVuVIP;
     // CONSTRUCTOR DEFAULT / PROPERTY / COPY
     public VeThuongGia() {
@@ -47,28 +48,35 @@ public class VeThuongGia extends Ve {
     @Override
     public void nhap() {
         do {
-            System.out.println(" Ma Ve (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
-            System.out.println(" - Nhap Ma Ve: ");
+            System.out.println("Ma Ve, Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu: ");
+            System.out.println("Nhap Ma Ve: ");
             maVe = sc.nextLine();
             if(maVe.length() < 3 || maVe.length() > 5) {
-                System.err.println(" --- Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!! ---");
+                System.err.println("Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!!");
             }
         }while(maVe.length() < 3 || maVe.length() > 5);
-        // UPDATTING ...
+        do {
+          //  dsCB.DocFileJava("KhachHang.txt");// FILE
+            dsCB.xemds();
+            System.out.println("Nhap ma chuyen bay: ");
+            maChuyenBay = sc.nextLine();
+            if(dsCB.truyenDuLieu_CB(maChuyenBay) == null)
+                System.out.println("Ma chuyen bay vua nhap khong co trong danh sach");
+        }while(dsCB.truyenDuLieu_CB(maChuyenBay) == null);
         
-        System.out.println(" - Gia Tien Cua Ve(VND): ");
+        System.out.println("Gia Tien Cua Ve(VND): ");
         gia = sc.nextFloat();
         sc.nextLine();
         do {
-            System.out.println(" Ma Phong Cho (Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu)");
-            System.out.println(" - Nhap Ma Phong Cho: ");
+            System.out.println("Ma Phong Cho, Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu: ");
+            System.out.println("Nhap Ma Phong Cho: ");
             maPhongCho = sc.nextLine();
             if(maPhongCho.length() < 3 || maPhongCho.length() > 5) {
-                System.err.println(" --- Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!! ---");
+                System.err.println("Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!!");
             }
         }while(maPhongCho.length() < 3 || maPhongCho.length() > 5);
         
-        System.out.println(" - Dich Vu VIP: ");
+        System.out.println("Dich Vu VIP: ");
         dichVuVIP = sc.nextLine();
     }
     // OUTPUT
