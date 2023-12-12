@@ -11,22 +11,25 @@ import java.util.Scanner;
 
 final class DanhSachMayBay {
 	private MayBay dsMayBay[];
-	private MayBay nv = new MayBay();
 	private int tongMayBay; 
+	private int soMBHH;
 	File d = new File("src/InputOutput/DanhSachMayBay.txt");
 	
 	//constructor
 	public DanhSachMayBay(int n) {
 		dsMayBay = new MayBay[n];
 		this.tongMayBay=0;
+		this.soMBHH = 0;
 	}
-	public DanhSachMayBay(MayBay dsMayBay[], int tongMayBay, int soNVHH) {
+	public DanhSachMayBay(MayBay dsMayBay[], int tongMayBay, int soMBHH) {
 		this.dsMayBay = dsMayBay;
 		this.tongMayBay = tongMayBay;
+		this.soMBHH = soMBHH;
 	}
 	public DanhSachMayBay(DanhSachMayBay a) {
 		this.dsMayBay = a.dsMayBay;
 		this.tongMayBay = a.tongMayBay;
+		this.soMBHH = a.soMBHH;
 	}
 	
 	// get/set
@@ -42,12 +45,17 @@ final class DanhSachMayBay {
 	public void settongMayBay(int tongMayBay) {
 		this.tongMayBay = tongMayBay;
 	}
-	
+	public void setSMBHH(int s) {
+		this.soMBHH = s;
+	}
+	public int getSoMBHH() {
+		return soMBHH;
+	}
 	// methods 
 	Scanner sc = new Scanner(System.in);
 	public void them() {
 		System.out.println(" ------------ Them may bay ------------");
-		this.tongMayBay++; 
+		this.tongMayBay++; this.soMBHH++;
 		System.out.println(" 	$ Nhap thong tin may bay $ ");
 		dsMayBay = Arrays.copyOf(dsMayBay, this.tongMayBay);
 		dsMayBay[this.tongMayBay - 1] = new MayBay();
@@ -72,6 +80,9 @@ final class DanhSachMayBay {
 			while(lines != null) {
 				String []line = lines.split("/");
 				dsMayBay[tongMayBay] = new MayBay(line[0], line[1], Integer.parseInt(line[2]), Integer.parseInt(line[3]));
+				if(line[3].equalsIgnoreCase("0")) {
+					this.soMBHH++;
+				}
 				tongMayBay++;
 				lines = br.readLine();
 			}
@@ -149,7 +160,7 @@ final class DanhSachMayBay {
 	        			for(int i=delete_point;i<this.tongMayBay - 1;i++) {
 	        				dsMayBay[i] = dsMayBay[i+1];
 	        			}
-	        			this.tongMayBay--;
+	        			this.tongMayBay--; this.soMBHH--;
 	        			dsMayBay = Arrays.copyOf(dsMayBay, this.tongMayBay);
 	        			System.out.println("\n -------- Hoan tat thao tac --------");
 	        		} else { 
@@ -163,7 +174,7 @@ final class DanhSachMayBay {
 	        		String maKP = sc.nextLine(); int m = 0;
 	        		for(MayBay nv : dsMayBay) {
 	        			if(nv != null && nv.getDeleted() == 1 && nv.getMaMayBay().equalsIgnoreCase(maKP)) {
-	        				nv.setDeleted(0); m++;
+	        				nv.setDeleted(0); m++; this.soMBHH++;
 	        				System.out.println("\n -------- Hoan tat thao tac --------");
 	        				break;
 	        			}
@@ -197,7 +208,7 @@ final class DanhSachMayBay {
 					int n = sc.nextInt();
 					switch(n) {
 						case 1:
-							dsMayBay[i].setDeleted(1);
+							dsMayBay[i].setDeleted(1); this.soMBHH--;
 							System.out.println("");
 							System.out.println(" -------- Hoan tat thao tac --------");
 							break;
@@ -206,7 +217,7 @@ final class DanhSachMayBay {
 								for(int j=delete_point;j < this.tongMayBay - 1;j++) {
 									dsMayBay[j] = dsMayBay[j+1]; 
 								}
-								this.tongMayBay --;
+								this.tongMayBay --; this.soMBHH--;
 								dsMayBay = Arrays.copyOf(dsMayBay, this.tongMayBay);
 			        			System.out.println("\n -------- Hoan tat thao tac --------");
 							}
@@ -300,6 +311,6 @@ final class DanhSachMayBay {
 	}
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
-		System.out.println(" - Tong so may bay: " + this.tongMayBay);
+		System.out.println(" - Tong so may bay: " + this.soMBHH);
 	}
 }
