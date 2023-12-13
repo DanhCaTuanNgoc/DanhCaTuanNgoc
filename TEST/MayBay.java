@@ -1,30 +1,33 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package TEST;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- *
- * @author Luong Thanh Tuan
- */
 public class MayBay {
-    private String maMayBay;
-    private String tenMayBay;
-    private int soGhe;
-    // CONSTRUCTOR DEFAULT / PROPERTY
-    public MayBay() {
-        maMayBay = "";
-        tenMayBay = "";
-        soGhe = 0;
+	private String maMayBay;
+	private String tenMayBay;
+	private int soGhe;
+	private int deleted = 0;
+	// constructor
+	public MayBay() {
+		maMayBay = "";
+		tenMayBay = "";
+		soGhe = 0;
+		deleted = 0;
+	}
+	public MayBay(String mamaybay,String tenmaybay,int soghe, int deleted) {
+		this.maMayBay = mamaybay;
+		this.tenMayBay = tenmaybay;
+		this.soGhe = soghe;
+		this.deleted = deleted;
+	}
+	public MayBay(MayBay a) {
+		this.maMayBay = a.maMayBay;
+		this.tenMayBay = a.tenMayBay;
+		this.soGhe = a.soGhe;
+		this.deleted = a.deleted;
     }
-    public MayBay(String maMayBay, String tenMayBay, int soGhe) {
-	this.maMayBay = maMayBay;
-	this.tenMayBay = tenMayBay;
-	this.soGhe = soGhe;
-    }
+	// get/set
 	public String getMaMayBay() {
 		return maMayBay;
 	}
@@ -43,32 +46,31 @@ public class MayBay {
 	public void setSoGhe(int soGhe) {
 		this.soGhe = soGhe;
 	}
-        // METHOD
-        public void nhap() {
-        Scanner sc = new Scanner(System.in) ;
-        do {
-            System.out.println("Ma may bay, toi thieu 3 ky tu va toi da 5 ky tu: ");
-            System.out.print("Ma may bay: ");
-            maMayBay =  sc.nextLine();
-            if(maMayBay.length() < 3 || maMayBay.length() > 5) {
-                System.err.println("Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!!");
-            }
-        }while(maMayBay.length() < 3 || maMayBay.length() > 5);
-        
-        System.out.print("Nhap Ten: ");
-        tenMayBay = sc.nextLine();
-        System.out.print("So ghe: ");
-        soGhe = sc.nextInt();
-    }
-    public void xuat() {
-        System.out.println("Thong Tin May Bay : ");
-        System.out.println("Ma May Bay : " + maMayBay + 
-                " / Ten : " + tenMayBay +
-                " / soGhe: " + soGhe);
-    }
-    public static void main(String [] args) {
-        MayBay mb = new MayBay();
-        mb.nhap();
-        mb.xuat();
-    }
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleted (int deleted) {
+		this.deleted = deleted;
+	}
+	// methods
+	
+	public void nhap() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print(" - Nhap ma may bay: ");
+		this.maMayBay = sc.nextLine();
+		System.out.print(" - Nhap ten may bay: ");
+		this.tenMayBay = sc.nextLine();
+		while(true){
+			try{
+				System.out.print(" - Nhap so ghe: ");
+				
+				this.soGhe = sc.nextInt();
+			if(this.soGhe!=0){return;}
+		}catch(InputMismatchException in){System.out.println("Nhap sai! Vui long nhap so!");sc.nextLine();}
+		}
+	}
+	
+	public void xuat() {
+		System.out.printf("%-15s %-15s %-10s",maMayBay, tenMayBay, soGhe);
+	}
 }
