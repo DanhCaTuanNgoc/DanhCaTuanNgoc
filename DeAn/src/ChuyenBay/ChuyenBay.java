@@ -7,32 +7,53 @@ public class ChuyenBay {
 	private String maMayBay;
 	private String ngayDi;
 	private String ngayDen;
+	private String sanBayDi;
+	private String sanBayDen;
+	private String gioDi;
+	private String gioDen;
 	private int tongSoVe;
     private int soVeConLai;
+	private int deleted = 0;
 	// constructor
 	public ChuyenBay() {
 		maChuyenBay = "";
 		maMayBay = "";
 		ngayDi = "";
 		ngayDen = "";
+		sanBayDi = "";
+		sanBayDen = "";
+		gioDi = "";
+		gioDen = "";
 		tongSoVe = 0;
 		soVeConLai = 0;
+		deleted = 0;
 	}
-	public ChuyenBay(String machuyenbay, String mamaybay, String ngaydi, String ngayden, int tongsove, int veconlai) {
-		machuyenbay = this.maChuyenBay;
-		mamaybay = this.maMayBay;
-		ngaydi = this.ngayDi;
-		ngayden = this.ngayDen;
-		tongsove = this.tongSoVe;
-        veconlai = this.soVeConLai;
+	public ChuyenBay(String machuyenbay, String mamaybay, String ngaydi, String ngayden, String sandi,String sanden,String giodi,String gioden, int tongsove, int veconlai, int deleted) {
+		this.maChuyenBay = machuyenbay;
+		this.maMayBay = mamaybay;
+		this.ngayDi = ngaydi;
+		this.ngayDen = ngayden;
+		this.sanBayDi = sandi;
+		this.sanBayDen = sanden;
+		this.gioDi = giodi;
+		this.gioDen = gioden;
+		this.tongSoVe = tongsove;
+        this.soVeConLai = veconlai;
+		this.deleted = deleted;
+		
 	}
 	public ChuyenBay(ChuyenBay a) {
-		a.maChuyenBay = this.maChuyenBay;
-		a.maMayBay = this.maMayBay;
-		a.ngayDi = this.ngayDi;
-		a.ngayDen = this.ngayDen;
-		a.tongSoVe = this.tongSoVe;
-		a.soVeConLai = this.soVeConLai;
+		this.maChuyenBay = a.maChuyenBay;
+		this.maMayBay = a.maMayBay;
+		this.ngayDi = a.ngayDi;
+		this.ngayDen = a.ngayDen;
+		this.sanBayDi = a.sanBayDi;
+		this.sanBayDen = a.sanBayDen;
+		this.gioDi = a.gioDi;
+		this.gioDen = a.gioDen;
+		this.tongSoVe = a.tongSoVe;
+		this.soVeConLai = a.soVeConLai;
+		this.deleted = a.deleted;
 	}
 	
 	//get/set
@@ -72,26 +93,63 @@ public class ChuyenBay {
 	public void setSoVeConLai(int soVeConLai) {
 		this.soVeConLai = soVeConLai;
 	}
-	
+	public String getSanBayDi() {
+		return sanBayDi;
+	}
+	public void setSanBayDi(String sanBayDi) {
+		this.sanBayDi = sanBayDi;
+	}
+	public String getSanBayDen() {
+		return sanBayDen;
+	}
+	public void setSanBayDen(String sanBayDen) {
+		this.sanBayDen = sanBayDen;
+	}
+	public String getGioDi() {
+		return gioDi;
+	}
+	public void setGioDi(String gioDi) {
+		this.gioDi = gioDi;
+	}
+	public String getGioDen() {
+		return gioDen;
+	}
+	public void setGioDen(String gioDen) {
+		this.gioDen = gioDen;
+	}
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(int deleted) {
+		this.deleted = deleted;
+	}
 	// methods
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhap ma chuyen bay: ");
+		System.out.print(" - Nhap ma chuyen bay: ");
 		this.maChuyenBay = sc.nextLine();
-		System.out.print("Nhap ma may bay: ");
+		System.out.print(" - Nhap ma may bay: ");
 		this.maMayBay = sc.nextLine();
-		System.out.print("Nhap ngay di: ");
+		System.out.print(" - Nhap ngay di: ");
 		this.ngayDi = sc.nextLine();
-		System.out.print("Nhap ngay den: ");
+		System.out.print(" - Nhap ngay den: ");
 		this.ngayDen = sc.nextLine();	
-		System.out.print("Nhap tong so ve: ");
+		System.out.print(" - Nhap san bay di: ");
+		this.sanBayDi = sc.nextLine();
+		System.out.print(" - Nhap san bay den: ");
+		this.sanBayDen = sc.nextLine();
+		System.out.print(" - Nhap gio di: ");
+		this.gioDi = sc.nextLine();	
+		System.out.print(" - Nhap gio den: ");
+		this.gioDen = sc.nextLine();
+		System.out.print(" - Nhap tong so ve: ");
 		this.tongSoVe = sc.nextInt();
-		System.out.print("Nhap so ve con lai: ");
+		System.out.print(" - Nhap so ve con lai: ");
 		this.soVeConLai = sc.nextInt();
 	}
 	
 	public void xuat() {
-		System.out.print(maChuyenBay + "\t" + maMayBay + "\t" + ngayDi + "\t" + ngayDen + "\t" + tongSoVe + "\t" + soVeConLai);
+		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s", maChuyenBay, maMayBay, ngayDi, ngayDen, sanBayDi, sanBayDen, gioDi, gioDen, tongSoVe, soVeConLai);
 	}
 }
