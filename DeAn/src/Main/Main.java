@@ -15,7 +15,7 @@ public class Main {
 	public static void main(String[]args) {
 		while(true) {
 			System.out.println(" ====================================================");
-			System.out.println(" !       ------ Ung dung ban ve may bay -----       !");
+			System.out.println(" !        ----- Ung dung ban ve may bay -----       !");
 			System.out.println(" !             1. Quan ly ve.                       !");
 			System.out.println(" !             2. Quan ly khach hang.               !");
 			System.out.println(" !             3. Quan ly chuyen bay.               !");
@@ -25,7 +25,7 @@ public class Main {
 			System.out.println(" !             7. Quan ly hoa don.                  !");
 			System.out.println(" !             8. Quan ly chi tiet hoa don.         !");
 			System.out.println(" !             0. Thoat.                            !");
-			System.out.println(" ====================================================");			
+			System.out.println(" ====================================================");		
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
 			int action = sc.nextInt();
