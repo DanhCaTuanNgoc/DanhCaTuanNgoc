@@ -1,2 +1,10 @@
-1/Tan Son Nhat/Quan 1/0
-
+SB001/San bay quoc te Tan Son Nhat/TP.HCM/0
+SB002/San bay quoc te Noi Bai/Ha Noi/0
+SB003/San bay quoc te Da Nang/Da Nang/0
+SB004/San bay quoc te Can Tho/Can Tho/0
+SB005/San bay quoc te Phu Quoc/Phu Quoc/0
+SB006/San bay quoc te Cam Ranh/Khanh Hoa/0
+SB007/San bay quoc te Lien Khuong/Da Lat/0
+SB008/San bay quoc te Phu Bai/Hue/0
+SB009/San bay quoc te Cat Bi/Hai Phong/0
+SB010/San bay quoc te Van Don/Quang Ninh/0
