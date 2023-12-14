@@ -120,7 +120,7 @@ final class DanhSachHoaDon {
 	}
 	public void xemds() {
 		System.out.println("\t\t --------- Danh sach hoa don ---------");
-		System.out.printf("%-15s %-15s %-15s %-12s %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
+		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
 		System.out.println();
 		int checkList = -1;
         for(HoaDon hd : dsHoaDon) {
@@ -134,7 +134,7 @@ final class DanhSachHoaDon {
 	}
 	public void xemdsXoa() {
 		System.out.println("\t\t --------- Danh sach hoa don da xoa ---------");
-		System.out.printf("%-15s %-15s %-15s %-12s %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
+		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
 		System.out.println();
 		int checkList = -1;
 		for(HoaDon hd : dsHoaDon) {
@@ -254,7 +254,7 @@ final class DanhSachHoaDon {
 		String tk5 = sc.nextLine();
 		int m = 0;
 		System.out.println();
-		System.out.printf("%-15s %-15s %-15s %-12s %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
+		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
 		System.out.println();
 		for(int i=0;i<this.tongHoaDon;i++) {
 			if((dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))

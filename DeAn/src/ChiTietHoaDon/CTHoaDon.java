@@ -5,26 +5,30 @@ import java.util.Scanner;
 public class CTHoaDon {
 	private String maHoaDon;
 	private String maVe;
-	private String soLuong;
-	private String giaTien;
+	private int soLuong;
+	private int giaTien;
+	private int deleted;
 	// constructor
 	public CTHoaDon() {
 		maHoaDon = "";
 		maVe = "";
-		soLuong = "";
-		giaTien = "";
+		soLuong = 0;
+		giaTien = 0;
+		deleted = 0;
 	}
-	public CTHoaDon(String mahoadon, String mave, String soluong, String giatien) {
-		mahoadon = this.maHoaDon;
-		mave = this.maVe;
-		soluong = this.soLuong;
-		giatien = this.giaTien;
+	public CTHoaDon(String mahoadon, String mave, int soluong, int giatien, int deleted) {
+		this.maHoaDon = mahoadon;
+		this.maVe = mave;
+		this.soLuong = soluong;
+		this.giaTien = giatien;
+		this.deleted = deleted;
 	}
 	public CTHoaDon(CTHoaDon a) {
-		a.maHoaDon = this.maHoaDon;
-		a.maVe = this.maVe;
-		a.soLuong = this.soLuong;
-		a.giaTien = this.giaTien;
+		this.maHoaDon = a.maHoaDon;
+		this.maVe = a.maVe;
+		this.soLuong = a.soLuong;
+		this.giaTien = a.giaTien;
+		this.deleted = a.deleted;
 	}
 	
 	// get/set
@@ -40,34 +44,39 @@ public class CTHoaDon {
 	public void setMaVe(String maVe) {
 		this.maVe = maVe;
 	}
-	public String getSoLuong() {
+	public int getSoLuong() {
 		return soLuong;
 	}
-	public void setSoLuong(String soLuong) {
+	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
-	public String getGiaTien() {
+	public int getGiaTien() {
 		return giaTien;
 	}
-	public void setGiaTien(String giaTien) {
+	public void setGiaTien(int giaTien) {
 		this.giaTien = giaTien;
 	}
-	
+	public int getDeleted() {
+		return deleted;
+	}
+	public void setDeleted(int deleted) {
+		this.deleted = deleted;
+	}
 	// methods
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Nhap ma hoa don: ");
+		System.out.print(" - Nhap ma hoa don: ");
 		this.maHoaDon = sc.nextLine();
-		System.out.print("Nhap ma ve: ");
+		System.out.print(" - Nhap ma ve: ");
 		this.maVe = sc.nextLine();
-		System.out.print("Nhap so luong: ");
-		this.soLuong = sc.nextLine();
-		System.out.print("Nhap gia tien: ");
-		this.giaTien = sc.nextLine();	
+		System.out.print(" - Nhap so luong: ");
+		this.soLuong = sc.nextInt();
+		System.out.print(" - Nhap gia tien: ");
+		this.giaTien = sc.nextInt();	
 	}
 	
 	public void xuat() {
-		System.out.print(maHoaDon + "\t" + maVe + "\t" + soLuong + "\t" + giaTien);
+		System.out.printf("| %-15s | %-15s | %-10s | %-15s |",maHoaDon, maVe, soLuong, giaTien);
 	}
 }

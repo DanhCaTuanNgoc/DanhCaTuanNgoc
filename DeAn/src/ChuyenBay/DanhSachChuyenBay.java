@@ -259,7 +259,7 @@ public void timkiem(){
 		String tk8= sc.nextLine();
 		int m = 0;
 		System.out.println();
-		System.out.printf("| %-15s | %-7s | %-15s | %-10s","Ma chuyen bay","Ho","Ten","SoDienThoai");//tuaasn lam
+		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngayden","San bay di","San bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
 		System.out.println();
 		for(int i=0;i<this.tongChuyenBay;i++) {
 			if((dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))

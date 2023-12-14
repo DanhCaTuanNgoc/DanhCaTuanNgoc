@@ -25,7 +25,7 @@ public class Main {
 			System.out.println(" !             7. Quan ly hoa don.                  !");
 			System.out.println(" !             8. Quan ly chi tiet hoa don.         !");
 			System.out.println(" !             0. Thoat.                            !");
-			System.out.println(" ====================================================");		
+			System.out.println(" ====================================================");			
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
 			int action = sc.nextInt();

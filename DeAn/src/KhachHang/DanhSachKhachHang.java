@@ -115,7 +115,7 @@ final class DanhSachKhachHang {
 	}
 	public void xemds() {
 		System.out.println(" ------------ Danh sach khach hang ------------");
-		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
+		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
 		System.out.println();
 		int checkList = -1;
 		for(KhachHang nv : dsKhachHang) {
@@ -129,7 +129,7 @@ final class DanhSachKhachHang {
 	}
 	public void xemdsXoa() {
 		System.out.println(" ------------ Danh sach khach hang da xoa ------------");
-		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
+		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
 		System.out.println();
 		int checkList = -1;
 		for(KhachHang nv : dsKhachHang) {
@@ -248,7 +248,7 @@ final class DanhSachKhachHang {
 		sc.nextLine();
 		String tk6 = sc.nextLine();
  		System.out.println();
-		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
+		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
 		System.out.println();
 		for(int i=0;i<this.tongKhachHang;i++) {
 			if((dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))

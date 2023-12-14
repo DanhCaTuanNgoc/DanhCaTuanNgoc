@@ -116,7 +116,7 @@ final class DanhSachSanBay {
 	}
 	public void xemds() {
 		System.out.println(" ------------ Danh sach san bay ------------");
-		System.out.printf("%-15s %-15s %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		int checkList = -1;
         for(SanBay nv : dsSanBay) {
@@ -130,7 +130,7 @@ final class DanhSachSanBay {
 	}
 	public void xemdsXoa() {
 		System.out.println(" ------------ Danh sach san bay da xoa ------------");
-		System.out.printf("%-15s %-15s %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		int checkList = -1;
 		for(SanBay nv : dsSanBay) {
@@ -245,7 +245,7 @@ final class DanhSachSanBay {
 		System.out.print(" + Dia chi san bay ( x de bo qa): ");
 		String tk3= sc.nextLine(); int m = 0;
 		System.out.println();
-		System.out.printf("%-15s %-15s %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		for(int i=0;i<this.tongSan;i++) {
 			if((dsSanBay[i].getMaSanBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))

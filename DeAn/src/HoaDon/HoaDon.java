@@ -90,6 +90,6 @@ public class HoaDon {
 	}
 	
 	public void xuat() {
-		System.out.printf("%-15s %-15s %-15s %-12s %-12s", maHoaDon, maKhachHang,  maNhanVien, ngayXuat, tongHoaDon);
+		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s", maHoaDon, maKhachHang,  maNhanVien, ngayXuat, tongHoaDon);
 	}
 }

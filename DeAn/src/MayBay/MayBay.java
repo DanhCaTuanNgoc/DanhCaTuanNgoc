@@ -1,6 +1,7 @@
 package MayBay;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class MayBay {
 	private String maMayBay;
@@ -70,6 +71,6 @@ public class MayBay {
 	}
 	
 	public void xuat() {
-		System.out.printf("%-15s %-15s %-10s",maMayBay, tenMayBay, soGhe);
+		System.out.printf("| %-15s | %-15s | %-10s",maMayBay, tenMayBay, soGhe);
 	}
 }
