@@ -59,8 +59,14 @@ public class MayBay {
 		this.maMayBay = sc.nextLine();
 		System.out.print(" - Nhap ten may bay: ");
 		this.tenMayBay = sc.nextLine();
-		System.out.print(" - Nhap so ghe: ");
-		this.soGhe = sc.nextInt();	
+		while(true){
+			try{
+				System.out.print(" - Nhap so ghe: ");
+				this.soGhe = sc.nextInt();
+				if(soGhe!=0){return;}
+				else{System.out.println("LOI! VUI LONG NHAP LAI!");}
+			}catch(InputMismatchException in){System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();}
+		}
 	}
 	
 	public void xuat() {
