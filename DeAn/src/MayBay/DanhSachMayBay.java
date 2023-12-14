@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-final class DanhSachMayBay {
+public class DanhSachMayBay {
 	private MayBay dsMayBay[];
 	private int tongMayBay; 
 	private int soMBHH;
