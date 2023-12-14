@@ -100,7 +100,7 @@ public class KhachHang {
 	}
 	
 	public void xuat() {
-		System.out.printf("%-15s %-7s %-15s %-15s %-20s %-10s", maKhachHang, ho, ten, cccd , diaChi, sdt);
+		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s", maKhachHang, ho, ten, cccd , diaChi, sdt);
 	}
 }
 	

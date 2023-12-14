@@ -193,7 +193,7 @@ public class DanhSachCTHoaDon {
 	        		break;
 	        }
 		} else {
-			System.out.println("	........Danh sach trong........");
+			System.out.println("\t\t ........Danh sach trong........");
 		}
         
 	}

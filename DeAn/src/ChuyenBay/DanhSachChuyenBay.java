@@ -8,6 +8,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import SanBay.DanhSachSanBay;
+import MayBay.DanhSachMayBay;
 
 
 public class DanhSachChuyenBay {
@@ -15,6 +17,9 @@ public class DanhSachChuyenBay {
 	private int tongChuyenBay; 
 	private int soCBHH; // so chuyen bay hien huu ( bien dem cho so nv kh nam trong danh sach xoa ) 
 	File d = new File("src/InputOutput/DanhSachChuyenBay.txt");
+	
+	DanhSachMayBay mb = new DanhSachMayBay(100);
+	DanhSachSanBay sb = new DanhSachSanBay(100);
 	
 	//constructor
 	public DanhSachChuyenBay(int n) {
@@ -56,7 +61,11 @@ public class DanhSachChuyenBay {
 	// methods 
 	Scanner sc = new Scanner(System.in);
 	public void them() {
-		System.out.println(" ------------ Them chuyen bay ------------");
+		sb.docfile();
+		mb.docfile();
+		sb.xemds();
+		mb.xemds();
+		System.out.println("\n ------------ Them chuyen bay ------------");
 		this.tongChuyenBay++; this.soCBHH++; 
 		System.out.println(" 	$ Nhap thong tin chuyen bay $ ");
 		dsChuyenBay = Arrays.copyOf(dsChuyenBay, this.tongChuyenBay);
@@ -106,8 +115,8 @@ public class DanhSachChuyenBay {
 			BufferedWriter br = new BufferedWriter(fr);
 			for(ChuyenBay nv : dsChuyenBay) {
 				if(nv != null) {
-					br.write(nv.getMaChuyenBay() + "/" + nv.getMaMayBay() + "/" + nv.getNgayDi() + "/" + nv.getNgayDen() + "/" + nv.getSanBayDi() + "/" +
-							nv.getSanBayDen() + "/" + nv.getGioDi() + "/" + nv.getGioDen() + "/" + nv.getTongSoVe() + "/" + nv.getSoVeConLai()  
+					br.write(nv.getMaChuyenBay() + "/" + nv.getMaMayBay() + "/" + nv.getNgayDi() + "/" + nv.getNgayDen() + "/" + nv.getMaSanBayDi() + "/" +
+							nv.getMaSanBayDen() + "/" + nv.getGioDi() + "/" + nv.getGioDen() + "/" + nv.getTongSoVe() + "/" + nv.getSoVeConLai()  
 							+ "/" + nv.getDeleted() + "\n");
 				} else {
 					break;
@@ -119,8 +128,8 @@ public class DanhSachChuyenBay {
 		}
 	}
 	public void xemds() {
-		System.out.println("\t\t\t\t ------------ Danh sach chuyen bay ------------");
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngayden","San bay di","San bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
+		System.out.println("\t\t\t\t\t\t\t ------------ Danh sach chuyen bay ------------");
+		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
 		System.out.println();
 		int checkList = -1;
         for(ChuyenBay nv : dsChuyenBay) {
@@ -133,8 +142,8 @@ public class DanhSachChuyenBay {
         }
 	}
 	public void xemdsXoa() {
-		System.out.println("\t\t\t\t ------------ Danh sach chuyen bay da xoa ------------");
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngayden","San bay di","San bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
+		System.out.println("\t\t\t\t\t\t\t ------------ Danh sach chuyen bay da xoa ------------");
+		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
 		System.out.println();
 		int checkList = -1;
 		for(ChuyenBay nv : dsChuyenBay) {
@@ -194,7 +203,7 @@ public class DanhSachChuyenBay {
 	        		break;
 	        }
 		} else {
-			System.out.println("	........Danh sach trong........");
+			System.out.println("\t\t\t\t\t\t\t\t ........Danh sach trong........");
 		}
         
 	}
@@ -249,9 +258,9 @@ public void timkiem(){
 		String tk3= sc.next();
 		System.out.print(" + Ngay den ( x de bo qua): ");
 		String tk4= sc.nextLine();
-		System.out.print(" + San bay di ( x de bo qua): ");
+		System.out.print(" + Ma san bay di ( x de bo qua): ");
 		String tk5= sc.nextLine();
-		System.out.print(" + San bay den ( x de bo qua): ");
+		System.out.print(" + Ma san bay den ( x de bo qua): ");
 		String tk6= sc.nextLine();
 		System.out.print(" + Gio di ( x de bo qua): ");
 		String tk7= sc.nextLine();
@@ -259,15 +268,15 @@ public void timkiem(){
 		String tk8= sc.nextLine();
 		int m = 0;
 		System.out.println();
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngayden","San bay di","San bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
+		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
 		System.out.println();
 		for(int i=0;i<this.tongChuyenBay;i++) {
 			if((dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsChuyenBay[i].getMaMayBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(dsChuyenBay[i].getNgayDi().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
 			&&(dsChuyenBay[i].getNgayDen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
-			&&(dsChuyenBay[i].getSanBayDi().equalsIgnoreCase(tk5)||tk5.equalsIgnoreCase("x"))
-			&&(dsChuyenBay[i].getSanBayDen().equalsIgnoreCase(tk6)||tk6.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getMaSanBayDi().equalsIgnoreCase(tk5)||tk5.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getMaSanBayDen().equalsIgnoreCase(tk6)||tk6.equalsIgnoreCase("x"))
 			&&(dsChuyenBay[i].getGioDi().equalsIgnoreCase(tk7)||tk7.equalsIgnoreCase("x"))
 			&&(dsChuyenBay[i].getGioDen().equalsIgnoreCase(tk8)||tk8.equalsIgnoreCase("x"))
 			&& dsChuyenBay[i].getDeleted() != 1){
@@ -318,13 +327,13 @@ public void timkiem(){
 						dsChuyenBay[i].setNgayDen(ngayden);
 						break;
 					case 4:
-						System.out.println(" - Sua san bay di: ");
+						System.out.println(" - Sua ma san bay di: ");
 						sc.nextLine();
 						String sanbaydi = sc.nextLine();
-						System.out.println(" - Sua san bay den: ");
+						System.out.println(" - Sua ma san bay den: ");
 						String sanbayden = sc.nextLine();
-						dsChuyenBay[i].setSanBayDen(sanbayden);
-						dsChuyenBay[i].setSanBayDi(sanbaydi);
+						dsChuyenBay[i].setMaSanBayDen(sanbayden);
+						dsChuyenBay[i].setMaSanBayDi(sanbaydi);
 						break;
 					case 5:
 						System.out.println(" - Sua gio di: ");
@@ -370,12 +379,4 @@ public void timkiem(){
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so chuyen bay hien co: " + this.soCBHH);
 	}
-	public String truyenDuLieu_CB(String maChuyenBay) {
-        for(int i = 0; i < this.tongChuyenBay; i ++) {
-            if(dsChuyenBay[i].getMaChuyenBay().equals(maChuyenBay)) {
-                return dsChuyenBay[i].getMaChuyenBay() + "" + dsChuyenBay[i].getMaMayBay();
-            }
-        }
-        return null;
-    }
 }

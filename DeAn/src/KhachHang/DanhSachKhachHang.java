@@ -114,7 +114,7 @@ final class DanhSachKhachHang {
 		}
 	}
 	public void xemds() {
-		System.out.println(" ------------ Danh sach khach hang ------------");
+		System.out.println("\t\t\t ------------ Danh sach khach hang ------------");
 		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
 		System.out.println();
 		int checkList = -1;
@@ -128,7 +128,7 @@ final class DanhSachKhachHang {
 		}
 	}
 	public void xemdsXoa() {
-		System.out.println(" ------------ Danh sach khach hang da xoa ------------");
+		System.out.println("\t\t\t ------------ Danh sach khach hang da xoa ------------");
 		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
 		System.out.println();
 		int checkList = -1;
@@ -189,7 +189,7 @@ final class DanhSachKhachHang {
 					break;
 			}
 		} else {
-			System.out.println("			........Danh sach trong........");
+			System.out.println("\t\t\t\t ........Danh sach trong........");
 		}
 		
 	}
