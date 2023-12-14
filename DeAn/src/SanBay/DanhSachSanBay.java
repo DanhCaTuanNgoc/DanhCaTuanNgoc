@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-final class DanhSachSanBay {
+public class DanhSachSanBay {
 	private SanBay dsSanBay[];
 	private int tongSan; 
 	private int soSBHH; // số sân bay hiện hữu.
