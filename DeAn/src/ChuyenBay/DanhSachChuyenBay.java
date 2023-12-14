@@ -239,34 +239,46 @@ public class DanhSachChuyenBay {
 			}
 		}
 	}
-//	public void timkiem(){
-//		System.out.println(" ------------ Tim kiem ------------");
-//		System.out.print(" + Ma chuyen bay ( x de bo qa): ");
-//		String tk1= sc.next();
-//		System.out.print(" + So dien thoi ( x de bo qa): ");
-//		String tk2= sc.next();
-//		System.out.print(" + Ho ( x de bo qa): ");
-//		String tk3= sc.next();
-//		System.out.print(" + Ten ( x de bo qa): ");
-//		sc.nextLine();
-//		String tk4= sc.nextLine(); int m = 0;
-//		System.out.println();
-//		System.out.printf("| %-15s | %-7s | %-15s | %-10s","Ma chuyen bay","Ho","Ten","SoDienThoai");
-//		System.out.println();
-//		for(int i=0;i<this.tongChuyenBay;i++) {
-//			if((dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
-//			&&(dsChuyenBay[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
-//			&&(dsChuyenBay[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
-//			&&(dsChuyenBay[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
-//			&& dsChuyenBay[i].getDeleted() != 1){
-//				dsChuyenBay[i].xuat(); m++;
-//				System.out.println("");
-//			}
-//		}
-//		if(m == 0) {
-//			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
-//		}
-//	}
+public void timkiem(){
+		System.out.println(" ------------ Tim kiem ------------");
+		System.out.print(" + Ma chuyen bay ( x de bo qua): ");
+		String tk1= sc.next();
+		System.out.print(" + Ma may bay ( x de bo qua): ");
+		String tk2= sc.next();
+		System.out.print(" + Ngay di ( x de bo qua): ");
+		String tk3= sc.next();
+		System.out.print(" + Ngay den ( x de bo qua): ");
+		String tk4= sc.nextLine();
+		System.out.print(" + San bay di ( x de bo qua): ");
+		String tk5= sc.nextLine();
+		System.out.print(" + San bay den ( x de bo qua): ");
+		String tk6= sc.nextLine();
+		System.out.print(" + Gio di ( x de bo qua): ");
+		String tk7= sc.nextLine();
+		System.out.print(" + Gio den ( x de bo qua): ");
+		String tk8= sc.nextLine();
+		int m = 0;
+		System.out.println();
+		System.out.printf("| %-15s | %-7s | %-15s | %-10s","Ma chuyen bay","Ho","Ten","SoDienThoai");//tuaasn lam
+		System.out.println();
+		for(int i=0;i<this.tongChuyenBay;i++) {
+			if((dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getMaMayBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getNgayDi().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getNgayDen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getSanBayDi().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getSanBayDen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getGioDi().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsChuyenBay[i].getGioDen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&& dsChuyenBay[i].getDeleted() != 1){
+				dsChuyenBay[i].xuat(); m++;
+				System.out.println("");
+			}
+		}
+		if(m == 0) {
+			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
+		}
+	}
 	public void sua() {
 		System.out.println(" ------------ Sua chuyen bay ------------");
 		System.out.print(" - Hay nhap ma chuyen bay can sua: ");
