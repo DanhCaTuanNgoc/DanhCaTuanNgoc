@@ -12,8 +12,8 @@ public class MainVe {
     public static void main(String [] args) {
         DanhSachVe dsVe = new DanhSachVe();
         dsVe.nhapDanhSach();
-        dsVe.DocFileJava("C:\\Users\\Admin\\Documents\\NetBeansProjects\\HelloAll\\src\\ve.txt");
-	dsVe.xuatDanhSach();
+        //dsVe.DocFileJava("Ve.txt");
+	dsVe.XuatDanhSach();
         dsVe.ThaoTac();
     }
 }

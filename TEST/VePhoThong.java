@@ -11,7 +11,7 @@ package TEST;
 import java.io.*;
 public class VePhoThong extends Ve {
     DanhSachVe dsv = new DanhSachVe();
-    DanhSachChuyenBay dsCB = new DanhSachChuyenBay();
+    //DanhSachChuyenBay dsCB = new DanhSachChuyenBay();
     private String hangVe;
     // CONSTRUCTOR DEFAULT / PROPERTY / COPY
     public VePhoThong() {
@@ -35,42 +35,42 @@ public class VePhoThong extends Ve {
     }
     // INPUT
     @Override
-    public void nhap() {
+    public void Nhap() {
         do {
-            System.out.println("Ma Ve, Toi Thieu 3 Ki Tu Va Toi Da 5 Ki Tu: ");
-            System.out.print("Nhap Ma Ve: ");
-            maVe = sc.nextLine();
-            if(maVe.length() < 3 || maVe.length() > 5) {
-                System.err.println("Nhap Thieu Hoac Thua Ki Tu, Hay Nhap Lai!!!");
-            }
-        }while(maVe.length() < 3 || maVe.length() > 5);
-        
-        do {
-          //  dsCB.DocFileJava("KhachHang.txt");// FILE
-            dsCB.hienThi();
-            System.out.print("Nhap ma chuyen bay: ");
-            maChuyenBay = sc.nextLine();
-            if(dsCB.truyenDuLieu_CB(maChuyenBay) == null)
-                System.out.println("Ma chuyen bay vua nhap khong co trong danh sach");
-        }while(dsCB.truyenDuLieu_CB(maChuyenBay) == null);
-        
-        System.out.println("Gia Tien Cua Ve(VND): ");
-        gia = sc.nextFloat();
-        sc.nextLine();
-        do {
-            System.out.println("Hang Ve Co 2 Loai: ");
-            System.out.println("1.Neu La Hang Ve Tieu Chuan Thi Nhap(a|A): ");
-            System.out.println("2.Neu La Hang Ve Pho Thong Tiet Kiem Thi Nhap(b|B): ");
-            System.out.print("Loai Hang Ve: ");
-            hangVe = sc.nextLine();
-            if((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe))) {
-                System.err.println("Nhap Sai Ki Tu!!!");
-            }
-        }while((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe)));
+			System.out.println("Khi nhap ma ve, toi thieu 3 ki tu va toi da 5 ki tu:");
+			System.out.print("MMoi nhap ma Ve: ");
+			maVe = sc.nextLine();
+			if(maVe.length() < 3 || maVe.length() > 5) 
+				System.err.println("Ban nhap thua haoc thieu ki tu moi nhap lai!!!");
+		}while(maVe.length() < 3 || maVe.length() > 5);
+		
+		
+		// KHOA NGOAI
+//		do {
+//			dsCB.DocFileJava("ChuyenBay.txt");
+//			dsCB.XuatDanhSach();
+//			System.out.print("Nhap ma chuyen bay: ");
+//			dsCB = sc.nextLine();
+//			if(dsCB.TruyenDuLieu_CB(maChuyenBay) == null)
+//				System.err.println("\nMa chuyen bay khong hop le hoac khong cho trong danh sach!!!");
+//		}while(dsCB.TruyenDuLieu_CB(maChuyenBay) == null);
+		do {
+                System.out.println("Hang Ve Co 2 Loai: ");
+                System.out.println("1.Neu La Hang Ve Tieu Chuan Thi Nhap(a|A): ");
+                System.out.println("2.Neu La Hang Ve Pho Thong Tiet Kiem Thi Nhap(b|B): ");
+                System.out.print("Loai Hang Ve: ");
+                hangVe = sc.nextLine();
+                if((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe))) {
+                    System.err.println("Nhap Sai Ki Tu!!!");
+                }
+                }while((!"a".equals(hangVe) && !"A".equals(hangVe) && !"b".equals(hangVe) && !"B".equals(hangVe)));
+		
+		System.out.print("Gia cua moi ve(VND): ");
+		gia = sc.nextFloat();
     }
     // OUTPUT
     @Override
-    public void xuat() {
+    public void Xuat() {
         System.out.format("| %-8s | %-8s | %-8.2f | %-9s\n", maVe, maChuyenBay, gia, hangVe);
     }
     // FILE
