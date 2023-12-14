@@ -77,6 +77,6 @@ public class CTHoaDon {
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-10s | %-15s |",maHoaDon, maVe, soLuong, giaTien);
+		System.out.printf("| %-15s | %-15s | %-10s | %-15s ",maHoaDon, maVe, soLuong, giaTien);
 	}
 }
