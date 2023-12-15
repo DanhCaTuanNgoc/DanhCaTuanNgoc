@@ -257,4 +257,16 @@ public class DanhSachKhachHang {
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so khach hang hien co: " + this.soKHHH);
 	}
+	
+	// Truy xuat du lieu
+	public void truyXuatKH(String maKh) {
+		System.out.printf("\n| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
+		System.out.println("");
+		for(int i=0;i<this.tongKhachHang;i++) {
+			if(dsKhachHang[i] != null && dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(maKh)) {
+				dsKhachHang[i].xuat();
+				break;
+			}
+		}
+	}
 }

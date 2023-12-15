@@ -34,16 +34,16 @@ public class QuanLyDSKH {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   =============================================");
-			System.out.println("   !            ----- Khach hang -----         !");
-			System.out.println("   !         1. Them Khach hang.               !");
-			System.out.println("   !         2. Danh sach Khach hang.          !");
-			System.out.println("   !         3. Tim kiem Khach hang.           !");
-			System.out.println("   !         4. Sua Khach hang.                !");
-			System.out.println("   !         5. Xoa Khach hang.                !");
-			System.out.println("   !         6. Thong ke.                      !");
-			System.out.println("   !         0. Thoat.                         !");
-			System.out.println("   =============================================");
+			System.out.println("  	=============================================");
+			System.out.println("   	!            ----- Khach hang -----         !");
+			System.out.println("   	!         1. Them Khach hang.               !");
+			System.out.println("   	!         2. Danh sach Khach hang.          !");
+			System.out.println("   	!         3. Tim kiem Khach hang.           !");
+			System.out.println("   	!         4. Sua Khach hang.                !");
+			System.out.println("   	!         5. Xoa Khach hang.                !");
+			System.out.println("   	!         6. Thong ke.                      !");
+			System.out.println("   	!         0. Thoat.                         !");
+			System.out.println("   	=============================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");

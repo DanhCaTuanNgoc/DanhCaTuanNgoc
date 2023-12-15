@@ -296,24 +296,27 @@ public class DanhSachChuyenBay {
 	
 	//
 	public void truyxuatSanbay(String sanbaydi, String sanbayden) {
-		System.out.printf("| %-10s | %-30s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.printf("\n| %-10s | %-30s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		sb.truyXuat(sanbayden);
 		System.out.println();
 		sb.truyXuat(sanbaydi);
 	}
-	public void truyxuat() {
+	public void truyXuat() {
 		sb.docfile(); mb.docfile();
 		System.out.println(" ------------ Truy xuat san bay va may bay ------------");
-		System.out.print(" - Nhap ma chuyen bay can truy xuat: ");
+		System.out.print(" - Nhap ma chuyen bay can truy xuat | Thoat(0): ");
 		String tx = sc.next();
-		System.out.println();
-		for(int i=0;i<this.tongChuyenBay;i++) {
-			if(dsChuyenBay[i] != null && dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tx)) {
-				truyxuatSanbay(dsChuyenBay[i].getMaSanBayDi(), dsChuyenBay[i].getMaSanBayDen());
-				System.out.println("");
-				mb.truyXuat(dsChuyenBay[i].getMaMayBay());
-				break;
+		if(tx.equalsIgnoreCase("0")) {
+			; 
+		} else {
+			for(int i=0;i<this.tongChuyenBay;i++) {
+				if(dsChuyenBay[i] != null && dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tx)) {
+					truyxuatSanbay(dsChuyenBay[i].getMaSanBayDi(), dsChuyenBay[i].getMaSanBayDen());
+					System.out.println("");
+					mb.truyXuat(dsChuyenBay[i].getMaMayBay());
+					break;
+				}
 			}
 		}
 	}

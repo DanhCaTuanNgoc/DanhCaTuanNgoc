@@ -34,17 +34,17 @@ public class QuanLyDSCB {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   =============================================");
-			System.out.println("   !             ----- Chuyen Bay -----        !");
-			System.out.println("   !          1. Them chuyen bay.              !");
-			System.out.println("   !          2. Danh sach chuyen bay.         !");
-			System.out.println("   !          3. Tim kiem chuyen bay.          !");
-			System.out.println("   !          4. Sua chuyen bay.               !");
-			System.out.println("   !          5. Xoa chuyen bay.               !");
-			System.out.println("   !          6. Truy xuat san bay va may bay. !");
-			System.out.println("   !          7. Thong ke.                     !");
-			System.out.println("   !          0. Thoat.                        !");
-			System.out.println("   =============================================");
+			System.out.println("	===============================================");
+			System.out.println("	!             ----- Chuyen Bay -----          !");
+			System.out.println(" 	!          1. Them chuyen bay.                !");
+			System.out.println("  	!          2. Danh sach chuyen bay.           !");
+			System.out.println("  	!          3. Tim kiem chuyen bay.            !");
+			System.out.println("  	!          4. Sua chuyen bay.                 !");
+			System.out.println("  	!          5. Xoa chuyen bay.                 !");
+			System.out.println("  	!          6. Truy xuat san bay va may bay.   !");
+			System.out.println("   	!          7. Thong ke.                       !");
+			System.out.println("  	!          0. Thoat.                          !");
+			System.out.println("  	===============================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -97,7 +97,7 @@ public class QuanLyDSCB {
 					
 				case 6:
 					clearScreen(5);
-					ds.truyxuat();
+					ds.truyXuat();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					System.out.println("");
 					sc.nextLine();

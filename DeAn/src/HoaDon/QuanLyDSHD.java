@@ -34,16 +34,18 @@ public class QuanLyDSHD {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   =========================================");
-			System.out.println("   !           ----- Hoa Don -----         !");
-			System.out.println("   !        1. Them hoa don.               !");
-			System.out.println("   !        2. Danh sach hoa don.          !");
-			System.out.println("   !        3. Tim kiem hoa don.           !");
-			System.out.println("   !        4. Sua hoa don.                !");
-			System.out.println("   !        5. Xoa hoa don.                !");
-			System.out.println("   !        6. Thong ke.                   !");
-			System.out.println("   !        0. Thoat.                      !");
-			System.out.println("   =========================================");
+			System.out.println("  	=========================================");
+			System.out.println(" 	!           ----- Hoa Don -----         !");
+			System.out.println("  	!        1. Them hoa don.               !");
+			System.out.println("  	!        2. Danh sach hoa don.          !");
+			System.out.println("  	!        3. Tim kiem hoa don.           !");
+			System.out.println("  	!        4. Sua hoa don.                !");
+			System.out.println("   	!        5. Xoa hoa don.                !");
+			System.out.println("   	!        6. Truy xuat nhan vien.        !");
+			System.out.println("   	!        7. Truy xuat khach hang.       !");
+			System.out.println("   	!        8. Thong ke.                   !");
+			System.out.println("   	!        0. Thoat.                      !");
+			System.out.println("   	=========================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -87,7 +89,17 @@ public class QuanLyDSHD {
 					break;
 				case 6:
 					clearScreen(5);
-					ds.thongke();
+					ds.truyXuatNV();
+					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					System.out.println("");
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
+					clearScreen(5);
+					break;
+				case 7:
+					clearScreen(5);
+					ds.truyXuatKH();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					System.out.println("");
 					sc.nextLine();

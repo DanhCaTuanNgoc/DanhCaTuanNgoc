@@ -10,11 +10,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 import NhanVien.DanhSachNhanVien;
+import KhachHang.DanhSachKhachHang;
 
 final class DanhSachHoaDon {
 	private HoaDon dsHoaDon[];
 	private int tongHoaDon; 
 	DanhSachNhanVien nv = new DanhSachNhanVien(100);
+	DanhSachKhachHang kh = new DanhSachKhachHang(100);
 	private int soHDHH; // số hóa đơn hiện hữu.
 	File d = new File("src/InputOutput/DanhSachHoaDon.txt");
 	
@@ -255,24 +257,41 @@ final class DanhSachHoaDon {
 	}
 	
 	
-	//
+	// Truy xuat du lieu
+	
 	public void truyXuatNV() {
-		System.out.println(" ------------ Truy xuat ------------");
+		System.out.println(" ------------ Truy xuat nhan vien ------------");
 		System.out.print(" - Nhap ma hoa don can truy xuat nhan vien | Thoat(0): ");
 		String maHd = sc.next(); 
 		if(maHd.equalsIgnoreCase("0")) {
 			;
 		} else {
 			nv.docfile();
-			System.out.printf("\n| %-15s | %-15s | %-7s | %-15s | %-10s","Ma hoa don","Ma nhan vien","Ho","Ten","SoDienThoai");
+			System.out.printf("\n| %-15s | %-7s | %-15s | %-10s","Ma nhan vien","Ho","Ten","SoDienThoai");
 			System.out.println();
 			for(int i=0;i<this.tongHoaDon;i++) {
 				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
-					System.out.printf("| %-15s ", dsHoaDon[i].getMaHoaDon());
-					nv.truyXuatNV1(dsHoaDon[i].getMaNhanVien());
-					System.out.println("");
+					nv.truyXuatNV(dsHoaDon[i].getMaNhanVien());
 				}
 			}
 		}
+		System.out.println("");
+	}
+	
+	public void truyXuatKH() {
+		System.out.println(" ------------ Truy xuat khach hang ------------");
+		System.out.print(" - Nhap ma hoa don can truy xuat khach hang | Thoat(0): ");
+		String maHd = sc.next();
+		if(maHd.equals("0")) {
+			;
+		} else {
+			kh.docfile();
+			for(int i=0;i<this.tongHoaDon;i++) {
+				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
+					kh.truyXuatKH(dsHoaDon[i].getMaKhachHang());
+				}
+			}
+		}
+		System.out.println("");
 	}
 }

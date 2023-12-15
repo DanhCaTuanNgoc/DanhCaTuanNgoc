@@ -34,16 +34,16 @@ public class QuanLyDSCTHD {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   =============================================");
-			System.out.println("   !           ----- Chi tiet hoa don -----    !");
-			System.out.println("   !        1. Them CT hoa don.                !");
-			System.out.println("   !        2. Danh sach CT hoa don.           !");
-			System.out.println("   !        3. Tim kiem CT hoa don.            !");
-			System.out.println("   !        4. Sua CT hoa don.                 !");
-			System.out.println("   !        5. Xoa CT hoa don.                 !");
-			System.out.println("   !        6. Thong ke.                       !");
-			System.out.println("   !        0. Thoat.                          !");
-			System.out.println("   =============================================");
+			System.out.println(" 	=============================================");
+			System.out.println(" 	!           ----- Chi tiet hoa don -----    !");
+			System.out.println(" 	!        1. Them CT hoa don.                !");
+			System.out.println(" 	!        2. Danh sach CT hoa don.           !");
+			System.out.println(" 	!        3. Tim kiem CT hoa don.            !");
+			System.out.println(" 	!        4. Sua CT hoa don.                 !");
+			System.out.println("	!        5. Xoa CT hoa don.                 !");
+			System.out.println("	!        6. Thong ke.                       !");
+			System.out.println("	!        0. Thoat.                          !");
+			System.out.println("   	=============================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
