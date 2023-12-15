@@ -38,11 +38,10 @@ public class QuanLyDSKH {
 			System.out.println("   !            ----- Khach hang -----         !");
 			System.out.println("   !         1. Them Khach hang.               !");
 			System.out.println("   !         2. Danh sach Khach hang.          !");
-			System.out.println("   !         3. Danh sach Khach hang da xoa.   !");
-			System.out.println("   !         4. Tim kiem Khach hang.           !");
-			System.out.println("   !         5. Sua Khach hang.                !");
-			System.out.println("   !         6. Xoa Khach hang.                !");
-			System.out.println("   !         7. Thong ke.                      !");
+			System.out.println("   !         3. Tim kiem Khach hang.           !");
+			System.out.println("   !         4. Sua Khach hang.                !");
+			System.out.println("   !         5. Xoa Khach hang.                !");
+			System.out.println("   !         6. Thong ke.                      !");
 			System.out.println("   !         0. Thoat.                         !");
 			System.out.println("   =============================================");
 			System.out.println("");
@@ -67,11 +66,6 @@ public class QuanLyDSKH {
 					break;
 				case 3:
 					clearScreen(5);
-					ds.xemdsXoa();
-					clearScreen(5);
-					break;
-				case 4:
-					clearScreen(5);
 					ds.timkiem();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					System.out.println("");
@@ -80,17 +74,17 @@ public class QuanLyDSKH {
 					sc.nextLine();
 					clearScreen(5);
 					break;
-				case 5:
+				case 4:
 					clearScreen(5);
 					ds.sua();
 					clearScreen(5);
 					break;
-				case 6:
+				case 5:
 					clearScreen(5);
 					ds.xoa();
 					clearScreen(5);
 					break;
-				case 7:
+				case 6:
 					clearScreen(5);
 					ds.thongke();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.

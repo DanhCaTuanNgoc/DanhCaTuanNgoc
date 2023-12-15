@@ -127,72 +127,6 @@ final class DanhSachKhachHang {
 			System.out.println("\n			........Danh sach trong........");
 		}
 	}
-	public void xemdsXoa() {
-		System.out.println("\t\t\t ------------ Danh sach khach hang da xoa ------------");
-		System.out.printf("| %-15s | %-7s | %-15s | %-15s | %-20s | %-10s","Ma khach hang","Ho","Ten","CCCD", "Dia chi", "So dien thoai");
-		System.out.println();
-		int checkList = -1;
-		for(KhachHang nv : dsKhachHang) {
-			if(nv != null && nv.getDeleted() == 1) {
-				nv.xuat(); System.out.println(""); checkList++;
-			}
-		}
-		System.out.println("");
-		if(checkList != -1) {
-			System.out.print(" Xoa vinh vien(1) | Khoi phuc(2) | Thoat(0): ");
-			int n = sc.nextInt();
-			System.out.println("");
-			switch (n) {
-				case 1:
-					System.out.println(" ------------ Xoa vinh vien ------------");
-					sc.nextLine();
-					System.out.print(" - Nhap ma khach hang can xoa: ");
-					String maXoa = sc.nextLine();
-					int delete_point = -1;
-					for(int i = 0;i < this.tongKhachHang;i++) {
-						if(dsKhachHang[i] != null && dsKhachHang[i].getDeleted() == 1 && dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(maXoa)) {
-							delete_point = i;
-							break;
-						}
-					}
-					if(delete_point != -1) {
-						for(int i=delete_point;i<this.tongKhachHang - 1;i++) {
-							dsKhachHang[i] = dsKhachHang[i+1];
-						}
-						this.tongKhachHang--; this.soKHHH--;
-						dsKhachHang = Arrays.copyOf(dsKhachHang, this.tongKhachHang);
-						System.out.println("/n -------- Hoan tat thao tac --------");
-					} else { 
-						System.out.println("/n -------- Khong tim thay ma khach hang --------");
-					} 
-					break;
-				case 2:
-					System.out.println(" ------------ Khoi phuc ------------");
-					sc.nextLine();
-					System.out.print(" - Nhap ma khach hang can khoi phuc: ");
-					String maKP = sc.nextLine(); int m = 0;
-					for(KhachHang nv : dsKhachHang) {
-						if(nv != null && nv.getDeleted() == 1 && nv.getMaKhachHang().equalsIgnoreCase(maKP)) {
-							nv.setDeleted(0); m++; this.soKHHH++;
-							System.out.println("\n -------- Hoan tat thao tac --------");
-							break;
-						}
-					}
-					if(m == 0) {
-						System.out.println("\n -------- Khong tim thay ma khach hang --------");
-					}
-				case 0:
-					break;
-				default:
-					System.out.println(" Lua chon khong hop le, xin thu lai !!!");
-					xemdsXoa();
-					break;
-			}
-		} else {
-			System.out.println("\t\t\t\t ........Danh sach trong........");
-		}
-		
-	}
 	public void xoa() {
 		System.out.println(" ------------ Xoa khach hang ------------");
 		System.out.print(" - Hay nhap ma khach hang can xoa | Thoat (0): ");
@@ -202,27 +136,10 @@ final class DanhSachKhachHang {
 		} else {
 			for(int i=0;i<this.tongKhachHang;i++) {
 				if(dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(x) && dsKhachHang[i].getDeleted() != 1) {
-					m++; delete_point = i;
-					System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
-					int n = sc.nextInt();
-					switch(n) {
-						case 1:
-							dsKhachHang[i].setDeleted(1); this.soKHHH--;							System.out.println("\n -------- Hoan tat thao tac --------");
-							break;
-						case 2: 
-							if(delete_point != -1) {
-								for(int j=delete_point;j<this.tongKhachHang - 1;j++) {
-									dsKhachHang[j] = dsKhachHang[j+1]; 
-								}
-								this.tongKhachHang --; this.soKHHH--;
-								System.out.println("\n -------- Hoan tat thao tac --------");
-							}
-							break;
-						default :
-							System.out.println(" Lua chon khong hop le, xin thu lai!!!");
-							xoa();
-							break;
-					}
+					m++; 
+					dsKhachHang[i].setDeleted(1); this.soKHHH--;
+					System.out.println("");
+					System.out.println("\n -------- Hoan tat thao tac --------");
 					break;
 				} 
 			}

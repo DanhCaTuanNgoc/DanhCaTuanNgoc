@@ -71,6 +71,6 @@ public class MayBay {
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-10s",maMayBay, tenMayBay, soGhe);
+		System.out.printf("| %-10s | %-15s | %-10s",maMayBay, tenMayBay, soGhe);
 	}
 }

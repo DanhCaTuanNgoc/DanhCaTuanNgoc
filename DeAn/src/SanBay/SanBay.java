@@ -66,6 +66,6 @@ public class SanBay {
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-15s", maSanBay, tenSanBay, diaChiSanBay);
+		System.out.printf("| %-10s | %-30s | %-15s", maSanBay, tenSanBay, diaChiSanBay);
 	}
 }

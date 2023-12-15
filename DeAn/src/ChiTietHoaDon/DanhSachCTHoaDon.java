@@ -131,105 +131,19 @@ public class DanhSachCTHoaDon {
         	System.out.println("\n	........Danh sach trong........");
         }
 	}
-	public void xemdsXoa() {
-		System.out.println(" ------------ Danh sach chi tiet hoa don da xoa ------------");
-		System.out.printf("| %-15s | %-15s | %-10s | %-15s ","Ma hoa don","Ma ve","So luong","Gia tien");
-		System.out.println();
-		int checkList = -1;
-		for(CTHoaDon ct : dsCTHoaDon) {
-			if(ct != null && ct.getDeleted() == 1) {
-				ct.xuat(); System.out.println(""); checkList++;
-			}
-		}
-		System.out.println("");
-		if(checkList != -1) {
-			System.out.print(" Xoa vinh vien(1) | Khoi phuc(2) | Thoat(0): ");
-	        int n = sc.nextInt();
-	        System.out.println("");
-	        switch (n) {
-	        	case 1:
-	        		System.out.println(" ------------ Xoa vinh vien ------------");
-	        		sc.nextLine();
-	        		System.out.print(" - Nhap ma chi tiet hoa don can xoa: ");
-	        		String maXoa = sc.nextLine();
-	        		int delete_point = -1;
-	        		for(int i = 0;i < this.tongCTHoaDon;i++) {
-	        			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getDeleted() == 1 && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(maXoa)) {
-	        				delete_point = i;
-	        				break;
-	        			}
-	        		}
-	        		if(delete_point != -1) {
-	        			for(int i=delete_point;i<this.tongCTHoaDon - 1;i++) {
-	        				dsCTHoaDon[i] = dsCTHoaDon[i+1];
-	        			}
-	        			this.tongCTHoaDon--; 
-	        			dsCTHoaDon = Arrays.copyOf(dsCTHoaDon, this.tongCTHoaDon);
-	        			System.out.println("\n -------- Hoan tat thao tac --------");
-	        		} else { 
-	        			System.out.println("\n -------- Khong tim thay ma chi tiet hoa don --------");
-	        		} 
-	        		break;
-	        	case 2:
-	        		System.out.println(" ------------ Khoi phuc ------------");
-	        		sc.nextLine();
-	        		System.out.print(" - Nhap ma chi tiet hoa don can khoi phuc: ");
-	        		String maKP = sc.nextLine(); int m = 0;
-	        		for(CTHoaDon ct : dsCTHoaDon) {
-	        			if(ct != null && ct.getDeleted() == 1 && ct.getMaHoaDon().equalsIgnoreCase(maKP)) {
-	        				ct.setDeleted(0); m++; this.soCTHDHH++;
-	        				System.out.println("\n -------- Hoan tat thao tac --------");
-	        				break;
-	        			}
-	        		}
-	        		if(m == 0) {
-	        			System.out.println("\n -------- Khong tim thay ma chi tiet hoa don --------");
-	        		}
-	        	case 0:
-	        		break;
-	        	default:
-	        		System.out.println(" Lua chon khong hop le, xin thu lai !!!");
-	        		xemdsXoa();
-	        		break;
-	        }
-		} else {
-			System.out.println("\t\t ........Danh sach trong........");
-		}
-        
-	}
 	public void xoa() {
 		System.out.println(" ------------ Xoa chi tiet hoa don ------------");
 		System.out.print(" - Hay nhap ma chi tiet hoa don can xoa | Thoat(0): ");
-		String x = sc.next(); int m = 0; int delete_point = -1;
+		String x = sc.next(); int m = 0;
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
 			for(int i=0;i<this.tongCTHoaDon;i++) {
 				if(dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(x) && dsCTHoaDon[i].getDeleted() != 1) {
-					m++; delete_point = i;
-					System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
-					int n = sc.nextInt();
-					switch(n) {
-						case 1:
-							dsCTHoaDon[i].setDeleted(1); this.soCTHDHH--;
-							System.out.println("");
-							System.out.println(" -------- Hoan tat thao tac --------");
-							break;
-						case 2: 
-							if(delete_point != -1) {
-								for(int j=delete_point;j < this.tongCTHoaDon - 1;j++) {
-									dsCTHoaDon[j] = dsCTHoaDon[j+1]; 
-								}
-								this.tongCTHoaDon --;
-								dsCTHoaDon = Arrays.copyOf(dsCTHoaDon, this.tongCTHoaDon);
-			        			System.out.println("\n -------- Hoan tat thao tac --------");
-							}
-							break;
-						default :
-							System.out.println(" Lua chon khong hop le, xin thu lai!!!");
-							xoa();
-							break;
-					}
+					m++; 
+					dsCTHoaDon[i].setDeleted(1); this.soCTHDHH--;
+					System.out.println("");
+					System.out.println(" -------- Hoan tat thao tac --------");
 					break;
 				} 
 			}

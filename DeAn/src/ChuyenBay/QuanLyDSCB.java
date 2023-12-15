@@ -34,17 +34,17 @@ public class QuanLyDSCB {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   ============================================");
-			System.out.println("   !             ----- Chuyen Bay -----       !");
-			System.out.println("   !          1. Them chuyen bay.             !");
-			System.out.println("   !          2. Danh sach chuyen bay.        !");
-			System.out.println("   !          3. Danh sach chuyen bay da xoa. !");
-			System.out.println("   !          4. Tim kiem chuyen bay.         !");
-			System.out.println("   !          5. Sua chuyen bay.              !");
-			System.out.println("   !          6. Xoa chuyen bay.              !");
-			System.out.println("   !          7. Thong ke.                    !");
-			System.out.println("   !          0. Thoat.                       !");
-			System.out.println("   ============================================");
+			System.out.println("   =============================================");
+			System.out.println("   !             ----- Chuyen Bay -----        !");
+			System.out.println("   !          1. Them chuyen bay.              !");
+			System.out.println("   !          2. Danh sach chuyen bay.         !");
+			System.out.println("   !          3. Tim kiem chuyen bay.          !");
+			System.out.println("   !          4. Sua chuyen bay.               !");
+			System.out.println("   !          5. Xoa chuyen bay.               !");
+			System.out.println("   !          6. Truy xuat san bay va may bay. !");
+			System.out.println("   !          7. Thong ke.                     !");
+			System.out.println("   !          0. Thoat.                        !");
+			System.out.println("   =============================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -66,12 +66,7 @@ public class QuanLyDSCB {
 					sc.nextLine();
 					clearScreen(5);
 					break;
-				case 3:
-					clearScreen(5);
-					ds.xemdsXoa();
-					clearScreen(5);
-					break;
-				case 4: 
+				case 3: 
 					clearScreen(5);
 					System.out.println("Vinh lam le di !!!");
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV
@@ -81,19 +76,28 @@ public class QuanLyDSCB {
 					sc.nextLine();
 					clearScreen(5);
 					break;
-				case 5:
+				case 4:
 					clearScreen(5);
 					ds.sua();
 					clearScreen(5);
 					break;
-				case 6:
+				case 5:
 					clearScreen(5);
 					ds.xoa();
 					clearScreen(5);
 					break;
 				case 7:
-					clearScreen(5);
+					clearScreen(3);
 					ds.thongke();
+					System.out.println("");
+					sc.nextLine();
+					System.out.println(" Thoat (phim bat ky): ");
+					sc.nextLine();
+					clearScreen(3);
+					
+				case 6:
+					clearScreen(5);
+					ds.truyxuat();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
 					System.out.println("");
 					sc.nextLine();

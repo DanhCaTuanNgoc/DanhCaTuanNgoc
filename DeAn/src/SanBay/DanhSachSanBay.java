@@ -115,8 +115,8 @@ public class DanhSachSanBay {
 		}
 	}
 	public void xemds() {
-		System.out.println(" ------------ Danh sach san bay ------------");
-		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.println("\t ------------ Danh sach san bay ------------");
+		System.out.printf("| %-10s | %-30s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		int checkList = -1;
         for(SanBay nv : dsSanBay) {
@@ -128,72 +128,6 @@ public class DanhSachSanBay {
         	System.out.println("\n	........Danh sach trong........");
         }
 	}
-	public void xemdsXoa() {
-		System.out.println(" ------------ Danh sach san bay da xoa ------------");
-		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
-		System.out.println();
-		int checkList = -1;
-		for(SanBay nv : dsSanBay) {
-			if(nv != null && nv.getDeleted() == 1) {
-				nv.xuat(); System.out.println(""); checkList++;
-			}
-		}
-		System.out.println("");
-		if(checkList != -1) {
-			System.out.print(" Xoa vinh vien(1) | Khoi phuc(2) | Thoat(0): ");
-	        int n = sc.nextInt();
-	        System.out.println("");
-	        switch (n) {
-	        	case 1:
-	        		System.out.println(" ------------ Xoa vinh vien ------------");
-	        		sc.nextLine();
-	        		System.out.print(" - Nhap ma san bay can xoa: ");
-	        		String maXoa = sc.nextLine();
-	        		int delete_point = -1;
-	        		for(int i = 0;i < this.tongSan;i++) {
-	        			if(dsSanBay[i] != null && dsSanBay[i].getDeleted() == 1 && dsSanBay[i].getMaSanBay().equalsIgnoreCase(maXoa)) {
-	        				delete_point = i;
-	        				break;
-	        			}
-	        		}
-	        		if(delete_point != -1) {
-	        			for(int i=delete_point;i<this.tongSan - 1;i++) {
-	        				dsSanBay[i] = dsSanBay[i+1];
-	        			}
-	        			this.tongSan--; this.soSBHH--;
-	        			dsSanBay = Arrays.copyOf(dsSanBay, this.tongSan);
-	        			System.out.println("\n -------- Hoan tat thao tac --------");
-	        		} else { 
-	        			System.out.println("\n -------- Khong tim thay ma san bay --------");
-	        		} 
-	        		break;
-	        	case 2:
-	        		System.out.println(" ------------ Khoi phuc ------------");
-	        		sc.nextLine();
-	        		System.out.print(" - Nhap ma san bay can khoi phuc: ");
-	        		String maKP = sc.nextLine(); int m = 0;
-	        		for(SanBay nv : dsSanBay) {
-	        			if(nv != null && nv.getDeleted() == 1 && nv.getMaSanBay().equalsIgnoreCase(maKP)) {
-	        				nv.setDeleted(0); m++; this.soSBHH++;
-	        				System.out.println("\n -------- Hoan tat thao tac --------");
-	        				break;
-	        			}
-	        		}
-	        		if(m == 0) {
-	        			System.out.println("\n -------- Khong tim thay ma san bay --------");
-	        		}
-	        	case 0:
-	        		break;
-	        	default:
-	        		System.out.println(" Lua chon khong hop le, xin thu lai !!!");
-	        		xemdsXoa();
-	        		break;
-	        }
-		} else {
-			System.out.println("	........Danh sach trong........");
-		}
-        
-	}
 	public void xoa() {
 		System.out.println(" ------------ Xoa san bay ------------");
 		System.out.print(" - Hay nhap ma san bay can xoa | Thoat(0): ");
@@ -203,30 +137,10 @@ public class DanhSachSanBay {
 		} else {
 			for(int i=0;i<this.tongSan;i++) {
 				if(dsSanBay[i].getMaSanBay().equalsIgnoreCase(x) && dsSanBay[i].getDeleted() != 1) {
-					m++; delete_point = i;
-					System.out.print(" Cho vao danh sach xoa(1) | Xoa vinh vien(2): ");
-					int n = sc.nextInt();
-					switch(n) {
-						case 1:
-							dsSanBay[i].setDeleted(1); this.soSBHH--;
-							System.out.println("");
-							System.out.println(" -------- Hoan tat thao tac --------");
-							break;
-						case 2: 
-							if(delete_point != -1) {
-								for(int j=delete_point;j < this.tongSan - 1;j++) {
-									dsSanBay[j] = dsSanBay[j+1]; 
-								}
-								this.tongSan --; this.soSBHH--;
-								dsSanBay = Arrays.copyOf(dsSanBay, this.tongSan);
-			        			System.out.println("\n -------- Hoan tat thao tac --------");
-							}
-							break;
-						default :
-							System.out.println(" Lua chon khong hop le, xin thu lai!!!");
-							xoa();
-							break;
-					}
+					m++; 
+					dsSanBay[i].setDeleted(1); this.soSBHH--;
+					System.out.println("");
+					System.out.println(" -------- Hoan tat thao tac --------");
 					break;
 				} 
 			}
@@ -245,7 +159,7 @@ public class DanhSachSanBay {
 		System.out.print(" + Dia chi san bay ( x de bo qa): ");
 		String tk3= sc.nextLine(); int m = 0;
 		System.out.println();
-		System.out.printf("| %-15s | %-15s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
+		System.out.printf("| %-10s | %-30s | %-15s","Ma san bay","Ten san bay","Dia chi san bay");
 		System.out.println();
 		for(int i=0;i<this.tongSan;i++) {
 			if((dsSanBay[i].getMaSanBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
@@ -314,4 +228,25 @@ public class DanhSachSanBay {
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so san bay: " + this.soSBHH);
 	}
+	
+	// Kiem tra du lieu
+	public boolean Check_Available(String masanbay) {
+		for(int i=0;i<this.tongSan;i++) {
+			if(dsSanBay[i] != null && dsSanBay[i].getMaSanBay().equalsIgnoreCase(masanbay)) {
+				 return true;
+			}
+		}
+		return false;
+	}
+	
+	// truy xuat du lieu
+	public void truyXuat(String masanabay) {
+		for(int i=0;i<this.tongSan;i++) {
+			if(dsSanBay[i] != null && dsSanBay[i].getMaSanBay().equalsIgnoreCase(masanabay)) {
+				dsSanBay[i].xuat();
+				break;
+			}
+		}
+	}
+	
 }

@@ -9,7 +9,6 @@ import SanBay.DanhSachSanBay;
 public class ChuyenBay {
 	private String maChuyenBay;
 	private String maMayBay;
-	private String maSanBay;
 	private String ngayDi;
 	private String ngayDen;
 	private String maSanBayDi;
@@ -144,7 +143,7 @@ public class ChuyenBay {
 		while(true) { // rang buoc du lieu ma may bay
 			try {
 				System.out.print(" - Nhap ma may bay: ");
-				this.maMayBay = sc.nextLine();
+				this.maMayBay = sc.next();
 				if(mb.Check_Available(this.maMayBay)) {
 					break;
 				} else {
@@ -157,10 +156,8 @@ public class ChuyenBay {
 		while(true) { // rang buoc du lieu ma san bay
 			try {
 				System.out.print(" - Nhap ma san bay di: ");
-				this.maSanBayDi = sc.nextLine();
-				System.out.print(" - Nhap ma san bay den: ");
-				this.maSanBayDen = sc.nextLine();
-				if(sb.Check_Available(this.maSanBayDi) && sb.Check_Available(this.maSanBayDen)) {
+				this.maSanBayDi = sc.next();
+				if(sb.Check_Available(this.maSanBayDi)) {
 					break;
 				} else {
 					System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
@@ -169,6 +166,20 @@ public class ChuyenBay {
 				System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();
 			}
 		}
+		while(true) { // rang buoc du lieu ma san bay
+			try {
+				System.out.print(" - Nhap ma san bay den: ");
+				this.maSanBayDen = sc.next();
+				if(sb.Check_Available(this.maSanBayDen)) {
+					break;
+				} else {
+					System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
+				}
+			} catch(InputMismatchException in) {
+				System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();
+			}
+		}
+		sc.nextLine();
 		System.out.print(" - Nhap ngay di: ");
 		this.ngayDi = sc.nextLine();
 		System.out.print(" - Nhap ngay den: ");
