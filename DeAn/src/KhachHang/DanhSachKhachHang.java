@@ -9,7 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-final class DanhSachKhachHang {
+public class DanhSachKhachHang {
 	private KhachHang dsKhachHang[];
 	private int tongKhachHang;
 	private int soKHHH; // số khách hàng hiện hữu, tức kh bị xóa mềm.
