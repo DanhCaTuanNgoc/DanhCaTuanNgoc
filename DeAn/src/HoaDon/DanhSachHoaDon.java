@@ -78,7 +78,7 @@ public class DanhSachHoaDon implements Pthuc {
 		}
 	}	
 	public void docfile() {
-		tongHoaDon = 0;
+		tongHoaDon=0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -261,7 +261,6 @@ public class DanhSachHoaDon implements Pthuc {
 	}
 	
 	public void thongke() {
-		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so hoa don: " + this.soHDHH);
 	}
 	
@@ -331,5 +330,13 @@ public class DanhSachHoaDon implements Pthuc {
 			}
 		}
 		return false;
+	}
+	public int tongtien(){
+		docfile();
+		int tong=0;
+		for (int i=0;i<tongHoaDon;i++) {
+			tong+=dsHoaDon[i].getTongTien();
+		}
+		return tong;
 	}
 }

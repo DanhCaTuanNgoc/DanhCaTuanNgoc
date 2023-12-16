@@ -60,7 +60,7 @@ public class DanhSachVe {
 
 	//doc file
     public void docfile(){
-    	tongVe = 0;
+		tongVe=0;
         try{
         if (!d.exists()){
             d.createNewFile();
@@ -71,10 +71,10 @@ public class DanhSachVe {
             while (lines!=null) {
                 String []line=lines.split("/");
                 if(line[0].equals("ve pho thong")){
-                    dsVe[SoVeHH]=new VePhoThong(line[1],line[2],Integer.parseInt(line[3]),line[4],Integer.parseInt(line[5]));
+                    dsVe[tongVe]=new VePhoThong(line[1],line[2],Integer.parseInt(line[3]),line[4],Integer.parseInt(line[5]));
 					if(line[5].equals("0")){SoVeHH++;}
                 }else if(line[0].equals("ve thuong gia")){
-                    dsVe[SoVeHH]=new VeThuongGia(line[1],line[2],Integer.parseInt(line[3]),line[4],line[5],Integer.parseInt(line[6]));
+                    dsVe[tongVe]=new VeThuongGia(line[1],line[2],Integer.parseInt(line[3]),line[4],line[5],Integer.parseInt(line[6]));
 					if(line[6].equals("0")){SoVeHH++;}
 				}
                 tongVe++;
@@ -100,11 +100,11 @@ public class DanhSachVe {
                 if(ve1!=null){
                 if(ve1 instanceof VePhoThong){
                     VePhoThong vpt=(VePhoThong) ve1;
-                    bw.write("ve pho thong/"+vpt.getMaVe()+"/"+vpt.getMaVe()+"/"+vpt.getGia()+"/"+vpt.getHangVe()+"/"+vpt.getDeleted()+"\n");
+                    bw.write("ve pho thong/"+vpt.getMaVe()+"/"+vpt.getMaChuyenBay()+"/"+vpt.getGia()+"/"+vpt.getHangVe()+"/"+vpt.getDeleted()+"\n");
                 }
                 else {
                     VeThuongGia vtg=(VeThuongGia) ve1;
-                    bw.write("ve thuong gia/"+vtg.getMaVe()+"/"+vtg.getMaVe()+"/"+vtg.getGia()+"/"+vtg.getMaPhongCho()+"/"+vtg.getDichVuVIP()+"/"+vtg.getDeleted()+"\n");
+                    bw.write("ve thuong gia/"+vtg.getMaVe()+"/"+vtg.getMaChuyenBay()+"/"+vtg.getGia()+"/"+vtg.getMaPhongCho()+"/"+vtg.getDichVuVIP()+"/"+vtg.getDeleted()+"\n");
                 }
             }}
             bw.close();
@@ -264,8 +264,8 @@ public class DanhSachVe {
 		}
 	}
 	public void sua() {
-		System.out.println(" ------------ Sua chuyen bay ------------");
-		System.out.print(" - Hay nhap ma chuyen bay can sua: ");
+		System.out.println(" ------------ Sua ve ------------");
+		System.out.print(" - Hay nhap ma ve can sua: ");
 		String x = sc.next(); int m = 1;
 		System.out.println("");
 		// Nhap ma chuyen bay sau do tuy chon cach sua.
@@ -274,9 +274,9 @@ public class DanhSachVe {
 				System.out.println(" (1) Ma ve");
 				System.out.println(" (2) Ma chuyen bay");
 				System.out.println(" (3) Gia tien");
-				System.out.println(" (8) Doi loai ve");
+				System.out.println(" (4) Doi loai ve");
 				System.out.println(" (0) Thoat");
-				System.out.println(" - Lua chon gia tri can sua: ");
+				System.out.print(" - Lua chon gia tri can sua: ");
 				int n = sc.nextInt(); m++;
 				switch (n) {
 					case 1:
@@ -320,8 +320,8 @@ public class DanhSachVe {
 								String dcv=sc.next();
 								dsVe[i]=new VeThuongGia(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),mpc,dcv,0);
 								return;
-							}else {
-								System.err.println("Chon sai! Vui long chon lai!");
+							} else {
+								System.err.println(" Chon sai! Vui long chon lai!");
 							}							
 						}
 					case 0:
@@ -344,9 +344,10 @@ public class DanhSachVe {
 		}
 	}
 	public void thongke(){
-
+		System.out.println(" - So ve hien co: "+SoVeHH);
 	}
 	public boolean Check_Available(String mave) {
+		docfile();
 		for(int i=0;i<this.tongVe;i++) {
 			if(dsVe[i] != null && dsVe[i].getMaVe().equalsIgnoreCase(mave)) {
 				 return true;
@@ -362,5 +363,25 @@ public class DanhSachVe {
 			}
 		}
 		return dsVe[i].getGia()-(km*dsVe[i].getGia())/100;
+	}
+	public int tongtien(){
+		docfile();
+		int tong=0;
+		for(int i=0;i<tongVe;i++){
+			if (dsVe[i].getDeleted()==0) {
+				if(dsVe[i] instanceof VePhoThong){
+					VePhoThong vpt=(VePhoThong)dsVe[i];
+					if(vpt.getHangVe().equalsIgnoreCase("economy")){tong=tong+500000;}
+					else if(vpt.getHangVe().equalsIgnoreCase("Premium Economy")){tong=tong+1000000;}
+					else if(vpt.getHangVe().equalsIgnoreCase("Business")){tong=tong+1500000;}
+				}else {
+					VeThuongGia vtg=(VeThuongGia)dsVe[i];
+					if(vtg.getDichVuVIP().equalsIgnoreCase("A")){tong=tong+2000000;}
+					else if(vtg.getDichVuVIP().equalsIgnoreCase("B")){tong=tong+2500000;}
+					else if(vtg.getDichVuVIP().equalsIgnoreCase("C")){tong=tong+3000000;}
+				}			
+			}
+		}
+		return tong;
 	}
 }

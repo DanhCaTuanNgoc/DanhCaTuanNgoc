@@ -227,7 +227,6 @@ public class DanhSachSanBay implements Pthuc {
 		}
 	}
 	public void thongke() {
-		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so san bay: " + this.soSBHH);
 	}
 	

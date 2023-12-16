@@ -31,10 +31,10 @@ public class VePhoThong extends Ve {
     @Override
     public void nhap() {
         ve.docfile();
-		System.out.print(" - Moi nhap ma ve: ");
+		System.out.print(" - Nhap ma ve: ");
 		this.maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){
-            System.err.print(" Ma ve da ton tai ! Vui long nhap lai");
+            System.err.println("\n Ma ve da ton tai ! Vui long nhap lai");
             System.out.print(" - Nhap ma ve: ");
             this.maVe=sc.nextLine();
         }

@@ -3,6 +3,8 @@ package ChiTietHoaDon;
 import java.util.Scanner;
 import HoaDon.DanhSachHoaDon;
 import Ve.DanhSachVe;
+
+
 public class CTHoaDon {
 	private String maHoaDon;
 	private String maVe;
