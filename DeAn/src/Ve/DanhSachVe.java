@@ -107,7 +107,6 @@ public class DanhSachVe {
                 }
             }}
             bw.close();
-            System.out.println("hoan tat!");
         }catch(IOException ioe){System.out.println("error!");}
     }
 	
@@ -140,8 +139,8 @@ public class DanhSachVe {
 		}
 	}
     public void xemdsPT(){
-        System.out.println(" ------------ Danh sach ve pho thong ------------");
-		System.out.printf("%-15s %-15s %-10s %-10s","Ma ve","Ma chuyen bay","Gia","Hang ve");
+        System.out.println("\t ------------ Danh sach ve pho thong ------------");
+		System.out.printf("| %-10s | %-15s | %-15s | %-10s","Ma ve","Ma chuyen bay","Gia","Hang ve");
 		System.out.println();
 		int checkList = -1;
         for(Ve ve : dsVe) {
@@ -155,8 +154,8 @@ public class DanhSachVe {
         }
     }
     public void xemdsTG(){
-        System.out.println(" ------------ Danh sach ve thuong gia------------");
-		System.out.printf("%-15s %-15s %-10s %-15s %-15s","Ma ve","Ma chuyen bay","Gia","Ma phong cho","Dich vi vip");
+        System.out.println("\t\t ------------ Danh sach ve thuong gia------------");
+		System.out.printf("| %-10s | %-15s | %-15s | %-14s | %-10s ","Ma ve","Ma chuyen bay","Gia","Ma phong cho","Dich vi vip");
 		System.out.println();
 		int checkList = -1;
         for(Ve ve : dsVe) {
@@ -170,13 +169,13 @@ public class DanhSachVe {
         }
     }
     public void xemdsve(){
-        System.out.println(" ------------ Danh sach ve ------------");
-		System.out.printf("| %-15s | %-15s | %-15s | %-15s","Ma ve","Ma chuyen bay","Gia","Loai ve");
+        System.out.println("\t ------------ Danh sach ve ------------");
+		System.out.printf("| %-10s | %-15s | %-15s | %-10s","Ma ve","Ma chuyen bay","Gia","Loai ve");
 		System.out.println();
 		int checkList = -1;
         for(Ve ve : dsVe) {
         	if (ve != null && ve.getDeleted() != 1) {
-            	System.out.printf("| %-15s | %-15s | %-15s",ve.getMaVe(),ve.getMaChuyenBay(),ve.getGia());
+            	System.out.printf("| %-10s | %-15s | %-15s ",ve.getMaVe(),ve.getMaChuyenBay(),ve.getGia());
 				ve.loaive(); System.out.println(""); checkList++;
         	}
         }
@@ -185,7 +184,7 @@ public class DanhSachVe {
         }
     }
     public void xemds(){
-        System.out.println(" Xem tat ca(1) | Xem pho thong(2) | Xem thuong gia(3) ");
+        System.out.print(" Xem tat ca(1) | Xem pho thong(2) | Xem thuong gia(3): ");
         int n=sc.nextInt();
         System.out.println("");
         switch (n) {
@@ -225,11 +224,12 @@ public class DanhSachVe {
 			for(int i=0;i<this.tongVe;i++) {
 				if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
 					m++; dsVe[i].setDeleted(1);
-				}
 					System.out.println("\n -------- Hoan tat thao tac --------");
+					break;
 				}
+			}
 				if(m == 0) {
-				System.out.println("\n -------- Khong tim thay ma chuyen bay --------");
+				System.out.println("\n -------- Khong tim thay ma ve --------");
 				}
 			}
 	}
@@ -244,7 +244,7 @@ public class DanhSachVe {
 		System.out.print(" + Den: ");
 		int tk4= sc.nextInt();
  		System.out.println();
-		System.out.printf("| %-15s | %-15s | %-15s | %-15s","Ma ve","Ma chuyen bay","Gia","Loai ve");
+		System.out.printf("| %-10s | %-15s | %-15s | %-10s ","Ma ve","Ma chuyen bay","Gia","Loai ve");
 		System.out.println();
 		int m=0;
 		for(int i=0;i<this.tongVe;i++) {
@@ -253,7 +253,8 @@ public class DanhSachVe {
 			&&(dsVe[i].getGia()>=tk3)
 			&&(dsVe[i].getGia()<=tk4)
 			&& dsVe[i].getDeleted() != 1){
-				System.out.printf("| %-15s | %-15s | %-15s",dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia());;dsVe[i].loaive(); m++;
+				System.out.printf("| %-10s | %-15s | %-15s ",dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia());
+				dsVe[i].loaive(); m++;
 				System.out.println("");
 			}
 		}

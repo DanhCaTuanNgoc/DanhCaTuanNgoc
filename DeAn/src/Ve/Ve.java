@@ -66,6 +66,6 @@ public abstract class Ve{
 	//CAC HAM KHAC
 	public void nhap(){}
 	public void xuat(){
-        System.out.format("| %-8s | %-8s | %-8.2s", maVe, maChuyenBay, gia);
+        System.out.format("| %-10s | %-15s | %-15s", maVe, maChuyenBay, gia);
     }
 }

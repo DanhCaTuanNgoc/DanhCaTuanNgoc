@@ -27,17 +27,16 @@ public class QuanLyDSV {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   ========================================");
-			System.out.println("   !           ----- Ve -----        !");
-			System.out.println("   !        1. Them ve.              !");
-			System.out.println("   !        2. Danh sach ve.         !");
-			System.out.println("   !        3. Danh sach ve da xoa.  !");
-			System.out.println("   !        4. Tim kiem ve.          !");
-			System.out.println("   !        5. Sua ve.               !");
-			System.out.println("   !        6. Xoa ve.               !");
-			System.out.println("   !        7. Thong ke.             !");
-			System.out.println("   !        0. Thoat.                !");
-			System.out.println("   ========================================");
+			System.out.println("  	====================================");
+			System.out.println("  	!           ----- Ve -----         !");
+			System.out.println("  	!        1. Them ve.               !");
+			System.out.println("  	!        2. Danh sach ve.          !");
+			System.out.println("  	!        3. Tim kiem ve.           !");
+			System.out.println("  	!        4. Sua ve.                !");
+			System.out.println(" 	!        5. Xoa ve.                !");
+			System.out.println("  	!        6. Thong ke.              !");
+			System.out.println("  	!        0. Thoat.                 !");
+			System.out.println("  	====================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -54,12 +53,7 @@ public class QuanLyDSV {
 					ds.xemds();
 					clearScreen(5);
 					break;
-				// case 3:
-				// 	clearScreen(5);
-				// 	ds.xemdsXoa();
-				// 	clearScreen(5);
-				// 	break;
-				case 4: 
+				case 3: 
 					clearScreen(5);
 					ds.timkiem();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV
@@ -69,26 +63,21 @@ public class QuanLyDSV {
 					sc.nextLine();
 					clearScreen(5);
 					break;
-				case 5:
+				case 4:
 					clearScreen(5);
 					ds.sua();
 					clearScreen(5);
 					break;
-				case 6:
+				case 5:
 					clearScreen(5);
 					ds.xoa();
 					clearScreen(5);
 					break;
-				// case 7:
-				// 	clearScreen(5);
-				// 	ds.thongke();
-				// 	// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
-				// 	System.out.println("");
-				// 	sc.nextLine();
-				// 	System.out.print(" Thoat (phim bat ky): ");
-				// 	sc.nextLine();
-				// 	clearScreen(5);
-				// 	break;
+				 case 6:
+				 	clearScreen(5);
+				 	ds.thongke();
+				 	clearScreen(5);
+				 	break;
 				case 0:
 					return;
 				default: 

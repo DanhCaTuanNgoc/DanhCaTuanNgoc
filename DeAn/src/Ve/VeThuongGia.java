@@ -44,14 +44,14 @@ public class VeThuongGia extends Ve {
 		System.out.print(" - Moi nhap ma Ve: ");
 		maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){
-            System.err.print("Ma ve bi trung!Vui long nhap lai");
+            System.err.print(" Ma ve da ton tai ! Vui long nhap lai");
             System.out.print(" - Nhap ma ve: ");
             this.maVe=sc.nextLine();
         }
         System.out.print(" - Nhap ma chuyen bay: ");
         this.maChuyenBay=sc.nextLine();
         while(!ds.Check_Available(maChuyenBay)){
-            System.out.println("Ma chuyen bay khong ton tai!Vui long nhap lai!");
+            System.out.println(" Ma chuyen bay khong ton tai ! Vui long nhap lai!");
             System.out.print(" - Nhap ma chuyen bay: ");
             this.maChuyenBay=sc.nextLine();
         }
@@ -67,11 +67,11 @@ public class VeThuongGia extends Ve {
     // OUTPUT
     @Override
     public void xuat() {
-        System.out.format("| %-8s | %-8s | %-8.2s | %-9s | %-8s", maVe, maChuyenBay, gia, maPhongCho, dichVuVIP);
+        System.out.format("| %-10s | %-15s | %-15s | %-14s | %-10s ", maVe, maChuyenBay, gia, maPhongCho, dichVuVIP);
 
     }
     @Override
     public void loaive(){
-        System.out.print("ve thuong gia");
+        System.out.print("| ve thuong gia");
     }
 }
