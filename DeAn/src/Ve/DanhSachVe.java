@@ -263,8 +263,8 @@ public class DanhSachVe {
 		}
 	}
 	public void sua() {
-		System.out.println(" ------------ Sua chuyen bay ------------");
-		System.out.print(" - Hay nhap ma chuyen bay can sua: ");
+		System.out.println(" ------------ Sua ve ------------");
+		System.out.print(" - Hay nhap ma ve can sua: ");
 		String x = sc.next(); int m = 1;
 		System.out.println("");
 		// Nhap ma chuyen bay sau do tuy chon cach sua.
@@ -273,9 +273,9 @@ public class DanhSachVe {
 				System.out.println(" (1) Ma ve");
 				System.out.println(" (2) Ma chuyen bay");
 				System.out.println(" (3) Gia tien");
-				System.out.println(" (8) Doi loai ve");
+				System.out.println(" (4) Doi loai ve");
 				System.out.println(" (0) Thoat");
-				System.out.println(" - Lua chon gia tri can sua: ");
+				System.out.print(" - Lua chon gia tri can sua: ");
 				int n = sc.nextInt(); m++;
 				switch (n) {
 					case 1:
@@ -319,8 +319,8 @@ public class DanhSachVe {
 								String dcv=sc.next();
 								dsVe[i]=new VeThuongGia(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),mpc,dcv,0);
 								return;
-							}else {
-								System.err.println("Chon sai! Vui long chon lai!");
+							} else {
+								System.err.println(" Chon sai! Vui long chon lai!");
 							}							
 						}
 					case 0:
@@ -343,7 +343,6 @@ public class DanhSachVe {
 		}
 	}
 	public void thongke(){
-
 	}
 	public boolean Check_Available(String mave) {
 		docfile();
