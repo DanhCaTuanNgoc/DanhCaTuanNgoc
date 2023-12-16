@@ -353,4 +353,13 @@ public class DanhSachVe {
 		}
 		return false;
 	}
+	public int tinhgiamgia(String mve,int km){
+		int i;
+		for(i=0;i<this.tongVe;i++) {
+			if(dsVe[i] != null && dsVe[i].getMaVe().equalsIgnoreCase(mve)) {
+				break;
+			}
+		}
+		return dsVe[i].getGia()-(km*dsVe[i].getGia())/100;
+	}
 }

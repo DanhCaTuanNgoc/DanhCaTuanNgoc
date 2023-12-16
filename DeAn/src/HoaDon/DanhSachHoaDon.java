@@ -1,6 +1,7 @@
 package HoaDon;
 
 import java.util.Arrays;
+import Interface.Pthuc;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,7 @@ import ChiTietHoaDon.DanhSachCTHoaDon;
 import NhanVien.DanhSachNhanVien;
 import KhachHang.DanhSachKhachHang;
 
-public class DanhSachHoaDon {
+public class DanhSachHoaDon implements Pthuc {
 	private HoaDon dsHoaDon[];
 	private int tongHoaDon; 
 	DanhSachNhanVien nv = new DanhSachNhanVien(100);

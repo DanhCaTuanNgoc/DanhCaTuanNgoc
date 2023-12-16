@@ -3,12 +3,14 @@ package ChiTietHoaDon;
 import java.util.Scanner;
 import HoaDon.DanhSachHoaDon;
 import Ve.DanhSachVe;
+import Ve.Ve;
 
 import java.util.InputMismatchException;
 
 public class CTHoaDon {
 	private String maHoaDon;
 	private String maVe;
+	private int khuyenmai;
 	private int giaTien;
 	private int deleted;
 	DanhSachVe ve=new DanhSachVe(100);
@@ -19,18 +21,21 @@ public class CTHoaDon {
 		maHoaDon = "";
 		maVe = "";
 		giaTien = 0;
+		khuyenmai=0;
 		deleted = 0;
 	}
-	public CTHoaDon(String mahoadon, String mave, int giatien, int deleted) {
+	public CTHoaDon(String mahoadon, String mave, int giatien,int khuyenmai, int deleted) {
 		this.maHoaDon = mahoadon;
 		this.maVe = mave;
 		this.giaTien = giatien;
+		this.khuyenmai=khuyenmai;
 		this.deleted = deleted;
 	}
 	public CTHoaDon(CTHoaDon a) {
 		this.maHoaDon = a.maHoaDon;
 		this.maVe = a.maVe;
 		this.giaTien = a.giaTien;
+		this.khuyenmai=a.khuyenmai;
 		this.deleted = a.deleted;
 	}
 	
@@ -59,10 +64,17 @@ public class CTHoaDon {
 	public void setDeleted(int deleted) {
 		this.deleted = deleted;
 	}
+	public int getKhuyenmai() {
+		return khuyenmai;
+	}
+	public void setKhuyenmai(int khuyenmai) {
+		this.khuyenmai = khuyenmai;
+	}
+	
 	// methods
 	
 	public void nhap() {
-		hd.docfile();
+		ve.docfile();
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			try {
@@ -89,11 +101,13 @@ public class CTHoaDon {
 				System.out.println(" Ma ve khong ton tai ! Vui long chon ma ve khac !");	
 			}
 		}
-		System.out.print(" - Nhap gia tien: ");
-		this.giaTien = sc.nextInt();	
+		System.out.print(" - Nhap khuyen mai (%): ");
+		this.khuyenmai=sc.nextInt();
+		this.giaTien=ve.tinhgiamgia(maVe, khuyenmai);
+		System.out.println(" - Thanh tien: "+this.giaTien);
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-10s | %-10s | %-15s ",maHoaDon, maVe, giaTien);
+		System.out.printf("| %-10s | %-10s | %-15s | %-10s",maHoaDon, maVe, giaTien,khuyenmai);
 	}
 }

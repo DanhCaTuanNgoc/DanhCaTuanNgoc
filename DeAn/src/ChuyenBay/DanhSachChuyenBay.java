@@ -1,6 +1,7 @@
 package ChuyenBay;
 
 import java.util.Arrays;
+import Interface.Pthuc;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,7 @@ import SanBay.DanhSachSanBay;
 import MayBay.DanhSachMayBay;
 
 
-public class DanhSachChuyenBay {
+public class DanhSachChuyenBay implements Pthuc {
 	private ChuyenBay dsChuyenBay[];
 	private int tongChuyenBay; 
 	private int soCBHH; // so chuyen bay hien huu ( bien dem cho so nv kh nam trong danh sach xoa ) 

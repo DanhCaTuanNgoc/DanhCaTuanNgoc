@@ -8,11 +8,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import Interface.Pthuc;
 
-
-public class DanhSachNhanVien {
+public class DanhSachNhanVien implements Pthuc {
 	private NhanVien dsNhanVien[];
-	private NhanVien nv = new NhanVien();
 	private int tongNV; 
 	private int soNVHH; // so nhan vien hien huu ( bien dem cho so nv kh nam trong danh sach xoa ) 
 	File d = new File("src/InputOutput/DanhSachNhanVien.txt");

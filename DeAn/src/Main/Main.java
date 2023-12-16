@@ -1,6 +1,7 @@
 package Main;
 
 import NhanVien.QuanLyDSNV;
+import ThongTinChuongTrinh.ThongTinChuongTrinh;
 import KhachHang.QuanLyDSKH;
 import SanBay.QuanLyDSSB;
 import HoaDon.QuanLyDSHD;

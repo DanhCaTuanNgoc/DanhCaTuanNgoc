@@ -1,6 +1,7 @@
 package MayBay;
 
 import java.util.Arrays;
+import Interface.Pthuc;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class DanhSachMayBay {
+public class DanhSachMayBay implements Pthuc{
 	private MayBay dsMayBay[];
 	private int tongMayBay; 
 	private int soMBHH;

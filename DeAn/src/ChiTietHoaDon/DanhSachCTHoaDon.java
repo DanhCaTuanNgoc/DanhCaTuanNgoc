@@ -8,9 +8,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
+import Interface.Pthuc;
 
 
-public class DanhSachCTHoaDon {
+public class DanhSachCTHoaDon implements Pthuc {
 	private CTHoaDon dsCTHoaDon[];
 	private int tongCTHoaDon; 
 	private int soCTHDHH; // so CHI TIET HOA DON hien huu ( bien dem cho so ct kh nam trong danh sach xoa ) 
@@ -81,7 +82,7 @@ public class DanhSachCTHoaDon {
 			String lines = br.readLine();
 			while(lines != null) {
 				String []line=lines.split("/");
-				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1] , Integer.parseInt(line[2]), Integer.parseInt(line[3]));
+				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1] , Integer.parseInt(line[2]), Integer.parseInt(line[3]), Integer.parseInt(line[3]));
 				if(line[3].equalsIgnoreCase("0")) {
 					this.soCTHDHH++;
 				}
@@ -106,7 +107,7 @@ public class DanhSachCTHoaDon {
 			BufferedWriter br = new BufferedWriter(fr);
 			for(CTHoaDon ct : dsCTHoaDon) {
 				if(ct != null) {
-					br.write(ct.getMaHoaDon() + "/" + ct.getMaVe() + "/" + ct.getGiaTien() + "/" + ct.getDeleted() + "\n");
+					br.write(ct.getMaHoaDon() + "/" + ct.getMaVe() + "/" + ct.getGiaTien() + "/" +ct.getKhuyenmai() + "/" + ct.getDeleted() + "\n");
 				} else {
 					break;
 				}
@@ -118,7 +119,7 @@ public class DanhSachCTHoaDon {
 	}
 	public void xemds() {
 		System.out.println(" ------------ Danh sach chi tiet hoa don ------------");
-		System.out.printf("| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
+		System.out.printf("| %-10s | %-10s | %-15s | %-10s","Ma hoa don","Ma ve","Gia tien","Khuyen mai");
 		System.out.println();
 		int checkList = -1;
         for(CTHoaDon ct : dsCTHoaDon) {
@@ -246,6 +247,7 @@ public class DanhSachCTHoaDon {
 		}
 	}
 	public boolean Check_Available(String mave) {
+		docfile();
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaVe().equalsIgnoreCase(mave)) {
 				 return true;

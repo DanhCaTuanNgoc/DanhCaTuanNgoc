@@ -1,6 +1,7 @@
 package SanBay;
 
 import java.util.Arrays;
+import Interface.Pthuc;
 import java.io.BufferedWriter;
 import java.io.BufferedReader;
 import java.io.File;
@@ -9,7 +10,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class DanhSachSanBay {
+public class DanhSachSanBay implements Pthuc {
 	private SanBay dsSanBay[];
 	private int tongSan; 
 	private int soSBHH; // số sân bay hiện hữu.
