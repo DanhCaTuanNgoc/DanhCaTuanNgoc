@@ -110,7 +110,7 @@ public class HoaDon {
 			System.out.print(" - Nhap ma nhan vien: ");
 			this.maNhanVien = sc.nextLine();
 			if(!nv.Check_Available(maNhanVien)) {
-				System.out.println("\n Ma nhan vien kh ton tai !!! Vui long nhap lai");
+				System.err.println("\n Ma nhan vien kh ton tai !!! Vui long nhap lai");
 			} else {
 				break;
 			}

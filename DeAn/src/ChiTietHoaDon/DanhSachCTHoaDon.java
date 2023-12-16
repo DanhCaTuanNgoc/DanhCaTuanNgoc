@@ -238,9 +238,6 @@ public class DanhSachCTHoaDon {
 	
 	///////
 	public void truyXuatCTHD(String maHd) {
-		System.out.println();
-		System.out.printf("| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
-		System.out.println();
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
 				dsCTHoaDon[i].xuat();

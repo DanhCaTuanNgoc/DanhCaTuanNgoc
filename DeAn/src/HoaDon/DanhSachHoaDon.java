@@ -304,6 +304,9 @@ public class DanhSachHoaDon {
 		if(maHd.equals("0")) {
 			;
 		} else {
+			ct.docfile();
+			System.out.printf("\n| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
+			System.out.println();
 			for(int i=0;i<this.tongHoaDon;i++) {
 				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
 					ct.truyXuatCTHD(dsHoaDon[i].getMaHoaDon());

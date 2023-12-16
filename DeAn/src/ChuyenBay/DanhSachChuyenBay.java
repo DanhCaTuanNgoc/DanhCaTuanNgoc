@@ -313,6 +313,7 @@ public class DanhSachChuyenBay {
 				}
 			}
 		}
+		System.out.println("");
 	}
 	
 	public boolean Check_Available(String machuyenbay) {
