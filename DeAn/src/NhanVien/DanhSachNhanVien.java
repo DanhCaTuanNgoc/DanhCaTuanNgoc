@@ -254,8 +254,8 @@ public class DanhSachNhanVien implements Pthuc {
 		for(int i=0;i<this.tongNV;i++) {
 			if((dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsNhanVien[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
-			&&(dsNhanVien[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
-			&&(dsNhanVien[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsNhanVien[i].getHo().contains(tk3)||tk3.equalsIgnoreCase("x"))
+			&&(dsNhanVien[i].getTen().contains(tk4)||tk4.equalsIgnoreCase("x"))
 			&& dsNhanVien[i].getDeleted() != 1){
 				dsNhanVien[i].xuat(); m++;
 				System.out.println("");

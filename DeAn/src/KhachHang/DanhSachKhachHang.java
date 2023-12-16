@@ -171,10 +171,10 @@ public class DanhSachKhachHang implements Pthuc {
 		for(int i=0;i<this.tongKhachHang;i++) {
 			if((dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
 			&&(dsKhachHang[i].getSdt().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
-			&&(dsKhachHang[i].getHo().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
-			&&(dsKhachHang[i].getTen().equalsIgnoreCase(tk4)||tk4.equalsIgnoreCase("x"))
+			&&(dsKhachHang[i].getHo().contains(tk3)||tk3.equalsIgnoreCase("x"))
+			&&(dsKhachHang[i].getTen().contains(tk4)||tk4.equalsIgnoreCase("x"))
 			&&(dsKhachHang[i].getCccd().equalsIgnoreCase(tk5)||tk5.equalsIgnoreCase("x"))
-			&&(dsKhachHang[i].getDiaChi().equalsIgnoreCase(tk6)||tk6.equalsIgnoreCase("x"))
+			&&(dsKhachHang[i].getDiaChi().contains(tk6)||tk6.equalsIgnoreCase("x"))
 			&& dsKhachHang[i].getDeleted() != 1){
 				dsKhachHang[i].xuat(); m++;
 				System.out.println("");

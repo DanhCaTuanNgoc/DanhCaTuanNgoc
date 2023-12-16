@@ -132,7 +132,7 @@ public class DanhSachSanBay implements Pthuc {
 	public void xoa() {
 		System.out.println(" ------------ Xoa san bay ------------");
 		System.out.print(" - Hay nhap ma san bay can xoa | Thoat(0): ");
-		String x = sc.next(); int m = 0; int delete_point = -1;
+		String x = sc.next(); int m = 0;
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
@@ -164,8 +164,8 @@ public class DanhSachSanBay implements Pthuc {
 		System.out.println();
 		for(int i=0;i<this.tongSan;i++) {
 			if((dsSanBay[i].getMaSanBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
-			&&(dsSanBay[i].getTenSanBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
-			&&(dsSanBay[i].getDiaChiSanBay().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
+			&&(dsSanBay[i].getTenSanBay().contains(tk2)||tk2.equalsIgnoreCase("x"))
+			&&(dsSanBay[i].getDiaChiSanBay().contains(tk3)||tk3.equalsIgnoreCase("x"))
 			&& dsSanBay[i].getDeleted() != 1){
 				dsSanBay[i].xuat(); m++;
 				System.out.println("");
