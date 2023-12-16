@@ -121,23 +121,12 @@ public class DanhSachVe {
 			dsVe = Arrays.copyOf(dsVe, this.tongVe);
 			VePhoThong vpt=new VePhoThong();
 			vpt.nhap();
-			while(Check_Available(vpt.maVe)){
-				sc.nextLine();
-				System.out.println("Ma ve bi trung!Vui long nhap lai!");
-				vpt=new VePhoThong();
-				vpt.nhap();
-			}
 			dsVe[this.tongVe - 1] = vpt;
 		}else if(n.equals("2")){
 			System.out.println(" 	$ Nhap thong tin ve thuong gia $ ");
 			dsVe = Arrays.copyOf(dsVe, this.tongVe);
 			VeThuongGia vtg=new VeThuongGia();
 			vtg.nhap();
-			while(Check_Available(vtg.maVe)){
-				System.out.println("Ma ve bi trung!Vui long nhap lai!");
-				vtg=new VeThuongGia();
-				vtg.nhap();
-			}
 			dsVe[this.tongVe - 1] = vtg;
 		}else {System.err.println(" Nhap sai! vui long nhap lai! ");them();}
 		
@@ -228,7 +217,7 @@ public class DanhSachVe {
 	public void xoa(){
 		System.out.println(" ------------ Xoa ve ------------");
 		System.out.print(" - Hay nhap ma ve can xoa | Thoat(0): ");
-		String x = sc.nextLine(); int m = 0; int delete_point = -1;
+		String x = sc.nextLine(); int m = 0; 
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
@@ -355,6 +344,7 @@ public class DanhSachVe {
 
 	}
 	public boolean Check_Available(String mave) {
+		docfile();
 		for(int i=0;i<this.tongVe;i++) {
 			if(dsVe[i] != null && dsVe[i].getMaVe().equalsIgnoreCase(mave)) {
 				 return true;

@@ -90,8 +90,8 @@ public class DanhSachChuyenBay {
 			String lines = br.readLine();
 			while(lines != null) {
 				String []line = lines.split("/");
-				dsChuyenBay[tongChuyenBay] = new ChuyenBay(line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7], Integer.parseInt(line[8]), Integer.parseInt(line[9]), Integer.parseInt(line[10]));
-				if(line[10].equalsIgnoreCase("0")) {
+				dsChuyenBay[tongChuyenBay] = new ChuyenBay(line[0], line[1], line[2], line[3], line[4], line[5], line[6], line[7], Integer.parseInt(line[8]), Integer.parseInt(line[9]));
+				if(line[9].equalsIgnoreCase("0")) {
 					this.soCBHH++;
 				}
 				tongChuyenBay++;
@@ -116,7 +116,7 @@ public class DanhSachChuyenBay {
 			for(ChuyenBay nv : dsChuyenBay) {
 				if(nv != null) {
 					br.write(nv.getMaChuyenBay() + "/" + nv.getMaMayBay() + "/" + nv.getNgayDi() + "/" + nv.getNgayDen() + "/" + nv.getMaSanBayDi() + "/" +
-							nv.getMaSanBayDen() + "/" + nv.getGioDi() + "/" + nv.getGioDen() + "/" + nv.getTongSoVe() + "/" + nv.getSoVeConLai()  
+							nv.getMaSanBayDen() + "/" + nv.getGioDi() + "/" + nv.getGioDen() + "/" + nv.getTongSoVe()
 							+ "/" + nv.getDeleted() + "\n");
 				} else {
 					break;
@@ -129,7 +129,7 @@ public class DanhSachChuyenBay {
 	}
 	public void xemds() {
 		System.out.println("\t\t\t\t\t\t\t ------------ Danh sach chuyen bay ------------");
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
+		System.out.printf("| %-15s | %-10s | %-10s | %-10s | %-15s | %-15s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve");
 		System.out.println();
 		int checkList = -1;
         for(ChuyenBay nv : dsChuyenBay) {
@@ -182,7 +182,7 @@ public class DanhSachChuyenBay {
 		String tk8= sc.nextLine();
 		int m = 0;
 		System.out.println();
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve", "So ve con lai");
+		System.out.printf("| %-15s | %-10s | %-10s | %-10s | %-15s | %-15s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve");
 		System.out.println();
 		for(int i=0;i<this.tongChuyenBay;i++) {
 			if((dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
@@ -216,8 +216,7 @@ public class DanhSachChuyenBay {
 				System.out.println(" (4) San di va san den");
 				System.out.println(" (5) Gio di va gio den");
 				System.out.println(" (6) Tong so ve");
-				System.out.println(" (7) So ve con lai");
-				System.out.println(" (8) Tat ca");
+				System.out.println(" (7) Tat ca");
 				System.out.println(" (0) Thoat");
 				System.out.println(" - Lua chon gia tri can sua: ");
 				int n = sc.nextInt(); m++;
@@ -263,11 +262,6 @@ public class DanhSachChuyenBay {
 						dsChuyenBay[i].setTongSoVe(tongve);
 						break;
 					case 7: 
-						System.out.println(" - Sua so ve con lai: ");
-						int cl = sc.nextInt();
-						dsChuyenBay[i].setSoVeConLai(cl);
-						break;
-					case 8: 
 						dsChuyenBay[i].nhap();
 						break;
 					case 0:

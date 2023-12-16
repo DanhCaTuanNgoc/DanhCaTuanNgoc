@@ -2,35 +2,34 @@ package ChiTietHoaDon;
 
 import java.util.Scanner;
 import HoaDon.DanhSachHoaDon;
+import Ve.DanhSachVe;
+
 import java.util.InputMismatchException;
 
 public class CTHoaDon {
 	private String maHoaDon;
 	private String maVe;
-	private int soLuong;
 	private int giaTien;
 	private int deleted;
-	
+	DanhSachVe ve=new DanhSachVe(100);
 	DanhSachHoaDon hd = new DanhSachHoaDon(100);
+	DanhSachCTHoaDon cthdd=new DanhSachCTHoaDon(100);
 	// constructor
 	public CTHoaDon() {
 		maHoaDon = "";
 		maVe = "";
-		soLuong = 0;
 		giaTien = 0;
 		deleted = 0;
 	}
-	public CTHoaDon(String mahoadon, String mave, int soluong, int giatien, int deleted) {
+	public CTHoaDon(String mahoadon, String mave, int giatien, int deleted) {
 		this.maHoaDon = mahoadon;
 		this.maVe = mave;
-		this.soLuong = soluong;
 		this.giaTien = giatien;
 		this.deleted = deleted;
 	}
 	public CTHoaDon(CTHoaDon a) {
 		this.maHoaDon = a.maHoaDon;
 		this.maVe = a.maVe;
-		this.soLuong = a.soLuong;
 		this.giaTien = a.giaTien;
 		this.deleted = a.deleted;
 	}
@@ -48,12 +47,6 @@ public class CTHoaDon {
 	public void setMaVe(String maVe) {
 		this.maVe = maVe;
 	}
-	public int getSoLuong() {
-		return soLuong;
-	}
-	public void setSoLuong(int soLuong) {
-		this.soLuong = soLuong;
-	}
 	public int getGiaTien() {
 		return giaTien;
 	}
@@ -69,7 +62,7 @@ public class CTHoaDon {
 	// methods
 	
 	public void nhap() {
-		hd.docfile
+		hd.docfile();
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			try {
@@ -82,15 +75,25 @@ public class CTHoaDon {
 				}
 			} catch(InputMismatchException in){System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();}
 		}
-		System.out.print(" - Nhap ma ve: ");
-		this.maVe = sc.nextLine();
-		System.out.print(" - Nhap so luong: ");
-		this.soLuong = sc.nextInt();
+		boolean fk=true;
+		while(fk){
+			System.out.print(" - Nhap ma ve: ");
+			this.maVe = sc.nextLine();
+			if(ve.Check_Available(maVe)){
+				if (cthdd.Check_Available(maVe)) {
+					System.err.println(" Ve da duoc dat ! Vui long chon ma ve khac !");
+				}else {
+					fk=false;
+				}
+			}else{
+				System.out.println(" Ma ve khong ton tai ! Vui long chon ma ve khac !");	
+			}
+		}
 		System.out.print(" - Nhap gia tien: ");
 		this.giaTien = sc.nextInt();	
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-10s | %-15s ",maHoaDon, maVe, soLuong, giaTien);
+		System.out.printf("| %-10s | %-10s | %-15s ",maHoaDon, maVe, giaTien);
 	}
 }

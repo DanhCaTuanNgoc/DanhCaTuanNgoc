@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import MayBay.DanhSachMayBay;
+import ChuyenBay.DanhSachChuyenBay;
 import SanBay.DanhSachSanBay;
 
 public class ChuyenBay {
@@ -16,11 +17,11 @@ public class ChuyenBay {
 	private String gioDi;
 	private String gioDen;
 	private int tongSoVe;
-    private int soVeConLai;
 	private int deleted = 0;
 	
 	DanhSachMayBay mb = new DanhSachMayBay(100);
 	DanhSachSanBay sb = new DanhSachSanBay(100);
+	DanhSachChuyenBay cb = new DanhSachChuyenBay(100);
 	
 	
 	// constructor
@@ -34,10 +35,9 @@ public class ChuyenBay {
 		gioDi = "";
 		gioDen = "";
 		tongSoVe = 0;
-		soVeConLai = 0;
 		deleted = 0;
 	}
-	public ChuyenBay(String machuyenbay, String mamaybay, String ngaydi, String ngayden, String sandi,String sanden,String giodi,String gioden, int tongsove, int veconlai, int deleted) {
+	public ChuyenBay(String machuyenbay, String mamaybay, String ngaydi, String ngayden, String sandi,String sanden,String giodi,String gioden, int tongsove, int deleted) {
 		this.maChuyenBay = machuyenbay;
 		this.maMayBay = mamaybay;
 		this.ngayDi = ngaydi;
@@ -47,7 +47,6 @@ public class ChuyenBay {
 		this.gioDi = giodi;
 		this.gioDen = gioden;
 		this.tongSoVe = tongsove;
-        this.soVeConLai = veconlai;
 		this.deleted = deleted;
 		
 	}
@@ -61,7 +60,6 @@ public class ChuyenBay {
 		this.gioDi = a.gioDi;
 		this.gioDen = a.gioDen;
 		this.tongSoVe = a.tongSoVe;
-		this.soVeConLai = a.soVeConLai;
 		this.deleted = a.deleted;
 	}
 	
@@ -95,12 +93,6 @@ public class ChuyenBay {
 	}
 	public void setTongSoVe(int tongSoVe) {
 		this.tongSoVe = tongSoVe;
-	}
-	public int getSoVeConLai() {
-		return soVeConLai;
-	}
-	public void setSoVeConLai(int soVeConLai) {
-		this.soVeConLai = soVeConLai;
 	}
 	public String getMaSanBayDi() {
 		return maSanBayDi;
@@ -138,46 +130,42 @@ public class ChuyenBay {
 		Scanner sc = new Scanner(System.in);
 		sb.docfile();
 		mb.docfile();
-		System.out.print(" - Nhap ma chuyen bay: ");
-		this.maChuyenBay = sc.nextLine();
+		cb.docfile();
+		while(true) {
+				System.out.print(" - Nhap ma chuyen bay: ");
+				this.maChuyenBay = sc.nextLine();
+				if(cb.Check_Available(maChuyenBay)) {
+					System.err.println("\n Ma chuyen bay da ton tai !!! Vui long nhap lai");
+				} else {
+					break;
+				}
+		}
 		while(true) { // rang buoc du lieu ma may bay
-			try {
 				System.out.print(" - Nhap ma may bay: ");
-				this.maMayBay = sc.next();
+				this.maMayBay = sc.nextLine();
 				if(mb.Check_Available(this.maMayBay)) {
 					break;
 				} else {
-					System.err.println("\n Ma may bay kh ton tai trong he thong, vui long nhap lai !!!");
+					System.err.println("\n Ma may bay khong ton tai !!! Vui long nhap lai !!!");
 				}
-			} catch(InputMismatchException in) {
-				System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();
-			}
 		}
 		while(true) { // rang buoc du lieu ma san bay
-			try {
 				System.out.print(" - Nhap ma san bay di: ");
-				this.maSanBayDi = sc.next();
+				this.maSanBayDi = sc.nextLine();
 				if(sb.Check_Available(this.maSanBayDi)) {
 					break;
 				} else {
-					System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
+					System.err.println("\n Ma san bay khong ton tai !!! Vui long nhap lai !!!");
 				}
-			} catch(InputMismatchException in) {
-				System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();
-			}
 		}
 		while(true) { // rang buoc du lieu ma san bay
-			try {
-				System.out.print(" - Nhap ma san bay den: ");
-				this.maSanBayDen = sc.next();
-				if(sb.Check_Available(this.maSanBayDen)) {
-					break;
-				} else {
-					System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
-				}
-			} catch(InputMismatchException in) {
-				System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();
-			}
+			System.out.print(" - Nhap ma san bay den: ");
+			this.maSanBayDen = sc.next();
+			if(sb.Check_Available(this.maSanBayDen)) {
+				break;
+			} else {
+				System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
+			}	
 		}
 		sc.nextLine();
 		System.out.print(" - Nhap ngay di: ");
@@ -190,11 +178,9 @@ public class ChuyenBay {
 		this.gioDen = sc.nextLine();
 		System.out.print(" - Nhap tong so ve: ");
 		this.tongSoVe = sc.nextInt();
-		System.out.print(" - Nhap so ve con lai: ");
-		this.soVeConLai = sc.nextInt();
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-10s | %-10s | %-20s | %-20s | %-10s | %-10s | %-10s | %-10s", maChuyenBay, maMayBay, ngayDi, ngayDen, maSanBayDi, maSanBayDen, gioDi, gioDen, tongSoVe, soVeConLai);
+		System.out.printf("| %-15s | %-10s | %-10s | %-10s | %-15s | %-15s | %-10s | %-10s | %-10s ", maChuyenBay, maMayBay, ngayDi, ngayDen, maSanBayDi, maSanBayDen, gioDi, gioDen, tongSoVe);
 	}
 }

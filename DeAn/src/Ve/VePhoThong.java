@@ -6,6 +6,7 @@ import ChuyenBay.DanhSachChuyenBay;
 public class VePhoThong extends Ve {
     private String hangVe;
     DanhSachChuyenBay ds=new DanhSachChuyenBay(100);
+    DanhSachVe ve=new DanhSachVe(100);
     // CONSTRUCTOR DEFAULT / PROPERTY / COPY
     public VePhoThong() {
         hangVe = "";
@@ -29,9 +30,13 @@ public class VePhoThong extends Ve {
     // INPUT
     @Override
     public void nhap() {
-        ds.docfile();
 		System.out.print(" - Moi nhap ma ve: ");
 		this.maVe = sc.nextLine();
+        while(ve.Check_Available(maVe)){
+            System.err.print("Ma ve bi trung!Vui long nhap lai");
+            System.out.print(" - Nhap ma ve: ");
+            this.maVe=sc.nextLine();
+        }
         System.out.print(" - Nhap ma chuyen bay: ");
         this.maChuyenBay=sc.nextLine();
         while(! ds.Check_Available(maChuyenBay)){

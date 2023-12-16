@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class DanhSachCTHoaDon {
 	private CTHoaDon dsCTHoaDon[];
-	private CTHoaDon ct = new CTHoaDon();
 	private int tongCTHoaDon; 
 	private int soCTHDHH; // so CHI TIET HOA DON hien huu ( bien dem cho so ct kh nam trong danh sach xoa ) 
 	File d = new File("src/InputOutput/DanhSachCTHoaDon.txt");
@@ -81,9 +80,9 @@ public class DanhSachCTHoaDon {
 			BufferedReader br = new BufferedReader(fr);
 			String lines = br.readLine();
 			while(lines != null) {
-				String []line = lines.split("/");
-				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1] , Integer.parseInt(line[2]), Integer.parseInt(line[3]), Integer.parseInt(line[4]));
-				if(line[4].equalsIgnoreCase("0")) {
+				String []line=lines.split("/");
+				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1] , Integer.parseInt(line[2]), Integer.parseInt(line[3]));
+				if(line[3].equalsIgnoreCase("0")) {
 					this.soCTHDHH++;
 				}
 				tongCTHoaDon++;
@@ -107,7 +106,7 @@ public class DanhSachCTHoaDon {
 			BufferedWriter br = new BufferedWriter(fr);
 			for(CTHoaDon ct : dsCTHoaDon) {
 				if(ct != null) {
-					br.write(ct.getMaHoaDon() + "/" + ct.getMaVe() + "/" + ct.getSoLuong() + "/" + ct.getGiaTien() + "/" + ct.getDeleted() + "\n");
+					br.write(ct.getMaHoaDon() + "/" + ct.getMaVe() + "/" + ct.getGiaTien() + "/" + ct.getDeleted() + "\n");
 				} else {
 					break;
 				}
@@ -119,7 +118,7 @@ public class DanhSachCTHoaDon {
 	}
 	public void xemds() {
 		System.out.println(" ------------ Danh sach chi tiet hoa don ------------");
-		System.out.printf("| %-15s | %-15s | %-10s | %-15s ","Ma hoa don","Ma ve","So luong","Gia tien");
+		System.out.printf("| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
 		System.out.println();
 		int checkList = -1;
         for(CTHoaDon ct : dsCTHoaDon) {
@@ -164,7 +163,7 @@ public class DanhSachCTHoaDon {
 		System.out.print(" + Gia tien ( x de bo qa): ");
 		String tk4= sc.nextLine(); int m = 0;
 		System.out.println();
-		System.out.printf("| %-15s | %-15s | %-10s | %-15s ","Ma hoa don","Ma ve","So luong","Gia tien");
+		System.out.printf("| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
 		System.out.println();
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if((dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
@@ -190,10 +189,9 @@ public class DanhSachCTHoaDon {
 			if(dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(x) && dsCTHoaDon[i].getDeleted() != 1) {
 				System.out.println(" (1) Ma chi tiet hoa don");
 				System.out.println(" (2) Ma ve");
-				System.out.println(" (3) So luong");
-				System.out.println(" (4) Gia tien");
-				System.out.println(" (5) Tat ca");
-				System.out.println(" (6) Thoat");
+				System.out.println(" (3) Gia tien");
+				System.out.println(" (4) Tat ca");
+				System.out.println(" (0) Thoat");
 				int n = sc.nextInt(); m++;
 				switch (n) {
 					case 1:
@@ -207,16 +205,11 @@ public class DanhSachCTHoaDon {
 						dsCTHoaDon[i].setMaVe(mave);
 						break;
 					case 3: 
-						System.out.print(" - Sua so luong: ");
-						int soluong = sc.nextInt();
-						dsCTHoaDon[i].setSoLuong(soluong);
-						break;
-					case 4: 
 						System.out.println(" - Sua gia tien: ");
 						int giatien = sc.nextInt();
 						dsCTHoaDon[i].setGiaTien(giatien);
-						break;
-					case 5: 
+						break;		
+					case 4: 
 						dsCTHoaDon[i].nhap();
 						break;
 					case 0:
@@ -241,5 +234,26 @@ public class DanhSachCTHoaDon {
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so chi tiet hoa don hien co: " + this.soCTHDHH);
+	}
+	
+	///////
+	public void truyXuatCTHD(String maHd) {
+		System.out.println();
+		System.out.printf("| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
+		System.out.println();
+		for(int i=0;i<this.tongCTHoaDon;i++) {
+			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
+				dsCTHoaDon[i].xuat();
+				System.out.println("");
+			}
+		}
+	}
+	public boolean Check_Available(String mave) {
+		for(int i=0;i<this.tongCTHoaDon;i++) {
+			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaVe().equalsIgnoreCase(mave)) {
+				 return true;
+			}
+		}
+		return false;
 	}
 }

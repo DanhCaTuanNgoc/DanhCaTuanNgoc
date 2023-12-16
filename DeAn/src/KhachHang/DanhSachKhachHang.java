@@ -269,4 +269,13 @@ public class DanhSachKhachHang {
 			}
 		}
 	}
+	
+	public boolean Check_Available(String maKh) {
+		for(int i=0;i<this.tongKhachHang;i++) {
+			if(dsKhachHang != null && dsKhachHang[i].getMaKhachHang().equalsIgnoreCase(maKh)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

@@ -8,7 +8,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
-
+import ChiTietHoaDon.DanhSachCTHoaDon;
 import NhanVien.DanhSachNhanVien;
 import KhachHang.DanhSachKhachHang;
 
@@ -17,6 +17,7 @@ public class DanhSachHoaDon {
 	private int tongHoaDon; 
 	DanhSachNhanVien nv = new DanhSachNhanVien(100);
 	DanhSachKhachHang kh = new DanhSachKhachHang(100);
+	DanhSachCTHoaDon ct = new DanhSachCTHoaDon(100);
 	private int soHDHH; // số hóa đơn hiện hữu.
 	File d = new File("src/InputOutput/DanhSachHoaDon.txt");
 	
@@ -251,6 +252,7 @@ public class DanhSachHoaDon {
 			System.out.println("\n ----- Hoan tat thao tac -----");
 		}
 	}
+	
 	public void thongke() {
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so hoa don: " + this.soHDHH);
@@ -289,6 +291,22 @@ public class DanhSachHoaDon {
 			for(int i=0;i<this.tongHoaDon;i++) {
 				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
 					kh.truyXuatKH(dsHoaDon[i].getMaKhachHang());
+				}
+			}
+		}
+		System.out.println("");
+	}
+	
+	public void truyXuatCTHD() {
+		System.out.println(" ------------ Truy xuat CT hoa don ------------");
+		System.out.print(" - Nhap ma hoa don can truy xuat CT hoa don | Thoat(0): ");
+		String maHd = sc.next();
+		if(maHd.equals("0")) {
+			;
+		} else {
+			for(int i=0;i<this.tongHoaDon;i++) {
+				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
+					ct.truyXuatCTHD(dsHoaDon[i].getMaHoaDon());
 				}
 			}
 		}

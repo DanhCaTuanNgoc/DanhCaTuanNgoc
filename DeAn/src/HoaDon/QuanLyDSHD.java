@@ -41,9 +41,10 @@ public class QuanLyDSHD {
 			System.out.println("  	!        3. Tim kiem hoa don.           !");
 			System.out.println("  	!        4. Sua hoa don.                !");
 			System.out.println("   	!        5. Xoa hoa don.                !");
-			System.out.println("   	!        6. Truy xuat nhan vien.        !");
-			System.out.println("   	!        7. Truy xuat khach hang.       !");
-			System.out.println("   	!        8. Thong ke.                   !");
+			System.out.println("   	!        6. Truy xuat chi tiet hoa don. !");
+			System.out.println("   	!        7. Truy xuat nhan vien.        !");
+			System.out.println("   	!        8. Truy xuat khach hang.       !");
+			System.out.println("   	!        9. Thong ke.                   !");
 			System.out.println("   	!        0. Thoat.                      !");
 			System.out.println("   	=========================================");
 			System.out.println("");
@@ -89,24 +90,27 @@ public class QuanLyDSHD {
 					break;
 				case 6:
 					clearScreen(5);
-					ds.truyXuatNV();
-					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
-					System.out.println("");
-					sc.nextLine();
-					System.out.print(" Thoat (phim bat ky): ");
-					sc.nextLine();
+					ds.truyXuatCTHD();
 					clearScreen(5);
 					break;
 				case 7:
 					clearScreen(5);
+					ds.truyXuatNV();
+					clearScreen(5);
+					break;
+				case 8:
+					clearScreen(5);
 					ds.truyXuatKH();
-					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
+					clearScreen(5);
+					break;
+				case 9:
+					clearScreen(5);
+					ds.thongke();
 					System.out.println("");
 					sc.nextLine();
 					System.out.print(" Thoat (phim bat ky): ");
 					sc.nextLine();
 					clearScreen(5);
-					break;
 				case 0:
 					return;
 				default: 

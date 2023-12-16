@@ -330,4 +330,13 @@ public class DanhSachNhanVien {
 			}
 		}
 	}
+	
+	public boolean Check_Available(String maNv) {
+		for(int i=0;i<this.tongNV;i++) {
+			if(dsNhanVien[i] != null && dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(maNv)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

@@ -1,6 +1,9 @@
 package HoaDon;
 
 import java.util.Scanner;
+import NhanVien.DanhSachNhanVien;
+import KhachHang.DanhSachKhachHang;
+import HoaDon.DanhSachHoaDon;
 
 public class HoaDon {
 	private String maHoaDon;
@@ -9,6 +12,11 @@ public class HoaDon {
 	private String ngayXuat;
 	private String tongHoaDon;
 	private int deleted;
+	
+	DanhSachNhanVien nv = new DanhSachNhanVien(100);
+	DanhSachKhachHang kh = new DanhSachKhachHang(100);
+	DanhSachHoaDon hd = new DanhSachHoaDon(100);
+	
 	// constructor
 	public HoaDon() {
 		maHoaDon = "";
@@ -76,13 +84,37 @@ public class HoaDon {
 	// methods
 	
 	public void nhap() {
+		kh.docfile(); hd.docfile(); nv.docfile();
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma hoa don: ");
-		this.maHoaDon = sc.nextLine();
-		System.out.print(" - Nhap ma khach hang: ");
-		this.maKhachHang = sc.nextLine();
-		System.out.print(" - Nhap ma nhan vien: ");
-		this.maNhanVien = sc.nextLine();
+		
+		while(true) {
+			System.out.print(" - Nhap ma hoa don: ");
+			this.maHoaDon = sc.nextLine();
+			if(hd.Check_Available(maHoaDon)) {
+				System.err.println("\n Ma hoa don da ton tai !!! Vui long nhap lai");
+			} else {
+				break;
+			}
+		}
+		
+		while(true) {
+			System.out.print(" - Nhap ma khach hang: ");
+			this.maKhachHang = sc.nextLine();
+			if(!kh.Check_Available(maKhachHang)) {
+				System.err.println("\n Ma khach hang khong ton tai !!! Vui long nhap lai");
+			} else {
+				break;
+			}
+		}
+		while(true) {
+			System.out.print(" - Nhap ma nhan vien: ");
+			this.maNhanVien = sc.nextLine();
+			if(!nv.Check_Available(maNhanVien)) {
+				System.out.println("\n Ma nhan vien kh ton tai !!! Vui long nhap lai");
+			} else {
+				break;
+			}
+		}
 		System.out.print(" - Nhap ngay xuat: ");
 		this.ngayXuat = sc.nextLine();	
 		System.out.print(" - Nhap tong hoa don: ");
