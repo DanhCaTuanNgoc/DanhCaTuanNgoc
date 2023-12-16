@@ -171,12 +171,13 @@ public class DanhSachVe {
     }
     public void xemdsve(){
         System.out.println(" ------------ Danh sach ve ------------");
-		System.out.printf("%-15s %-15s %-10s","Ma ve","Ma chuyen bay","Gia");
+		System.out.printf("| %-15s | %-15s | %-15s | %-15s","Ma ve","Ma chuyen bay","Gia","Loai ve");
 		System.out.println();
 		int checkList = -1;
         for(Ve ve : dsVe) {
         	if (ve != null && ve.getDeleted() != 1) {
-            	ve.xuat(); System.out.println(""); checkList++;
+            	System.out.printf("| %-15s | %-15s | %-15s",ve.getMaVe(),ve.getMaChuyenBay(),ve.getGia());
+				ve.loaive(); System.out.println(""); checkList++;
         	}
         }
         if(checkList == -1) {
@@ -252,7 +253,7 @@ public class DanhSachVe {
 			&&(dsVe[i].getGia()>=tk3)
 			&&(dsVe[i].getGia()<=tk4)
 			&& dsVe[i].getDeleted() != 1){
-				dsVe[i].xuat();dsVe[i].loaive(); m++;
+				System.out.printf("| %-15s | %-15s | %-15s",dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia());;dsVe[i].loaive(); m++;
 				System.out.println("");
 			}
 		}
