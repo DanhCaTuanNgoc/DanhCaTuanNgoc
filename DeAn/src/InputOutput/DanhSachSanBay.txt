@@ -8,3 +8,13 @@ SB007/San bay quoc te Lien Khuong/Da Lat/0
 SB008/San bay quoc te Phu Bai/Hue/0
 SB009/San bay quoc te Cat Bi/Hai Phong/0
 SB010/San bay quoc te Van Don/Quang Ninh/0
+SB011/San bay quoc te Buon Ma Thuot/Dak Lak/0
+SB012/San bay quoc te Vinh/Nghe An/0
+SB013/San bay quoc te Tho Xuan/Thanh Hoa/0
+SB014/San bay quoc te Phu Cat/Binh Dinh/0
+SB015/San bay quoc te Pleiku/Gia Lai/0
+SB016/San bay quoc te Rach Gia/Kien Giang/0
+SB017/San bay quoc te Dong Hoi/Quang Binh/0
+SB018/San bay quoc te Tuy Hoa/Phu Yen/0
+SB019/San bay quoc te Chu Lai/Quang Nam/0
+SB020/San bay quoc te Con Dao/Ba Ria - Vung Tau/0
