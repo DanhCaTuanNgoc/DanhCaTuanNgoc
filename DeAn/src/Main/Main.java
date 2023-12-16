@@ -5,7 +5,7 @@ import KhachHang.QuanLyDSKH;
 import SanBay.QuanLyDSSB;
 import HoaDon.QuanLyDSHD;
 import ChuyenBay.QuanLyDSCB;
-import TEST.DanhSachVe;
+import Ve.QuanLyDSV;
 import HoaDon.QuanLyDSHD;
 import ChiTietHoaDon.QuanLyDSCTHD;
 import MayBay.QuanLyDSMB;
@@ -55,8 +55,8 @@ public class Main {
 				cb.menu();
 				break;
 			case 1: 
-				DanhSachVe dsVe = new DanhSachVe();
-		        dsVe.ThaoTac();
+				QuanLyDSV ve = new QuanLyDSV();
+		        ve.menu();
 				break;
 			case 8:
 				QuanLyDSCTHD cthd = new QuanLyDSCTHD();

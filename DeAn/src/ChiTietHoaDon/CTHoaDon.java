@@ -1,6 +1,8 @@
 package ChiTietHoaDon;
 
 import java.util.Scanner;
+import HoaDon.DanhSachHoaDon;
+import java.util.InputMismatchException;
 
 public class CTHoaDon {
 	private String maHoaDon;
@@ -8,6 +10,8 @@ public class CTHoaDon {
 	private int soLuong;
 	private int giaTien;
 	private int deleted;
+	
+	DanhSachHoaDon hd = new DanhSachHoaDon(100);
 	// constructor
 	public CTHoaDon() {
 		maHoaDon = "";
@@ -65,9 +69,19 @@ public class CTHoaDon {
 	// methods
 	
 	public void nhap() {
+		hd.docfile
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma hoa don: ");
-		this.maHoaDon = sc.nextLine();
+		while(true) {
+			try {
+				System.out.print(" - Nhap ma hoa don: ");
+				this.maHoaDon = sc.nextLine();
+				if(hd.Check_Available(this.maHoaDon)) {
+					System.err.println("\nMa hoa don da ton tai !!!");
+				} else {
+					break;
+				}
+			} catch(InputMismatchException in){System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();}
+		}
 		System.out.print(" - Nhap ma ve: ");
 		this.maVe = sc.nextLine();
 		System.out.print(" - Nhap so luong: ");

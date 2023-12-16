@@ -82,7 +82,7 @@ public class DanhSachCTHoaDon {
 			String lines = br.readLine();
 			while(lines != null) {
 				String []line = lines.split("/");
-				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1], Integer.parseInt(line[2]), Integer.parseInt(line[3]), Integer.parseInt(line[4]));
+				dsCTHoaDon[tongCTHoaDon] = new CTHoaDon(line[0], line[1] , Integer.parseInt(line[2]), Integer.parseInt(line[3]), Integer.parseInt(line[4]));
 				if(line[4].equalsIgnoreCase("0")) {
 					this.soCTHDHH++;
 				}

@@ -34,16 +34,16 @@ public class QuanLyDSSB {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("   =========================================");
-			System.out.println("   !           ----- San Bay -----         !");
-			System.out.println("   !        1. Them san bay.               !");
-			System.out.println("   !        2. Danh sach san bay.          !");
-			System.out.println("   !        3. Tim kiem san bay.           !");
-			System.out.println("   !        4. Sua san bay.                !");
-			System.out.println("   !        5. Xoa san bay.                !");
-			System.out.println("   !        6. Thong ke.                   !");
-			System.out.println("   !        0. Thoat.                      !");
-			System.out.println("   =========================================");
+			System.out.println("   	======================================");
+			System.out.println("   	!          ----- San Bay -----       !");
+			System.out.println("   	!        1. Them san bay.            !");
+			System.out.println("   	!        2. Danh sach san bay.       !");
+			System.out.println("   	!        3. Tim kiem san bay.        !");
+			System.out.println("   	!        4. Sua san bay.             !");
+			System.out.println("   	!        5. Xoa san bay.             !");
+			System.out.println("   	!        6. Thong ke.                !");
+			System.out.println("   	!        0. Thoat.                   !");
+			System.out.println("   	======================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");

@@ -320,4 +320,14 @@ public class DanhSachChuyenBay {
 			}
 		}
 	}
+	
+	public boolean Check_Available(String machuyenbay) {
+		docfile();
+		for(int i=0;i<this.tongChuyenBay;i++) {
+			if(dsChuyenBay[i] != null && dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(machuyenbay)) {
+				 return true;
+			}
+		}
+		return false;
+	}
 }

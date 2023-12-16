@@ -12,7 +12,7 @@ import java.util.Scanner;
 import NhanVien.DanhSachNhanVien;
 import KhachHang.DanhSachKhachHang;
 
-final class DanhSachHoaDon {
+public class DanhSachHoaDon {
 	private HoaDon dsHoaDon[];
 	private int tongHoaDon; 
 	DanhSachNhanVien nv = new DanhSachNhanVien(100);
@@ -293,5 +293,15 @@ final class DanhSachHoaDon {
 			}
 		}
 		System.out.println("");
+	}
+	
+	//Kiem tra ton tai
+	public boolean Check_Available(String mahoadon) {
+		for(int i=0;i<this.tongHoaDon;i++) {
+			if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(mahoadon)) {
+				 return true;
+			}
+		}
+		return false;
 	}
 }

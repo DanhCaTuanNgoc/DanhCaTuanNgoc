@@ -322,7 +322,7 @@ public class DanhSachNhanVien {
 		System.out.println(" ------------ Thong ke ------------");
 		System.out.println(" - Tong so nhan vien hien co: " + this.soNVHH);
 	}
-	public void truyXuatNV1(String maNV) {
+	public void truyXuatNV(String maNV) {
 		for(int i=0;i<this.tongNV;i++) {
 			if(dsNhanVien[i] != null && dsNhanVien[i].getMaNhanVien().equalsIgnoreCase(maNV)) {
 				dsNhanVien[i].xuat();
