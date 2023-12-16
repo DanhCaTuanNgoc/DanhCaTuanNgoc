@@ -3,10 +3,6 @@ package ChiTietHoaDon;
 import java.util.Scanner;
 import HoaDon.DanhSachHoaDon;
 import Ve.DanhSachVe;
-import Ve.Ve;
-
-import java.util.InputMismatchException;
-
 public class CTHoaDon {
 	private String maHoaDon;
 	private String maVe;
@@ -75,17 +71,16 @@ public class CTHoaDon {
 	
 	public void nhap() {
 		ve.docfile();
+		hd.docfile();
 		Scanner sc = new Scanner(System.in);
 		while(true) {
-			try {
 				System.out.print(" - Nhap ma hoa don: ");
 				this.maHoaDon = sc.nextLine();
 				if(hd.Check_Available(this.maHoaDon)) {
-					System.err.println("\nMa hoa don da ton tai !!!");
-				} else {
 					break;
+				} else {
+					System.err.println("\nMa hoa don khong ton tai !!!");
 				}
-			} catch(InputMismatchException in){System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();}
 		}
 		boolean fk=true;
 		while(fk){

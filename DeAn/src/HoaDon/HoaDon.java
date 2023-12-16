@@ -1,18 +1,20 @@
 package HoaDon;
 
 import java.util.Scanner;
+
+import ChiTietHoaDon.DanhSachCTHoaDon;
 import NhanVien.DanhSachNhanVien;
 import KhachHang.DanhSachKhachHang;
-import HoaDon.DanhSachHoaDon;
 
 public class HoaDon {
 	private String maHoaDon;
 	private String maKhachHang;
 	private String maNhanVien;
 	private String ngayXuat;
-	private String tongHoaDon;
+	private int tongTien;
 	private int deleted;
 	
+	DanhSachCTHoaDon cthd=new DanhSachCTHoaDon(100);
 	DanhSachNhanVien nv = new DanhSachNhanVien(100);
 	DanhSachKhachHang kh = new DanhSachKhachHang(100);
 	DanhSachHoaDon hd = new DanhSachHoaDon(100);
@@ -23,15 +25,15 @@ public class HoaDon {
 		maKhachHang = "";
 		maNhanVien = "";
 		ngayXuat = "";
-		tongHoaDon = "";
+		tongTien = 0;
 		deleted = 0;
 	}
-	public HoaDon(String mahoadon, String makhachhang, String manhanvien, String ngayxuat, String tonghoadon, int deleted) {
+	public HoaDon(String mahoadon, String makhachhang, String manhanvien, String ngayxuat, int tonghoadon, int deleted) {
 		this.maHoaDon = mahoadon;
 		this.maKhachHang = makhachhang;
 		this.maNhanVien = manhanvien;
 		this.ngayXuat = ngayxuat;
-		this.tongHoaDon = tonghoadon;
+		this.tongTien = tonghoadon;
 		this.deleted = deleted;
 		
 	}
@@ -40,7 +42,7 @@ public class HoaDon {
 		this.maKhachHang = a.maKhachHang;
 		this.maNhanVien = a.maNhanVien;
 		this.ngayXuat = a.ngayXuat;
-		this.tongHoaDon = a.tongHoaDon;
+		this.tongTien = a.tongTien;
 		this.deleted = a.deleted;
 	}
 	
@@ -69,11 +71,11 @@ public class HoaDon {
 	public void setNgayXuat(String ngayXuat) {
 		this.ngayXuat = ngayXuat;
 	}
-	public String getTongHoaDon() {
-		return tongHoaDon;
+	public int getTongTien() {
+		return tongTien;
 	}
-	public void setTongHoaDon(String tongHoaDon) {
-		this.tongHoaDon = tongHoaDon;
+	public void setTongTien(int tongTIen) {
+		this.tongTien = tongTIen;
 	}
 	public void setDeleted(int deleted) {
 		this.deleted = deleted;
@@ -84,7 +86,7 @@ public class HoaDon {
 	// methods
 	
 	public void nhap() {
-		kh.docfile(); hd.docfile(); nv.docfile();
+		kh.docfile(); hd.docfile(); nv.docfile();cthd.docfile();
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
@@ -116,12 +118,12 @@ public class HoaDon {
 			}
 		}
 		System.out.print(" - Nhap ngay xuat: ");
-		this.ngayXuat = sc.nextLine();	
-		System.out.print(" - Nhap tong hoa don: ");
-		this.tongHoaDon = sc.nextLine();
+		this.ngayXuat = sc.nextLine();
+		this.tongTien=cthd.tongtien(this.maHoaDon);
+		System.out.print(" - Tong hoa don: "+this.tongTien);
 	}
 	
 	public void xuat() {
-		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s", maHoaDon, maKhachHang,  maNhanVien, ngayXuat, tongHoaDon);
+		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s", maHoaDon, maKhachHang,  maNhanVien, ngayXuat, tongTien);
 	}
 }

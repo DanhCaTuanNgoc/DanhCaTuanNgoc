@@ -82,6 +82,7 @@ public class DanhSachChuyenBay implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongChuyenBay = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -129,7 +130,7 @@ public class DanhSachChuyenBay implements Pthuc {
 		}
 	}
 	public void xemds() {
-		System.out.println("\t\t\t\t\t\t\t ------------ Danh sach chuyen bay ------------");
+		System.out.println("\t\t\t\t\t ------------ Danh sach chuyen bay ------------");
 		System.out.printf("| %-15s | %-10s | %-10s | %-10s | %-15s | %-15s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve");
 		System.out.println();
 		int checkList = -1;
@@ -145,7 +146,7 @@ public class DanhSachChuyenBay implements Pthuc {
 	public void xoa() {
 		System.out.println(" ------------ Xoa chuyen bay ------------");
 		System.out.print(" - Hay nhap ma chuyen bay can xoa | Thoat(0): ");
-		String x = sc.next(); int m = 0; int delete_point = -1;
+		String x = sc.next(); int m = 0;
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {

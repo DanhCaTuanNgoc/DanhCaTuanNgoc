@@ -71,6 +71,7 @@ public class DanhSachMayBay implements Pthuc{
 		}
 	}	
 	public void docfile() {
+		tongMayBay = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -166,7 +167,7 @@ public class DanhSachMayBay implements Pthuc{
 		System.out.println();
 		for(int i=0;i<this.tongMayBay;i++) {
 			if((dsMayBay[i].getMaMayBay().equalsIgnoreCase(tk1)||tk1.equalsIgnoreCase("x"))
-			&&(dsMayBay[i].getTenMayBay().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
+			&&(dsMayBay[i].getTenMayBay().contains(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(String.valueOf(dsMayBay[i]).equals(tk3) || tk3.equalsIgnoreCase("x"))
 			&& dsMayBay[i].getDeleted() != 1){
 				dsMayBay[i].xuat(); m++;

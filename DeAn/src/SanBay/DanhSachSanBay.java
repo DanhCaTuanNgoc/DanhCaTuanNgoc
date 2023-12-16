@@ -71,6 +71,7 @@ public class DanhSachSanBay implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongSan = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();

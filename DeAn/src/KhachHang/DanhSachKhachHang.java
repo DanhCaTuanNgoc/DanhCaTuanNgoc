@@ -70,6 +70,7 @@ public class DanhSachKhachHang implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongKhachHang = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();

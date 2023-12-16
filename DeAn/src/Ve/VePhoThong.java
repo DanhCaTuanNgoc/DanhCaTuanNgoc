@@ -30,6 +30,7 @@ public class VePhoThong extends Ve {
     // INPUT
     @Override
     public void nhap() {
+        ve.docfile();
 		System.out.print(" - Moi nhap ma ve: ");
 		this.maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){

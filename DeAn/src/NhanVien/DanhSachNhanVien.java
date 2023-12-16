@@ -72,6 +72,7 @@ public class DanhSachNhanVien implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongNV = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();

@@ -41,6 +41,7 @@ public class VeThuongGia extends Ve {
     @Override
     public void nhap() {
         ds.docfile();
+        ve.docfile();
 		System.out.print(" - Moi nhap ma Ve: ");
 		maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){

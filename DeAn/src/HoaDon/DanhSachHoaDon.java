@@ -78,6 +78,7 @@ public class DanhSachHoaDon implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongHoaDon = 0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -87,7 +88,7 @@ public class DanhSachHoaDon implements Pthuc {
 			String lines = br.readLine();
 			while(lines != null) {
 				String []line = lines.split("/");
-				dsHoaDon[tongHoaDon] = new HoaDon(line[0], line[1], line[2], line[3], line[4], Integer.parseInt(line[5]));
+				dsHoaDon[tongHoaDon] = new HoaDon(line[0], line[1], line[2], line[3], Integer.parseInt(line[4]), Integer.parseInt(line[5]));
 				if(line[5].equalsIgnoreCase("0")) {
 					this.soHDHH++;
 				}
@@ -100,6 +101,7 @@ public class DanhSachHoaDon implements Pthuc {
 		}
 	}
 	public void ghifile() {
+		ct.docfile();
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -112,8 +114,9 @@ public class DanhSachHoaDon implements Pthuc {
 			BufferedWriter br = new BufferedWriter(fr);
 			for(HoaDon hd : dsHoaDon) {
 				if(hd != null) {
-					br.write(hd.getMaHoaDon() + "/" + hd.getMaKhachHang() + "/" + hd.getMaNhanVien() + "/" + hd.getNgayXuat() + "/" + hd.getTongHoaDon() +  "/" + hd.getDeleted() + "\n");
-				} else {
+					hd.setTongTien(ct.tongtien(hd.getMaHoaDon()));
+					br.write(hd.getMaHoaDon() + "/" + hd.getMaKhachHang() + "/" + hd.getMaNhanVien() + "/" + hd.getNgayXuat() + "/" + hd.getTongTien() +  "/" + hd.getDeleted() + "\n");
+				}else{
 					break;
 				}
 			}
@@ -139,7 +142,7 @@ public class DanhSachHoaDon implements Pthuc {
 	public void xoa() {
 		System.out.println(" ------------ Xoa hoa don ------------");
 		System.out.print(" - Hay nhap ma hoa don can xoa | Thoat(0): ");
-		String x = sc.next(); int m = 0; int delete_point = -1;
+		String x = sc.next(); int m = 0;
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
@@ -168,8 +171,10 @@ public class DanhSachHoaDon implements Pthuc {
 		System.out.print(" + Ngay xuat (x de bo qua): ");
 		sc.nextLine();
 		String tk4 = sc.nextLine();
-		System.out.print(" + Tong hoa don (x de bo qua): ");
-		String tk5 = sc.nextLine();
+		System.out.print(" + Tong hoa don tu: ");
+		int tk5 = sc.nextInt();
+		System.out.println(" + Den: ");
+		int tk6=sc.nextInt();
 		int m = 0;
 		System.out.println();
 		System.out.printf("| %-15s | %-15s | %-15s | %-12s | %-12s","Ma hoa don","Ma khach hang","Ma nhan vien", "Ngay xuat", "Tong hoa don");
@@ -179,7 +184,8 @@ public class DanhSachHoaDon implements Pthuc {
 			&&(dsHoaDon[i].getMaKhachHang().equalsIgnoreCase(tk2)||tk2.equalsIgnoreCase("x"))
 			&&(dsHoaDon[i].getMaNhanVien().equalsIgnoreCase(tk3)||tk3.equalsIgnoreCase("x"))
 			&&(dsHoaDon[i].getNgayXuat().equalsIgnoreCase(tk4) ||tk4.equalsIgnoreCase("x"))
-			&&(dsHoaDon[i].getTongHoaDon().equalsIgnoreCase(tk5)||tk5.equalsIgnoreCase("x"))
+			&&(dsHoaDon[i].getTongTien()>=tk5)
+			&& dsHoaDon[i].getTongTien()<=tk6
 			&& dsHoaDon[i].getDeleted() != 1){
 				dsHoaDon[i].xuat(); m++;
 				System.out.println("");
@@ -228,9 +234,9 @@ public class DanhSachHoaDon implements Pthuc {
 						String nx = sc.nextLine();
 						dsHoaDon[i].setNgayXuat(nx);
 					case 5: 
-						System.out.print(" - Sua tong hoa don: ");
-						String tong = sc.nextLine();
-						dsHoaDon[i].setTongHoaDon(tong);
+						// System.out.print(" - Sua tong hoa don: ");
+						// String tong = sc.nextLine();
+						// dsHoaDon[i].setTongHoaDon(tong);
 					case 6: 
 						dsHoaDon[i].nhap();
 						break;

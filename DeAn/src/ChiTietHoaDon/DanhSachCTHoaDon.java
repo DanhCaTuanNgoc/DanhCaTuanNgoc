@@ -73,6 +73,7 @@ public class DanhSachCTHoaDon implements Pthuc {
 		}
 	}	
 	public void docfile() {
+		tongCTHoaDon=0;
 		try {
 			if(!d.exists()) {
 				d.createNewFile();
@@ -247,12 +248,20 @@ public class DanhSachCTHoaDon implements Pthuc {
 		}
 	}
 	public boolean Check_Available(String mave) {
-		docfile();
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaVe().equalsIgnoreCase(mave)) {
 				 return true;
 			}
 		}
 		return false;
+	}
+	public int tongtien(String mahoadon){
+		int tong=0;
+		for(int i=0;i<this.tongCTHoaDon;i++) {
+			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(mahoadon)) {
+				tong=dsCTHoaDon[i].getGiaTien()+tong;
+			}
+		}
+		return tong;
 	}
 }
