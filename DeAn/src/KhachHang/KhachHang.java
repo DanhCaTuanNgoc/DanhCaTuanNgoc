@@ -10,6 +10,9 @@ public class KhachHang {
 	private String diaChi;
     private String sdt;
     private int deleted = 0;
+    
+    DanhSachKhachHang kh = new DanhSachKhachHang(100);
+    
 	// constructor
 	public KhachHang() {
 		maKhachHang = "";
@@ -85,8 +88,16 @@ public class KhachHang {
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma khach hang: ");
-		this.maKhachHang = sc.nextLine();
+		kh.docfile();
+		while(true) {
+			System.out.print(" - Nhap ma khach hang: ");
+			this.maKhachHang = sc.nextLine();
+			if(!kh.Check_Available(maKhachHang)) {
+				break;
+			} else {
+				System.out.println("\t !! Ma khach hang da ton tai !!");
+			}
+		}
 		System.out.print(" - Nhap ho: ");
 		this.ho = sc.nextLine();
 		System.out.print(" - Nhap ten: ");

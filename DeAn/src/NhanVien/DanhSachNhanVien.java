@@ -63,6 +63,7 @@ public class DanhSachNhanVien implements Pthuc {
 		dsNhanVien[this.tongNV - 1] = new NhanVien();
 		dsNhanVien[this.tongNV - 1].nhap(); 
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
 		System.out.println("");

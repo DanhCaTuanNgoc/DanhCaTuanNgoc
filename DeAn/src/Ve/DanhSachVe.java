@@ -72,10 +72,10 @@ public class DanhSachVe {
                 String []line=lines.split("/");
                 if(line[0].equals("ve pho thong")){
                     dsVe[tongVe]=new VePhoThong(line[1],line[2],Integer.parseInt(line[3]),line[4],Integer.parseInt(line[5]));
-					if(line[5].equals("0")){SoVeHH++;}
+                    if(line[5].equals("0")){SoVeHH++; this.SoVept++;}
                 }else if(line[0].equals("ve thuong gia")){
                     dsVe[tongVe]=new VeThuongGia(line[1],line[2],Integer.parseInt(line[3]),line[4],line[5],Integer.parseInt(line[6]));
-					if(line[6].equals("0")){SoVeHH++;}
+                    if(line[6].equals("0")){SoVeHH++; this.SoVetg++;}
 				}
                 tongVe++;
                 lines=br.readLine();
@@ -113,28 +113,28 @@ public class DanhSachVe {
 	
 	public void them(){
 		System.out.println(" ------------ Them ve ------------");
-		System.out.println(" 1.Ve pho thong | 2.Ve thuong gia");
-		String n =sc.nextLine();
+		System.out.print(" Ve pho thong(1) | Ve thuong gia(2) : ");
+		int n =sc.nextInt();
 		this.SoVeHH++;this.tongVe++;
-		if(n.equals("1")){
+		if(n == 1){
 			System.out.println(" 	$ Nhap thong tin ve pho thong $ ");
 			dsVe = Arrays.copyOf(dsVe, this.tongVe);
 			VePhoThong vpt=new VePhoThong();
 			vpt.nhap();
 			dsVe[this.tongVe - 1] = vpt;
-		}else if(n.equals("2")){
+		}else if(n == 2){
 			System.out.println(" 	$ Nhap thong tin ve thuong gia $ ");
 			dsVe = Arrays.copyOf(dsVe, this.tongVe);
 			VeThuongGia vtg=new VeThuongGia();
 			vtg.nhap();
 			dsVe[this.tongVe - 1] = vtg;
-		}else {System.err.println(" Nhap sai! vui long nhap lai! ");them();}
-		
+		}else {System.out.println("\n Nhap sai! vui long nhap lai! ");them();}
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
-		n = sc.nextLine();
+		n = sc.nextInt();
 		System.out.println("");
-		if(n.equals("1")) { them(); } 
+		if(n == 1) { them(); } 
 		else { 
 			System.out.println(" -------- Hoan tat thao tac --------");
 		}
@@ -218,19 +218,19 @@ public class DanhSachVe {
 	public void xoa(){
 		System.out.println(" ------------ Xoa ve ------------");
 		System.out.print(" - Hay nhap ma ve can xoa | Thoat(0): ");
-		String x = sc.nextLine(); int m = 0; 
+		String x = sc.next(); int m = 0; 
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
 			for(int i=0;i<this.tongVe;i++) {
 				if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
 					m++; dsVe[i].setDeleted(1);
-					System.out.println("\n -------- Hoan tat thao tac --------");
+					System.out.print("\n -------- Hoan tat thao tac --------");
 					break;
 				}
 			}
 				if(m == 0) {
-				System.out.println("\n -------- Khong tim thay ma ve --------");
+				System.out.print("\n -------- Khong tim thay ma ve --------");
 				}
 			}
 	}
@@ -240,9 +240,9 @@ public class DanhSachVe {
 		String tk1= sc.next();
 		System.out.print(" + Ma chuyen bay ( x de bo qua): ");
 		String tk2= sc.next();
-		System.out.print(" + Gia tu: ");
+		System.out.print(" + Gia tu : ");
 		int tk3= sc.nextInt();
-		System.out.print(" + Den: ");
+		System.out.print(" + Den : ");
 		int tk4= sc.nextInt();
  		System.out.println();
 		System.out.printf("| %-10s | %-15s | %-15s | %-10s ","Ma ve","Ma chuyen bay","Gia","Loai ve");
@@ -283,7 +283,7 @@ public class DanhSachVe {
 						System.out.print(" - Sua ma ve: ");
 						String ma = sc.next();
 						while(Check_Available(ma)){
-							System.err.println("Ma ve bi trung!Nhap lai!");
+							System.out.println("\t !! Ma ve da ton tai !!");
 							System.out.print(" - Sua ma ve: ");
 							ma = sc.next();
 						}
@@ -293,7 +293,7 @@ public class DanhSachVe {
 						System.out.println(" - Sua ma chuyen bay: ");
 						String macb = sc.next();
 						while(!ds.Check_Available(macb)){
-							System.err.println("Ma ve bi trung!Vui long nhap lai!");
+							System.out.println("\t !! Ma ve da toi tai !!");
 							System.out.println(" - Sua ma chuyen bay: ");
 							macb=sc.next();
         					}
@@ -306,7 +306,7 @@ public class DanhSachVe {
 						break;
 					case 4:
 						while (true) {
-							System.out.println(" - Doi sang: (1)Pho thong | (2)Thuong gia");
+							System.out.print(" - Doi sang: (1)Pho thong | (2)Thuong gia: ");
 							x=sc.next();
 							if(x.equals("1")){
 								System.out.print(" - Nhap hang ve: ");
@@ -336,7 +336,7 @@ public class DanhSachVe {
 			}
 		}
 		if (m == 1) {
-			System.out.println("\n ------ Khong tim thay chuyen bay ------");
+			System.out.println("\n ------ Khong tim thay ve ------");
 		} else if(m == -1) {
 			;
 		} else {
@@ -344,7 +344,9 @@ public class DanhSachVe {
 		}
 	}
 	public void thongke(){
-		System.out.println(" - So ve hien co: "+SoVeHH);
+		System.out.println(" - So ve hien co : " + SoVeHH);
+		System.out.println("\t + Ve thuong gia : " + this.SoVetg);
+		System.out.println("\t + Ve pho thong : " + this.SoVept);
 	}
 	public boolean Check_Available(String mave) {
 		docfile();

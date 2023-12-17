@@ -69,6 +69,7 @@ public class DanhSachHoaDon implements Pthuc {
 		dsHoaDon[this.tongHoaDon - 1] = new HoaDon();
 		dsHoaDon[this.tongHoaDon - 1].nhap(); 
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
 		System.out.println("");
@@ -331,6 +332,8 @@ public class DanhSachHoaDon implements Pthuc {
 		}
 		return false;
 	}
+	
+	// tinh tong tien
 	public int tongtien(){
 		docfile();
 		int tong=0;

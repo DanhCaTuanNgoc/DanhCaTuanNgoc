@@ -93,7 +93,7 @@ public class HoaDon {
 			System.out.print(" - Nhap ma hoa don: ");
 			this.maHoaDon = sc.nextLine();
 			if(hd.Check_Available(maHoaDon)) {
-				System.err.println("\n Ma hoa don da ton tai !!! Vui long nhap lai");
+				System.out.println("\t !! Ma hoa don da ton tai !!");
 			} else {
 				break;
 			}
@@ -103,16 +103,17 @@ public class HoaDon {
 			System.out.print(" - Nhap ma khach hang: ");
 			this.maKhachHang = sc.nextLine();
 			if(!kh.Check_Available(maKhachHang)) {
-				System.err.println("\n Ma khach hang khong ton tai !!! Vui long nhap lai");
+				System.out.println("\t !! Ma khach hang khong ton tai !!");
 			} else {
 				break;
 			}
 		}
+		
 		while(true) {
 			System.out.print(" - Nhap ma nhan vien: ");
 			this.maNhanVien = sc.nextLine();
 			if(!nv.Check_Available(maNhanVien)) {
-				System.err.println("\n Ma nhan vien kh ton tai !!! Vui long nhap lai");
+				System.out.println("\t !! Ma nhan vien kh ton tai !!");
 			} else {
 				break;
 			}

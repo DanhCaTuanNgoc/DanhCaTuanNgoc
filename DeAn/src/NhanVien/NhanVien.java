@@ -8,6 +8,9 @@ public class NhanVien {
 	private String sdt;
 	private String ten;
 	private int deleted = 0; // 0 => chua xoa, 1 => nguoc lai
+	
+	DanhSachNhanVien nv = new DanhSachNhanVien(100);
+	
 	// constructor
 	public NhanVien() {
 		maNhanVien = "";
@@ -65,8 +68,16 @@ public class NhanVien {
 	// methods
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma nhan vien: ");
-		this.maNhanVien = sc.nextLine();
+		nv.docfile();
+		while(true) {
+			System.out.print(" - Nhap ma nhan vien: ");
+			this.maNhanVien = sc.nextLine();
+			if(nv.Check_Available(maNhanVien)) {
+				System.out.println("\t !! Ma nhan vien da ton tai !!");
+			} else {
+				break;
+			}
+		}
 		System.out.print(" - Nhap ho nhan vien: ");
 		this.ho = sc.nextLine();
 		System.out.print(" - Nhap ten nhan vien: ");

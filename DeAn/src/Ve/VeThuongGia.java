@@ -45,14 +45,14 @@ public class VeThuongGia extends Ve {
 		System.out.print(" - Moi nhap ma Ve: ");
 		maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){
-            System.err.print(" Ma ve da ton tai ! Vui long nhap lai");
+            System.out.println("\t !! Ma ve da ton tai !!");
             System.out.print(" - Nhap ma ve: ");
             this.maVe=sc.nextLine();
         }
         System.out.print(" - Nhap ma chuyen bay: ");
         this.maChuyenBay=sc.nextLine();
         while(!ds.Check_Available(maChuyenBay)){
-            System.out.println(" Ma chuyen bay khong ton tai ! Vui long nhap lai!");
+            System.out.println("\t !! Ma chuyen bay khong ton tai !!");
             System.out.print(" - Nhap ma chuyen bay: ");
             this.maChuyenBay=sc.nextLine();
         }

@@ -73,6 +73,7 @@ public class DanhSachChuyenBay implements Pthuc {
 		dsChuyenBay[this.tongChuyenBay - 1] = new ChuyenBay();
 		dsChuyenBay[this.tongChuyenBay - 1].nhap(); 
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
 		System.out.println("");
@@ -318,7 +319,6 @@ public class DanhSachChuyenBay implements Pthuc {
 	}
 	
 	public boolean Check_Available(String machuyenbay) {
-		docfile();
 		for(int i=0;i<this.tongChuyenBay;i++) {
 			if(dsChuyenBay[i] != null && dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(machuyenbay)) {
 				 return true;

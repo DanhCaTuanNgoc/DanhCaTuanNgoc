@@ -64,6 +64,7 @@ public class DanhSachCTHoaDon implements Pthuc {
 		dsCTHoaDon[this.tongCTHoaDon - 1] = new CTHoaDon();
 		dsCTHoaDon[this.tongCTHoaDon - 1].nhap(); 
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
 		System.out.println("");

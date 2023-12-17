@@ -48,7 +48,6 @@ public class QuanLyDSMB {
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
 			int n = sc.nextInt();
-			System.out.println("");
 			switch(n) {
 				case 1:
 					clearScreen(5);

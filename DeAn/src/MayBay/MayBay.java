@@ -8,6 +8,9 @@ public class MayBay {
 	private String tenMayBay;
 	private int soGhe;
 	private int deleted = 0;
+	
+	DanhSachMayBay mb = new DanhSachMayBay(100);
+	
 	// constructor
 	public MayBay() {
 		maMayBay = "";
@@ -56,8 +59,16 @@ public class MayBay {
 	
 	public void nhap() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma may bay: ");
-		this.maMayBay = sc.nextLine();
+		mb.docfile();
+		while(true) {
+			System.out.print(" - Nhap ma may bay: ");
+			this.maMayBay = sc.nextLine();
+			if(mb.Check_Available(maMayBay)) {
+				System.out.println("\t !! Ma may bay da ton tai !!");
+			} else {
+				break;
+			}
+		}
 		System.out.print(" - Nhap ten may bay: ");
 		this.tenMayBay = sc.nextLine();
 		while(true){
@@ -65,7 +76,7 @@ public class MayBay {
 				System.out.print(" - Nhap so ghe: ");
 				this.soGhe = sc.nextInt();
 				if(soGhe!=0){return;}
-				else{System.out.println("LOI! VUI LONG NHAP LAI!");}
+				else{System.out.println("\t !! Loi !!");}
 			}catch(InputMismatchException in){System.out.println("LOI! VUI LONG NHAP LAI!");sc.nextLine();}
 		}
 	}

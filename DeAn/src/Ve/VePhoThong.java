@@ -30,18 +30,18 @@ public class VePhoThong extends Ve {
     // INPUT
     @Override
     public void nhap() {
-        ve.docfile();
+        ve.docfile(); ds.docfile();
 		System.out.print(" - Nhap ma ve: ");
 		this.maVe = sc.nextLine();
         while(ve.Check_Available(maVe)){
-            System.err.println("\n Ma ve da ton tai ! Vui long nhap lai");
+            System.out.println("\t !! Ma ve da ton tai !!");
             System.out.print(" - Nhap ma ve: ");
             this.maVe=sc.nextLine();
         }
         System.out.print(" - Nhap ma chuyen bay: ");
         this.maChuyenBay=sc.nextLine();
         while(! ds.Check_Available(maChuyenBay)){
-            System.err.print(" Ma chuyen bay khong ton tai ! Vui long nhap lai");
+            System.out.println("\t !! Ma chuyen bay khong ton tai !!");
             System.out.print(" - Nhap ma chuyen bay: ");
             this.maChuyenBay=sc.nextLine();
         }

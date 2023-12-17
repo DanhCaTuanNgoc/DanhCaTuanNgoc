@@ -81,7 +81,7 @@ public class CTHoaDon {
 				if(hd.Check_Available(this.maHoaDon)) {
 					break;
 				} else {
-					System.err.println("\nMa hoa don khong ton tai !!!");
+					System.out.println("\t !! Ma hoa don khong ton tai !!");
 				}
 		}
 		boolean fk=true;
@@ -90,12 +90,12 @@ public class CTHoaDon {
 			this.maVe = sc.nextLine();
 			if(ve.Check_Available(maVe)){
 				if (cthdd.Check_Available(maVe)) {
-					System.err.println(" Ve da duoc dat ! Vui long chon ma ve khac !");
+					System.out.println("\t !! Ve da duoc dat, chon ma ve khac !!");
 				}else {
 					fk=false;
 				}
 			}else{
-				System.out.println(" Ma ve khong ton tai ! Vui long chon ma ve khac !");	
+				System.out.println("\t !! Ma ve khong ton tai !!");	
 			}
 		}
 		System.out.print(" - Nhap khuyen mai (%): ");

@@ -135,7 +135,7 @@ public class ChuyenBay {
 				System.out.print(" - Nhap ma chuyen bay: ");
 				this.maChuyenBay = sc.nextLine();
 				if(cb.Check_Available(maChuyenBay)) {
-					System.err.println("\n Ma chuyen bay da ton tai !!! Vui long nhap lai");
+					System.out.println("\t !! Ma chuyen bay da ton tai !!");
 				} else {
 					break;
 				}
@@ -146,7 +146,7 @@ public class ChuyenBay {
 				if(mb.Check_Available(this.maMayBay)) {
 					break;
 				} else {
-					System.err.println("\n Ma may bay khong ton tai !!! Vui long nhap lai !!!");
+					System.out.println("\t !! Ma may bay khong ton tai !!");
 				}
 		}
 		while(true) { // rang buoc du lieu ma san bay
@@ -155,7 +155,7 @@ public class ChuyenBay {
 				if(sb.Check_Available(this.maSanBayDi)) {
 					break;
 				} else {
-					System.err.println("\n Ma san bay khong ton tai !!! Vui long nhap lai !!!");
+					System.out.println("\t !! Ma san bay khong ton tai !!");
 				}
 		}
 		while(true) { // rang buoc du lieu ma san bay
@@ -164,7 +164,7 @@ public class ChuyenBay {
 			if(sb.Check_Available(this.maSanBayDen)) {
 				break;
 			} else {
-				System.err.println("\n Ma san bay kh ton tai trong he thong, vui long nhap lai !!!");
+				System.out.println("\t !! Ma san bay kh ton tai !!");
 			}	
 		}
 		sc.nextLine();

@@ -62,6 +62,7 @@ public class DanhSachSanBay implements Pthuc {
 		dsSanBay[this.tongSan - 1] = new SanBay();
 		dsSanBay[this.tongSan - 1].nhap(); 
 		System.out.println("");
+		ghifile();
 		System.out.print(" Tiep tuc (1) | Dung lai (phim bat ky): ");
 		String n = sc.next();
 		System.out.println("");

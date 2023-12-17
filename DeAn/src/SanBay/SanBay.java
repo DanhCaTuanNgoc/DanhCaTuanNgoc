@@ -7,6 +7,8 @@ public class SanBay {
 	private String tenSanBay;
 	private String diaChiSanBay;
 	private int deleted = 0;
+	
+	DanhSachSanBay sb =  new DanhSachSanBay(100);
 
 	// constructor
 	public SanBay() {
@@ -56,9 +58,17 @@ public class SanBay {
 	// methods
 	
 	public void nhap() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print(" - Nhap ma san bay: ");
-		this.maSanBay = sc.nextLine();
+		Scanner sc = new Scanner(System.in); 
+		sb.docfile();
+		while(true) {
+			System.out.print(" - Nhap ma san bay: ");
+			this.maSanBay = sc.nextLine();
+			if(sb.Check_Available(maSanBay)) {
+				System.out.println("\t  !! Ma san bay da ton tai !!");
+			} else {
+				break;
+			}
+		}
 		System.out.print(" - Nhap ten san bay: ");
 		this.tenSanBay = sc.nextLine();
 		System.out.print(" - Nhap dia chi san bay: ");
