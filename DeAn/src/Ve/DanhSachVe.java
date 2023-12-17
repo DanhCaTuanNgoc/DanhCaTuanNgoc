@@ -12,12 +12,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
 import Interface.Pthuc;
+import ChiTietHoaDon.DanhSachCTHoaDon;
 
 public class DanhSachVe implements Pthuc {
 	private Ve[] dsVe;
 	private int SoVept,SoVetg;
 	private int SoVeHH,tongVe;
 	DanhSachChuyenBay ds =new DanhSachChuyenBay(100);
+	DanhSachCTHoaDon cthd = new DanhSachCTHoaDon(100);
 	Scanner sc = new Scanner(System.in);
 	File d=new File("src/InputOutput/DanhSachVe.txt");
 	//CONSTRUCTOR
@@ -218,23 +220,28 @@ public class DanhSachVe implements Pthuc {
         }
     }
 	public void xoa(){
+		cthd.docfile();
 		System.out.println(" ------------ Xoa ve ------------");
 		System.out.print(" - Hay nhap ma ve can xoa | Thoat(0): ");
 		String x = sc.next(); int m = 0; 
-		if(x.equalsIgnoreCase("0")) {
-			;
+		if(cthd.Check_Available(x)) {
+			System.out.print("\n ----- Khong the xoa ve da ban -----");
 		} else {
-			for(int i=0;i<this.tongVe;i++) {
-				if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
-					m++; dsVe[i].setDeleted(1);
-					System.out.print("\n -------- Hoan tat thao tac --------");
-					break;
+			if(x.equalsIgnoreCase("0")) {
+				;
+			} else {
+				for(int i=0;i<this.tongVe;i++) {
+					if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
+						m++; dsVe[i].setDeleted(1);
+						System.out.print("\n -------- Hoan tat thao tac --------");
+						break;
+					}
 				}
-			}
-				if(m == 0) {
-				System.out.print("\n -------- Khong tim thay ma ve --------");
+					if(m == 0) {
+					System.out.print("\n -------- Khong tim thay ma ve --------");
+					}
 				}
-			}
+		}
 	}
 	public void timkiem(){
 		System.out.println(" ------------ Tim kiem ------------");
@@ -266,83 +273,88 @@ public class DanhSachVe implements Pthuc {
 		}
 	}
 	public void sua() {
+		cthd.docfile();
 		System.out.println(" ------------ Sua ve ------------");
 		System.out.print(" - Hay nhap ma ve can sua: ");
 		String x = sc.next(); int m = 1;
-		System.out.println("");
-		// Nhap ma chuyen bay sau do tuy chon cach sua.
-		for (int i=0;i<this.tongVe;i++) {
-			if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
-				System.out.println(" (1) Ma ve");
-				System.out.println(" (2) Ma chuyen bay");
-				System.out.println(" (3) Gia tien");
-				System.out.println(" (4) Doi loai ve");
-				System.out.println(" (0) Thoat");
-				System.out.print(" - Lua chon gia tri can sua: ");
-				int n = sc.nextInt(); m++;
-				switch (n) {
-					case 1:
-						System.out.print(" - Sua ma ve: ");
-						String ma = sc.next();
-						while(Check_Available(ma)){
-							System.out.println("\t !! Ma ve da ton tai !!");
-							System.out.print(" - Sua ma ve: ");
-							ma = sc.next();
-						}
-						dsVe[i].setMaVe(ma);
-						break;
-					case 2:
-						System.out.println(" - Sua ma chuyen bay: ");
-						String macb = sc.next();
-						while(!ds.Check_Available(macb)){
-							System.out.println("\t !! Ma ve da toi tai !!");
-							System.out.println(" - Sua ma chuyen bay: ");
-							macb=sc.next();
-        					}
-						dsVe[i].setMaChuyenBay(macb);
-						break;
-					case 3: 
-						System.out.print(" - Sua gia tien: ");
-						int gt=sc.nextInt();
-						dsVe[i].setGia(gt);
-						break;
-					case 4:
-						while (true) {
-							System.out.print(" - Doi sang: (1)Pho thong | (2)Thuong gia: ");
-							x=sc.next();
-							if(x.equals("1")){
-								System.out.print(" - Nhap hang ve: ");
-								String hve=sc.next();
-								dsVe[i]=new VePhoThong(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),hve,0);
-								return;
-							}else if (x.equals("2")) {
-								System.out.print(" - Nhap ma phong cho: ");
-								String mpc=sc.next();
-								System.out.print(" - Nhap dich vu vip: ");
-								String dcv=sc.next();
-								dsVe[i]=new VeThuongGia(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),mpc,dcv,0);
-								return;
-							} else {
-								System.err.println(" Chon sai! Vui long chon lai!");
-							}							
-						}
-					case 0:
-						m = -1;
-						break;
-					default:
-						System.out.println("Lua chon khong hop le, vui long nhap lai !!!");
-						sua();
-						break;
-				}
-				break;
-			}
-		}
-		if (m == 1) {
-			System.out.println("\n ------ Khong tim thay ve ------");
-		} else if(m == -1) {
-			;
+		if(cthd.Check_Available(x)) {
+			System.out.print("\n ----- Khong the sua ve da ban -----");
 		} else {
-			System.out.println("\n ----- Hoan tat thao tac -----");
+			System.out.println("");
+			// Nhap ma chuyen bay sau do tuy chon cach sua.
+			for (int i=0;i<this.tongVe;i++) {
+				if(dsVe[i].getMaVe().equalsIgnoreCase(x) && dsVe[i].getDeleted() != 1) {
+					System.out.println(" (1) Ma ve");
+					System.out.println(" (2) Ma chuyen bay");
+					System.out.println(" (3) Gia tien");
+					System.out.println(" (4) Doi loai ve");
+					System.out.println(" (0) Thoat");
+					System.out.print(" - Lua chon gia tri can sua: ");
+					int n = sc.nextInt(); m++;
+					switch (n) {
+						case 1:
+							System.out.print(" - Sua ma ve: ");
+							String ma = sc.next();
+							while(Check_Available(ma)){
+								System.out.println("\t !! Ma ve da ton tai !!");
+								System.out.print(" - Sua ma ve: ");
+								ma = sc.next();
+							}
+							dsVe[i].setMaVe(ma);
+							break;
+						case 2:
+							System.out.println(" - Sua ma chuyen bay: ");
+							String macb = sc.next();
+							while(!ds.Check_Available(macb)){
+								System.out.println("\t !! Ma ve da toi tai !!");
+								System.out.println(" - Sua ma chuyen bay: ");
+								macb=sc.next();
+	        					}
+							dsVe[i].setMaChuyenBay(macb);
+							break;
+						case 3: 
+							System.out.print(" - Sua gia tien: ");
+							int gt=sc.nextInt();
+							dsVe[i].setGia(gt);
+							break;
+						case 4:
+							while (true) {
+								System.out.print(" - Doi sang: (1)Pho thong | (2)Thuong gia: ");
+								x=sc.next();
+								if(x.equals("1")){
+									System.out.print(" - Nhap hang ve: ");
+									String hve=sc.next();
+									dsVe[i]=new VePhoThong(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),hve,0);
+									return;
+								}else if (x.equals("2")) {
+									System.out.print(" - Nhap ma phong cho: ");
+									String mpc=sc.next();
+									System.out.print(" - Nhap dich vu vip: ");
+									String dcv=sc.next();
+									dsVe[i]=new VeThuongGia(dsVe[i].getMaVe(),dsVe[i].getMaChuyenBay(),dsVe[i].getGia(),mpc,dcv,0);
+									return;
+								} else {
+									System.err.println(" Chon sai! Vui long chon lai!");
+								}							
+							}
+						case 0:
+							m = -1;
+							break;
+						default:
+							System.out.println("Lua chon khong hop le, vui long nhap lai !!!");
+							sua();
+							break;
+					}
+					break;
+				}
+			}
+			if (m == 1) {
+				System.out.println("\n ------ Khong tim thay ve ------");
+			} else if(m == -1) {
+				;
+			} else {
+				System.out.println("\n ----- Hoan tat thao tac -----");
+			}
 		}
 	}
 	public void thongke(){

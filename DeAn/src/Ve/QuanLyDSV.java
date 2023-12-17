@@ -18,7 +18,7 @@ public class QuanLyDSV {
     public void setDs(DanhSachVe ds) {
         this.ds = ds;
     }
-    public void clearScreen(int n) {
+    public static void clearScreen(int n) {
 		for(int i=0;i<n;i++) {
 			System.out.println();
 		}

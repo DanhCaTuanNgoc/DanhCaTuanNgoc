@@ -64,6 +64,6 @@ public abstract class Ve{
     }
 	//CAC HAM KHAC
     public abstract void loaive();
-    public abstract void nhap();
-    public abstract void xuat();
+	public abstract void nhap();
+	public abstract void xuat();
 }
