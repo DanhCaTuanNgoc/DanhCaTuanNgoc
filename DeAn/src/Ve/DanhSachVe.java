@@ -11,8 +11,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
+import Interface.Pthuc;
 
-public class DanhSachVe {
+public class DanhSachVe implements Pthuc {
 	private Ve[] dsVe;
 	private int SoVept,SoVetg;
 	private int SoVeHH,tongVe;
@@ -370,7 +371,7 @@ public class DanhSachVe {
 		docfile();
 		int tong=0;
 		for(int i=0;i<tongVe;i++){
-			if (dsVe[i].getDeleted()==0) {
+			if (dsVe[i].getDeleted() == 0) {
 				if(dsVe[i] instanceof VePhoThong){
 					VePhoThong vpt=(VePhoThong)dsVe[i];
 					if(vpt.getHangVe().equalsIgnoreCase("economy")){tong=tong+500000;}

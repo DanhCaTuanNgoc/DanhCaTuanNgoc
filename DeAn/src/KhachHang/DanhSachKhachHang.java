@@ -133,7 +133,7 @@ public class DanhSachKhachHang implements Pthuc {
 	public void xoa() {
 		System.out.println(" ------------ Xoa khach hang ------------");
 		System.out.print(" - Hay nhap ma khach hang can xoa | Thoat (0): ");
-		String x = sc.next(); int m = 0; int delete_point = -1;
+		String x = sc.next(); int m = 0; 
 		if(x.equalsIgnoreCase("0")) {
 			;
 		} else {
@@ -257,7 +257,7 @@ public class DanhSachKhachHang implements Pthuc {
 		}
 	}
 	public void thongke() {
-		System.out.println(" - Tong so khach hang hien co: " + this.soKHHH);
+		System.out.println(" - Tong so khach hang : " + this.soKHHH);
 	}
 	
 	// Truy xuat du lieu

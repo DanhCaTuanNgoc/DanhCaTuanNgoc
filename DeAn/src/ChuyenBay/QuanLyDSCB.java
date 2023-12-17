@@ -42,7 +42,6 @@ public class QuanLyDSCB {
 			System.out.println("  	!          4. Sua chuyen bay.                 !");
 			System.out.println("  	!          5. Xoa chuyen bay.                 !");
 			System.out.println("  	!          6. Truy xuat san bay va may bay.   !");
-			System.out.println("   	!          7. Thong ke.                       !");
 			System.out.println("  	!          0. Thoat.                          !");
 			System.out.println("  	===============================================");
 			System.out.println("");
@@ -86,15 +85,6 @@ public class QuanLyDSCB {
 					ds.xoa();
 					clearScreen(5);
 					break;
-				case 7:
-					clearScreen(3);
-					ds.thongke();
-					System.out.println("");
-					sc.nextLine();
-					System.out.println(" Thoat (phim bat ky): ");
-					sc.nextLine();
-					clearScreen(3);
-					
 				case 6:
 					clearScreen(5);
 					ds.truyXuat();

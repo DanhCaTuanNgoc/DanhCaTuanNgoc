@@ -3,10 +3,11 @@ import HoaDon.DanhSachHoaDon;
 import Ve.DanhSachVe;
 
 public class LoiNhuan {
-	final static double thue=0.15; // thue doanh nghiep
+	final static double thue = 0.15; // thue doanh nghiep
 	private String Tong;
 	DanhSachVe dsve=new DanhSachVe(100);
 	DanhSachHoaDon dshd=new DanhSachHoaDon(100);
+	
 	// constructor
 	public LoiNhuan() {
 		Tong = "";

@@ -42,7 +42,6 @@ public class QuanLyDSNV {
 			System.out.println("   	!        4. Tim kiem nhan vien.          !");
 			System.out.println("   	!        5. Sua nhan vien.               !");
 			System.out.println("   	!        6. Xoa nhan vien.               !");
-			System.out.println("   	!        7. Thong ke.                    !");
 			System.out.println("   	!        0. Thoat.                       !");
 			System.out.println("   	==========================================");
 			System.out.println("");
@@ -88,16 +87,6 @@ public class QuanLyDSNV {
 				case 6:
 					clearScreen(5);
 					ds.xoa();
-					clearScreen(5);
-					break;
-				case 7:
-					clearScreen(5);
-					ds.thongke();
-					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
-					System.out.println("");
-					sc.nextLine();
-					System.out.print(" Thoat (phim bat ky): ");
-					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 0:

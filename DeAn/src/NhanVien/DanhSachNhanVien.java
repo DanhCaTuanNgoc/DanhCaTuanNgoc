@@ -320,7 +320,7 @@ public class DanhSachNhanVien implements Pthuc {
 		}
 	}
 	public void thongke() {
-		System.out.println(" - Tong so nhan vien hien co: " + this.soNVHH);
+		System.out.println(" - Tong so nhan vien : " + this.soNVHH);
 	}
 	public void truyXuatNV(String maNV) {
 		for(int i=0;i<this.tongNV;i++) {

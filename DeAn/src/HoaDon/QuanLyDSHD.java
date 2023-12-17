@@ -44,7 +44,6 @@ public class QuanLyDSHD {
 			System.out.println("   	!        6. Truy xuat chi tiet hoa don. !");
 			System.out.println("   	!        7. Truy xuat nhan vien.        !");
 			System.out.println("   	!        8. Truy xuat khach hang.       !");
-			System.out.println("   	!        9. Thong ke.                   !");
 			System.out.println("   	!        0. Thoat.                      !");
 			System.out.println("   	=========================================");
 			System.out.println("");
@@ -103,14 +102,6 @@ public class QuanLyDSHD {
 					ds.truyXuatKH();
 					clearScreen(5);
 					break;
-				case 9:
-					clearScreen(5);
-					ds.thongke();
-					System.out.println("");
-					sc.nextLine();
-					System.out.print(" Thoat (phim bat ky): ");
-					sc.nextLine();
-					clearScreen(5);
 				case 0:
 					return;
 				default: 

@@ -338,7 +338,7 @@ public class DanhSachHoaDon implements Pthuc {
 		docfile();
 		int tong=0;
 		for (int i=0;i<tongHoaDon;i++) {
-			tong+=dsHoaDon[i].getTongTien();
+			tong += dsHoaDon[i].getTongTien();
 		}
 		return tong;
 	}

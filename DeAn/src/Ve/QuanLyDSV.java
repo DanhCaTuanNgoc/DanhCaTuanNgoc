@@ -27,16 +27,15 @@ public class QuanLyDSV {
 		ds.docfile();
 		while(true) {
 			System.out.println("");
-			System.out.println("  	====================================");
-			System.out.println("  	!           ----- Ve -----         !");
-			System.out.println("  	!        1. Them ve.               !");
-			System.out.println("  	!        2. Danh sach ve.          !");
-			System.out.println("  	!        3. Tim kiem ve.           !");
-			System.out.println("  	!        4. Sua ve.                !");
-			System.out.println(" 	!        5. Xoa ve.                !");
-			System.out.println("  	!        6. Thong ke.              !");
-			System.out.println("  	!        0. Thoat.                 !");
-			System.out.println("  	====================================");
+			System.out.println("  	===================================");
+			System.out.println("  	!           ----- Ve -----        !");
+			System.out.println("  	!        1. Them ve.              !");
+			System.out.println("  	!        2. Danh sach ve.         !");
+			System.out.println("  	!        3. Tim kiem ve.          !");
+			System.out.println("  	!        4. Sua ve.               !");
+			System.out.println(" 	!        5. Xoa ve.               !");
+			System.out.println("  	!        0. Thoat.                !");
+			System.out.println("  	===================================");
 			System.out.println("");
 			Scanner sc = new Scanner(System.in);
 			System.out.print(" - Chon hanh dong: ");
@@ -72,11 +71,6 @@ public class QuanLyDSV {
 					ds.xoa();
 					clearScreen(5);
 					break;
-				 case 6:
-				 	clearScreen(5);
-				 	ds.thongke();
-				 	clearScreen(5);
-				 	break;
 				case 0:
 					return;
 				default: 

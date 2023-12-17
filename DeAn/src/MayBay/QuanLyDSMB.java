@@ -41,7 +41,6 @@ public class QuanLyDSMB {
 			System.out.println("   	!        3. Tim kiem may bay.         !");
 			System.out.println("   	!        4. Sua may bay.              !");
 			System.out.println("   	!        5. Xoa may bay.              !");
-			System.out.println("   	!        6. Thong ke.                 !");
 			System.out.println("   	!        0. Thoat.                    !");
 			System.out.println("   	=======================================");
 			System.out.println("");
@@ -82,16 +81,6 @@ public class QuanLyDSMB {
 				case 5:
 					clearScreen(5);
 					ds.xoa();
-					clearScreen(5);
-					break;
-				case 6:
-					clearScreen(5);
-					ds.thongke();
-					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV.
-					System.out.println("");
-					sc.nextLine();
-					System.out.print(" Thoat (phim bat ky): ");
-					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 0:
