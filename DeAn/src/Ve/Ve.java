@@ -62,10 +62,8 @@ public abstract class Ve{
     public void setDeleted(int deleted) {
         Deleted = deleted;
     }
-    public abstract void loaive();
 	//CAC HAM KHAC
-	public void nhap(){}
-	public void xuat(){
-        System.out.format("| %-10s | %-15s | %-15s", maVe, maChuyenBay, gia);
-    }
+    public abstract void loaive();
+    public abstract void nhap();
+    public abstract void xuat();
 }
