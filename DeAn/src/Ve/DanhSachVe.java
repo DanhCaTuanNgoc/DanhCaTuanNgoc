@@ -85,6 +85,7 @@ public class DanhSachVe implements Pthuc {
         }catch(IOException ioe){System.out.println("error!");}
 
     }
+    
     //luu file
     public void ghifile(){
         try{

@@ -157,8 +157,9 @@ public class DanhSachMayBay implements Pthuc{
 	public void timkiem(){
 		System.out.println(" ------------ Tim kiem ------------");
 		System.out.print(" + Ma may bay ( x de bo qa): ");
-		String tk1= sc.nextLine();
+		String tk1= sc.next();
 		System.out.print(" + Ten may bay ( x de bo qa): ");
+		sc.nextLine();
 		String tk2= sc.nextLine(); 
 		System.out.print(" + So ghe (x de bo qua): ");
 		String tk3=sc.nextLine();

@@ -260,7 +260,7 @@ public class DanhSachCTHoaDon implements Pthuc {
 		int tong=0;
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(mahoadon)) {
-				tong=dsCTHoaDon[i].getGiaTien()+tong;
+				tong = dsCTHoaDon[i].getGiaTien()+tong;
 			}
 		}
 		return tong;

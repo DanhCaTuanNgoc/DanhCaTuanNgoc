@@ -74,6 +74,7 @@ public class CTHoaDon {
 	public void nhap() {
 		ve.docfile();
 		hd.docfile();
+		cthdd.docfile();
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 				System.out.print(" - Nhap ma hoa don: ");

@@ -67,7 +67,7 @@ public class QuanLyDSCB {
 					break;
 				case 3: 
 					clearScreen(5);
-					System.out.println("Vinh lam le di !!!");
+					ds.timkiem();
 					// Thực hiện thao tác nhấn bất kì để tắt danh sách NV
 					System.out.println("");
 					sc.nextLine();

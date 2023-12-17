@@ -174,7 +174,7 @@ public class DanhSachHoaDon implements Pthuc {
 		String tk4 = sc.nextLine();
 		System.out.print(" + Tong hoa don tu: ");
 		int tk5 = sc.nextInt();
-		System.out.println(" + Den: ");
+		System.out.print(" + Den: ");
 		int tk6=sc.nextInt();
 		int m = 0;
 		System.out.println();
@@ -312,7 +312,7 @@ public class DanhSachHoaDon implements Pthuc {
 			;
 		} else {
 			ct.docfile();
-			System.out.printf("\n| %-10s | %-10s | %-15s ","Ma hoa don","Ma ve","Gia tien");
+			System.out.printf("\n| %-10s | %-10s | %-15s | %-10s ","Ma hoa don","Ma ve","Gia tien","Khuyen mai");
 			System.out.println();
 			for(int i=0;i<this.tongHoaDon;i++) {
 				if(dsHoaDon[i] != null && dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {

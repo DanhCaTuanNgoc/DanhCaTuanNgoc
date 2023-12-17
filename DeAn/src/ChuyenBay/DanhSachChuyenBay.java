@@ -172,7 +172,8 @@ public class DanhSachChuyenBay implements Pthuc {
 		System.out.print(" + Ma may bay ( x de bo qua): ");
 		String tk2= sc.next();
 		System.out.print(" + Ngay di ( x de bo qua): ");
-		String tk3= sc.next();
+		sc.nextLine();
+		String tk3= sc.nextLine();
 		System.out.print(" + Ngay den ( x de bo qua): ");
 		String tk4= sc.nextLine();
 		System.out.print(" + Ma san bay di ( x de bo qua): ");
@@ -202,7 +203,7 @@ public class DanhSachChuyenBay implements Pthuc {
 			}
 		}
 		if(m == 0) {
-			System.out.println("\n 	.....Khong tim thay ket qua tim kiem.....");
+			System.out.println("\n\t\t\t\t\t\t .....Khong tim thay ket qua tim kiem.....");
 		}
 	}
 	public void sua() {
@@ -221,7 +222,7 @@ public class DanhSachChuyenBay implements Pthuc {
 				System.out.println(" (6) Tong so ve");
 				System.out.println(" (7) Tat ca");
 				System.out.println(" (0) Thoat");
-				System.out.println(" - Lua chon gia tri can sua: ");
+				System.out.print(" - Lua chon gia tri can sua: ");
 				int n = sc.nextInt(); m++;
 				switch (n) {
 					case 1:
