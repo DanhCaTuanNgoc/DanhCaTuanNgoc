@@ -150,7 +150,7 @@ public class DanhSachHoaDon implements Pthuc {
 			for(int i=0;i<this.tongHoaDon;i++) {
 				if(dsHoaDon[i].getMaHoaDon().equalsIgnoreCase(x) && dsHoaDon[i].getDeleted() != 1) {
 					m++; 
-					dsHoaDon[i].setDeleted(1); this.soHDHH--;
+					dsHoaDon[i].setDeleted(1); this.soHDHH--; ct.xoaCT(dsHoaDon[i].getMaHoaDon());
 					System.out.println("");
 					System.out.println(" -------- Hoan tat thao tac --------");
 					break;

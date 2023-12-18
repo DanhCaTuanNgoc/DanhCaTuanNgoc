@@ -34,6 +34,7 @@ public class QuanLyDSV {
 			System.out.println("  	!        3. Tim kiem ve.          !");
 			System.out.println("  	!        4. Sua ve.               !");
 			System.out.println(" 	!        5. Xoa ve.               !");
+			System.out.println("   	!        6. Truy xuat chuyen bay  !");
 			System.out.println("  	!        0. Thoat.                !");
 			System.out.println("  	===================================");
 			System.out.println("");
@@ -69,6 +70,15 @@ public class QuanLyDSV {
 				case 5:
 					clearScreen(5);
 					ds.xoa();
+					clearScreen(5);
+					break;
+				case 6:
+					clearScreen(5);
+					ds.truyXuatCB();
+					System.out.println("");
+					sc.nextLine();
+					System.out.print(" Thoat (phim bat ky): ");
+					sc.nextLine();
 					clearScreen(5);
 					break;
 				case 0:

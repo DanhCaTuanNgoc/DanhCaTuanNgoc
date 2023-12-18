@@ -371,6 +371,23 @@ public class DanhSachVe implements Pthuc {
 		}
 		return false;
 	}
+	public void truyXuatCB() {
+		ds.docfile();
+		System.out.println(" -------- Truy xuat chuyen bay --------");
+		System.out.print(" - Nhap ma ve can truy xuat chuyen bay | Thoat(0): ");
+		String x = sc.nextLine();
+		if(x.equals("0")) {
+			; 
+		} else {
+
+			for(int i=0;i<this.tongVe;i++) {
+				if(dsVe[i].getDeleted() == 0 && dsVe[i].getMaVe().equalsIgnoreCase(x)) {
+					ds.truyXuat(dsVe[i].getMaChuyenBay()); 
+					break;
+				}
+			}
+		}
+	}
 	public int tinhgiamgia(String mve,int km){
 		int i;
 		for(i=0;i<this.tongVe;i++) {

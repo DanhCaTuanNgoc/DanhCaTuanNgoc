@@ -248,7 +248,17 @@ public class DanhSachCTHoaDon implements Pthuc {
 			}
 		}
 	}
-	public boolean Check_Available(String mave) {
+	
+	public void xoaCT(String maHd) {
+		docfile();
+		for(int i=0;i<this.tongCTHoaDon;i++) {
+			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaHoaDon().equalsIgnoreCase(maHd)) {
+				dsCTHoaDon[i].setDeleted(1);
+			}
+		}
+	}
+	
+ 	public boolean Check_Available(String mave) {
 		for(int i=0;i<this.tongCTHoaDon;i++) {
 			if(dsCTHoaDon[i] != null && dsCTHoaDon[i].getMaVe().equalsIgnoreCase(mave)) {
 				 return true;

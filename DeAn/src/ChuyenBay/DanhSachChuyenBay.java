@@ -327,4 +327,15 @@ public class DanhSachChuyenBay implements Pthuc {
 		}
 		return false;
 	}
+	
+	public void truyXuat(String maCB) {
+		System.out.println();
+		System.out.printf("| %-15s | %-10s | %-10s | %-10s | %-15s | %-15s | %-10s | %-10s | %-10s","Ma chuyen bay","Ma may bay","Ngay di","Ngay den","Ma san bay di","Ma san bay den","Gio di","Gio den","Tong so ve");
+		System.out.println();
+		for(int i=0;i<this.tongChuyenBay;i++) {
+			if(dsChuyenBay[i].getDeleted() == 0 && dsChuyenBay[i].getMaChuyenBay().equalsIgnoreCase(maCB)) {
+				dsChuyenBay[i].xuat(); System.out.println(); break; 
+			}
+		}
+	}
 }

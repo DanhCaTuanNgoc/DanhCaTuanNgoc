@@ -10,7 +10,7 @@ ve pho thong/VPT09/CB003/2000000/Business/0
 ve pho thong/VPT10/CB004/1000000/Economy/0
 ve pho thong/VPT11/CB004/1500000/Premium Economy/0
 ve pho thong/VPT12/CB004/2000000/Business/0
-ve pho thong/VPT13/CB005/1000000/Economy/1
+ve pho thong/VPT13/CB005/1000000/Economy/0
 ve pho thong/VPT14/CB005/1500000/Premium Economy/0
 ve pho thong/VPT15/CB005/2000000/Business/0
 ve pho thong/VPT16/CB006/1000000/Economy/0
