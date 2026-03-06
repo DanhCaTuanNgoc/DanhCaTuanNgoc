@@ -33,16 +33,6 @@ GitHub: https://github.com/DanhCaTuanNgoc
 **Backend & AI:** Spring Boot · Spring AI · VectorStore · RAG  
 **Web & Tools:** React · JavaScript · Git · GitHub Pages · VS Code · IntelliJ IDEA  
 
----
-
-## 📂 Project Showcase
-### Fintrack — Finance Manager App  
-![Fintrack](https://github-readme-stats.vercel.app/api/pin/?username=DanhCaTuanNgoc&repo=fintrack&hide_border=true)
-
-### Vehicle Manager UI  
-![Vehicle](https://github-readme-stats.vercel.app/api/pin/?username=DanhCaTuanNgoc&repo=vehicle-manager-ui&hide_border=true)
-
----
 
 ## ⌨️ Animated Typing Intro
 [![Typing](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=800&width=435&lines=Mobile+Developer;Flutter+%7C+React+Native+%7C+Kotlin;Building+AI-powered+apps;Future+software+startup+owner)](https://git.io/typing-svg)
@@ -59,19 +49,7 @@ GitHub: https://github.com/DanhCaTuanNgoc
 ---
 
 ## 🏆 GitHub Trophy
-![Trophy](https://github-profile-trophy.vercel.app/?username=DanhCaTuanNgoc&row=1&margin-w=10&no-frame=true)
-
----
-
-## 📈 Activity Graph
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=DanhCaTuanNgoc&hide_border=true)
-
----
-
-## 🐍 Snake Animation
-![Snake](https://raw.githubusercontent.com/DanhCaTuanNgoc/DanhCaTuanNgoc/output/github-contribution-grid-snake-dark.svg)
-
----
+![Trophy](https://github-profile-trophy.vercel.app/?username=DanhCaTuanNgoc&theme=algolia&no-frame=true&row=1)
 
 ## 🎮 Developer Level System
 - **React Native:** Level 4 — Mastering  
