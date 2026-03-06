@@ -12,7 +12,7 @@
 ---
 
 ## 🖼️ Header Banner
-![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=DanhCaTuanNgoc&fontSize=40&animation=fadeIn)
+![Banner](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=200&section=header&text=NguyenNgocTuan&fontSize=40&animation=fadeIn)
 
 ---
 
