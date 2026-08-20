@@ -1,7 +1,7 @@
 # 👋 Hi, I'm TuanNgoc
 
 ## 💫 About Me
-🎯 I’m currently working on: Mobile apps with **React Native**, **Flutter**, **Kotlin**, and interate **Spring AI** (Function Calling, ChatMemory, RAG).
+🎯 I’m currently working on: Mobile apps with **React Native**, **Flutter**, **Kotlin**, and integrate **Spring AI** (Function Calling, ChatMemory, RAG).
 
 🤝 I’m looking to collaborate on: Mobile app projects, AI-powered features, and open-source tools.
 
